@@ -1,0 +1,4 @@
+en XAMPP en apache le das a Config PHP y se busca ;curl.cainfo =
+ahí se cambia la línea por curl.cainfo="C:\xampp\php\extras\ssl\cacert.pem"
+
+TODO CON APACHE APAGADO
