@@ -21,8 +21,8 @@
     }
     ?>
 
-    <form action="LoginController.php" method="POST">
-        <div class="form-group">
+    <form action="/TFG/Codigo/auth" method="POST">
+            <div class="form-group">
             <label for="username">Usuario</label>
             <input type="text" name="username" id="username" required>
         </div>
@@ -36,7 +36,7 @@
     </form>
     
     <p style="text-align: center; font-size: 0.8rem; margin-top: 1rem;">
-        ¿No tienes cuenta? <a href="registro_vista.php">Regístrate aquí</a>
+        ¿No tienes cuenta? <a href="/TFG/Codigo/registro">Regístrate aquí</a>
     </p>
 </div>
 

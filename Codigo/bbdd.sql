@@ -13,8 +13,8 @@ CREATE DATABASE IF NOT EXISTS tcg_market
 
 USE tcg_market;
 
--- Cambiado de 'user' a 'usuarios' para ser consistente con el script
-CREATE TABLE usuarios (
+-- Cambiado de 'user' a 'users' para ser consistente con el script
+CREATE TABLE users (
   id            INT          NOT NULL AUTO_INCREMENT,
   username      VARCHAR(100) NOT NULL, -- Antes era 'nombre' en el INSERT
   email         VARCHAR(150) NOT NULL UNIQUE,
@@ -34,7 +34,7 @@ CREATE TABLE direcciones (
   codigo_postal VARCHAR(10)  NOT NULL,
   PRIMARY KEY (id),
   CONSTRAINT fk_dir_usuario FOREIGN KEY (usuario_id)
-    REFERENCES usuarios (id) -- Corregido: Ahora coincide con el nombre de la tabla
+    REFERENCES users (id) -- Corregido: Ahora coincide con el nombre de la tabla
     ON DELETE CASCADE
     ON UPDATE CASCADE
 ) ENGINE=InnoDB;
@@ -61,7 +61,7 @@ CREATE TABLE pedidos (
   creado_en     TIMESTAMP      NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (id),
   CONSTRAINT fk_ped_usuario   FOREIGN KEY (usuario_id)
-    REFERENCES usuarios (id) -- Corregido referencia
+    REFERENCES users (id) -- Corregido referencia
     ON DELETE RESTRICT
     ON UPDATE CASCADE,
   CONSTRAINT fk_ped_direccion FOREIGN KEY (direccion_id)
@@ -70,7 +70,7 @@ CREATE TABLE pedidos (
     ON UPDATE CASCADE
 ) ENGINE=InnoDB;
 
--- ... (El resto de las tablas siguen igual, solo asegúrate que las FK apunten a "usuarios")
+-- ... (El resto de las tablas siguen igual, solo asegúrate que las FK apunten a "users")
 -- ------------------------------------------------------------
 -- DETALLE_PEDIDO
 -- ------------------------------------------------------------
@@ -134,7 +134,7 @@ CREATE TABLE resenas (
   PRIMARY KEY (id),
   UNIQUE KEY uq_resena (usuario_id, tcgdex_card_id),
   CONSTRAINT fk_res_usuario FOREIGN KEY (usuario_id)
-    REFERENCES usuarios (id)
+    REFERENCES users (id)
     ON DELETE CASCADE
     ON UPDATE CASCADE
 ) ENGINE=InnoDB;
@@ -154,10 +154,11 @@ CREATE INDEX idx_resenas_card         ON resenas        (tcgdex_card_id);
 -- IDs reales de TCGDex (verificables en https://api.tcgdex.net/v2/es/cards)
 -- ============================================================
 
--- Datos de ejemplo corregidos para la tabla 'usuarios'
-INSERT INTO usuarios (username, email, password, phone) VALUES
+-- Datos de ejemplo corregidos para la tabla 'users'
+INSERT INTO users (username, email, password, phone) VALUES
   ('Ana García',    'ana@ejemplo.com',  '$2y$10$nOUIs5...', '+34600111222'),
-  ('Luis Martínez', 'luis@ejemplo.com', '$2y$10$nOUIs5...', '+34600333444');
+  ('Luis Martínez', 'luis@ejemplo.com', '$2y$10$nOUIs5...', '+34600333444'),
+  ('prueba', 'prueba@ejemplo.com', 'prueba', '+34999999999');
 
 -- Direcciones (Se mantiene igual, solo asegura que la tabla se llame 'direcciones')
 INSERT INTO direcciones (usuario_id, calle, ciudad, pais, codigo_postal) VALUES

@@ -24,4 +24,26 @@ class LoginController {
             exit();
         }
     }
+
+    public function showRegister() {
+        require_once 'views/auth/registro_vista.php';
+    }
+
+    public function register() {
+        $modelo = new Login();
+        
+        $data = [
+            'username' => $_POST['username'] ?? '',
+            'email'    => $_POST['email'] ?? '',
+            'password' => $_POST['password'] ?? '',
+            'phone'    => $_POST['phone'] ?? ''
+        ];
+
+        if ($modelo->registro($data)) {
+            header("Location: /TFG/Codigo/login?registered=1");
+        } else {
+            header("Location: /TFG/Codigo/registro?error=1");
+        }
+        exit();
+    }
 }
