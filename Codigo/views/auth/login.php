@@ -10,6 +10,8 @@
 
 <div class="login-container">
     <h2>Iniciar Sesión</h2>
+    <p style="text-align: center; font-size: 0.8rem; margin-top: 1rem;">registro 123456</p>
+
 
     <?php
     if (isset($_GET['error'])) {
@@ -20,6 +22,7 @@
         }
     }
     ?>
+    
 
     <form action="/TFG/Codigo/auth" method="POST">
             <div class="form-group">
