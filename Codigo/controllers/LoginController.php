@@ -17,7 +17,7 @@ class LoginController {
         if ($datosUsuario) {
             $_SESSION['user_id'] = $datosUsuario['id'];
             $_SESSION['nombre']  = $datosUsuario['username'];
-            header("Location: /TFG/Codigo/dashboard");
+            header("Location: /TFG/Codigo/home");
             exit();
         } else {
             header("Location: /TFG/Codigo/login?error=1");

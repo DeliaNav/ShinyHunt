@@ -1,5 +1,5 @@
 <?php
-class DashboardController {
+class HomeController {
     public function index() {
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
@@ -10,6 +10,6 @@ class DashboardController {
             exit();
         }
 
-        require_once 'views/dashboard.php';
+        require_once 'views/home.php';
     }
 }

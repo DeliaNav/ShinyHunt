@@ -12,5 +12,6 @@ $router->add('/TFG/Codigo/registro', 'LoginController@showRegister');
 $router->add('/TFG/Codigo/do-register', 'LoginController@register');
 
 $router->add('/TFG/Codigo/welcome', 'WelcomeController@index');
+$router->add('/TFG/Codigo/home', 'HomeController@index');
 
 $router->dispatch($_SERVER['REQUEST_URI']);
