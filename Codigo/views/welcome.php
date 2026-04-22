@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TFG</title>
+    <link rel="stylesheet" href="/TFG/Codigo/public/css/welcome.css">
 </head>
 <body>
     <div class="hero">
@@ -29,11 +30,6 @@
             <h1 class="hero-title">Tu mercado de cartas pokemon</h1>
             <p class="hero-subtitle">descripción de que web y eso, tipo: gestiona tu coleccion o algo asi</p>
         </div>
-
-        <div class="features">
-            <!--Botones que redireccionan a colecciones, lista de deseos o algo asi-->
-        </div>
-
     </div>
 </body>
 </html>
