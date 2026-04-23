@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+require_once 'lib/Auth.php';
 require_once 'lib/Router.php';
 
 $router = new Router();
