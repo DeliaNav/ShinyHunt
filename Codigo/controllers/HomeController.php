@@ -1,14 +1,13 @@
 <?php
+
+require_once 'lib/Auth.php';
+require_once 'lib/TCGApi.php';
+
 class HomeController {
     public function index() {
-        if (session_status() === PHP_SESSION_NONE) {
-            session_start();
-        }
+        Auth::require();
 
-        if (!isset($_SESSION['user_id'])) {
-            header("Location: /TFG/Codigo/login");
-            exit();
-        }
+        $cards = TCGApi::getRandomCards(20);
 
         require_once 'views/home.php';
     }
