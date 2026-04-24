@@ -12,7 +12,10 @@ class CardController {
 
         if (!$card) {
             http_response_code(404);
-            require_once __DIR__ . '/../views/404.php';
+            echo '<div style="text-align:center;padding:4rem;font-family:sans-serif">';
+            echo '<h1>404</h1><p>Carta no encontrada.</p>';
+            echo '<a href="/TFG/Codigo/home">← Volver al inicio</a>';
+            echo '</div>';
             return;
         }
 

@@ -1,0 +1,373 @@
+/* ================================================
+   card-detail.css — Ficha de carta · TCGMarket
+   ================================================ */
+
+.card-detail-wrap {
+    background: #f4f5f9;
+    min-height: 100vh;
+    padding-bottom: 4rem;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+}
+
+/* ─── BACK LINK ─────────────────────────────────── */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    color: #56607a;
+    font-size: .875rem;
+    margin-bottom: 1.5rem;
+    transition: color .2s;
+}
+.back-link:hover { color: #2563eb; }
+
+/* ─── LAYOUT ─────────────────────────────────────── */
+.card-detail {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+@media (max-width: 780px) {
+    .card-detail {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ─── LEFT: IMAGEN ───────────────────────────────── */
+.card-detail-left {
+    position: sticky;
+    top: 80px;
+}
+
+.card-detail-img-wrap {
+    background: #fff;
+    border: 1px solid #e3e6f0;
+    border-radius: 18px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 24px rgba(20,25,60,.08);
+}
+
+.card-detail-img-wrap img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+
+/* ─── RIGHT: INFO ────────────────────────────────── */
+.card-detail-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* ─── HEADER ─────────────────────────────────────── */
+.card-detail-header {
+    background: #fff;
+    border: 1px solid #e3e6f0;
+    border-radius: 14px;
+    padding: 1.5rem;
+}
+
+.card-detail-types {
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+    margin-bottom: .75rem;
+}
+
+.type-badge {
+    font-size: .75rem;
+    font-weight: 600;
+    padding: .2rem .75rem;
+    border-radius: 20px;
+    border: 1px solid;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
+
+.rarity-badge {
+    font-size: .75rem;
+    font-weight: 600;
+    padding: .2rem .75rem;
+    border-radius: 20px;
+    background: #fff8e1;
+    color: #f59f00;
+    border: 1px solid #ffe082;
+}
+
+.card-detail-name {
+    font-family: var(--font-head);
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 700;
+    color: #18192a;
+    margin-bottom: .3rem;
+    letter-spacing: -.02em;
+}
+
+.card-detail-set {
+    font-size: .875rem;
+    color: #9aa0b5;
+}
+
+/* ─── STATS ──────────────────────────────────────── */
+.card-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: .75rem;
+}
+
+.stat-box {
+    background: #fff;
+    border: 1px solid #e3e6f0;
+    border-radius: 10px;
+    padding: .75rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+
+.stat-label {
+    font-size: .7rem;
+    color: #9aa0b5;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+}
+
+.stat-value {
+    font-size: .95rem;
+    font-weight: 600;
+    color: #18192a;
+}
+
+/* ─── PRECIO ─────────────────────────────────────── */
+.price-box {
+    background: #fff;
+    border: 1px solid #e3e6f0;
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem;
+}
+
+.price-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+
+.price-label {
+    font-weight: 600;
+    font-size: .95rem;
+    color: #18192a;
+}
+
+.price-updated {
+    font-size: .75rem;
+    color: #9aa0b5;
+}
+
+.price-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: .75rem;
+}
+
+.price-item {
+    background: #f4f5f9;
+    border-radius: 8px;
+    padding: .65rem .9rem;
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+
+.price-item span {
+    font-size: .72rem;
+    color: #9aa0b5;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+}
+
+.price-item strong {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #2563eb;
+}
+
+/* ─── SECCIONES ──────────────────────────────────── */
+.card-section {
+    background: #fff;
+    border: 1px solid #e3e6f0;
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem;
+}
+
+.card-section-title {
+    font-size: .8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: #9aa0b5;
+    margin-bottom: 1rem;
+}
+
+/* Abilities */
+.ability-card {
+    background: #f4f5f9;
+    border-radius: 8px;
+    padding: .85rem 1rem;
+    margin-bottom: .6rem;
+}
+.ability-card:last-child { margin-bottom: 0; }
+
+.ability-header {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    margin-bottom: .4rem;
+}
+
+.ability-type {
+    font-size: .7rem;
+    font-weight: 600;
+    background: #eff4ff;
+    color: #2563eb;
+    border-radius: 4px;
+    padding: .1rem .5rem;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
+
+.ability-effect {
+    font-size: .85rem;
+    color: #56607a;
+    line-height: 1.6;
+}
+
+/* Attacks */
+.attack-card {
+    background: #f4f5f9;
+    border-radius: 8px;
+    padding: .85rem 1rem;
+    margin-bottom: .6rem;
+}
+.attack-card:last-child { margin-bottom: 0; }
+
+.attack-header {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    flex-wrap: wrap;
+    margin-bottom: .35rem;
+}
+
+.attack-cost {
+    display: flex;
+    gap: .25rem;
+    flex-wrap: wrap;
+}
+
+.cost-badge {
+    font-size: .65rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+}
+
+.attack-name {
+    font-size: .9rem;
+    color: #18192a;
+    flex: 1;
+}
+
+.attack-damage {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #18192a;
+    background: #fff;
+    border: 1px solid #e3e6f0;
+    border-radius: 6px;
+    padding: .1rem .5rem;
+}
+
+.attack-effect {
+    font-size: .85rem;
+    color: #56607a;
+    line-height: 1.6;
+}
+
+/* Weaknesses / Resistances */
+.card-wr {
+    background: #fff;
+    border: 1px solid #e3e6f0;
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.wr-title {
+    font-size: .7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: #9aa0b5;
+    margin-bottom: .6rem;
+}
+
+.wr-badge {
+    display: inline-block;
+    font-size: .8rem;
+    font-weight: 600;
+    padding: .3rem .8rem;
+    border-radius: 20px;
+    margin-right: .4rem;
+}
+
+.wr-weak   { background: #fff0f0; color: #e53935; border: 1px solid #ffcdd2; }
+.wr-resist { background: #f0fff4; color: #2e7d32; border: 1px solid #c8e6c9; }
+
+/* ─── BOTONES ─────────────────────────────────────── */
+.card-actions {
+    display: flex;
+    gap: .75rem;
+    flex-wrap: wrap;
+}
+
+.btn-collection,
+.btn-wishlist {
+    flex: 1;
+    min-width: 160px;
+    padding: .85rem 1.5rem;
+    border-radius: 10px;
+    font-size: .9rem;
+    font-weight: 600;
+    font-family: var(--font-body);
+    cursor: not-allowed;
+    border: none;
+    transition: all .2s;
+}
+
+.btn-collection {
+    background: #2563eb;
+    color: #fff;
+    opacity: .5;
+}
+
+.btn-wishlist {
+    background: #fff;
+    color: #f59f00;
+    border: 1.5px solid #ffe082;
+    opacity: .5;
+}
