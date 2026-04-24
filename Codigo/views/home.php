@@ -3,11 +3,9 @@ $pageTitle = 'Inicio · TCGMarket';
 $extraCss  = 'home.css';
 require_once 'views/layout/header.php';
 ?>
-
 <?php if (!empty($extraCss)): ?>
-    <link rel="stylesheet" href="/TFG/Codigo/public/css/<?= $extraCss ?>">
+     <link rel="stylesheet" href="/TFG/Codigo/public/css/<?= $extraCss ?>"> 
 <?php endif; ?>
-
 <div class="page-hero">
     <div class="page-hero-content">
         <h1>Hola, <?= htmlspecialchars(Auth::username()) ?></h1>
@@ -28,9 +26,9 @@ require_once 'views/layout/header.php';
     <?php else: ?>
         <div class="cards-grid">
             <?php foreach ($cards as $card):
-                $imgUrl = "https://assets.tcgdex.net/en/{$card['set']['id']}/{$card['localId']}/low.png";
+                $imgUrl = TCGApi::getImageUrl($card);
             ?>
-                <a href="/TFG/Codigo/cards/<?= htmlspecialchars($card['set']['id'] . '-' . $card['localId']) ?>" class="card-item">
+                <a href="/TFG/Codigo/cards/<?= htmlspecialchars($card['id']) ?>" class="card-item">
                     <div class="card-img-wrap">
                         <img src="<?= $imgUrl ?>"
                              alt="<?= htmlspecialchars($card['name']) ?>"
@@ -39,7 +37,7 @@ require_once 'views/layout/header.php';
                     </div>
                     <div class="card-info">
                         <span class="card-name"><?= htmlspecialchars($card['name']) ?></span>
-                        <span class="card-set"><?= htmlspecialchars($card['set']['name'] ?? '') ?></span>
+                        <span class="card-set"><?= htmlspecialchars($card['id'] ?? '') ?></span>
                     </div>
                 </a>
             <?php endforeach; ?>

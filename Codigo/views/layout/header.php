@@ -18,9 +18,9 @@ $unread = 0;
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/TFG/Codigo/public/css/main.css">
+    <link rel="stylesheet" href="/TFG/Codigo/public/css/header.css">
     <?php if (!empty($extraCss)): ?>
-        <link rel="stylesheet" href="/TFG/Codigo/public/css/header.css">
+        <link rel="stylesheet" href="/TFG/Codigo/public/css/<?= htmlspecialchars($extraCss) ?>">
     <?php endif; ?>
 </head>
 <body>
@@ -28,7 +28,7 @@ $unread = 0;
 <?php if (Auth::check()): ?>
 <nav class="navbar">
     <div class="nav-inner">
-        <a href="/TFG/Codigo/dashboard" class="nav-logo">
+        <a href="/TFG/Codigo/home" class="nav-logo">
             <span class="logo-icon">◆</span>
             <span class="logo-text">TCG<em>Market</em></span>
         </a>
@@ -46,10 +46,10 @@ $unread = 0;
         </div>
 
         <ul class="nav-links">
-            <li><a href="/TFG/Codigo/dashboard" class="nav-link <?= str_contains($_SERVER['REQUEST_URI'], 'dashboard') ? 'active' : '' ?>">Inicio</a></li>
+            <li><a href="/TFG/Codigo/home"      class="nav-link <?= str_contains($_SERVER['REQUEST_URI'], 'home')      ? 'active' : '' ?>">Inicio</a></li>
             <li><a href="/TFG/Codigo/coleccion" class="nav-link <?= str_contains($_SERVER['REQUEST_URI'], 'coleccion') ? 'active' : '' ?>">Mi Colección</a></li>
-            <li><a href="/TFG/Codigo/wishlist"  class="nav-link <?= str_contains($_SERVER['REQUEST_URI'], 'wishlist') ? 'active' : '' ?>">Lista de Deseos</a></li>
-            <li><a href="/TFG/Codigo/usuarios"  class="nav-link <?= str_contains($_SERVER['REQUEST_URI'], 'usuarios') ? 'active' : '' ?>">Usuarios</a></li>
+            <li><a href="/TFG/Codigo/wishlist"  class="nav-link <?= str_contains($_SERVER['REQUEST_URI'], 'wishlist')  ? 'active' : '' ?>">Lista de Deseos</a></li>
+            <li><a href="/TFG/Codigo/usuarios"  class="nav-link <?= str_contains($_SERVER['REQUEST_URI'], 'usuarios')  ? 'active' : '' ?>">Usuarios</a></li>
             <li>
                 <a href="/TFG/Codigo/mensajes" class="nav-link nav-link--icon <?= str_contains($_SERVER['REQUEST_URI'], 'mensajes') ? 'active' : '' ?>">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
