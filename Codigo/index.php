@@ -16,5 +16,6 @@ $router->add('/TFG/Codigo/welcome', 'WelcomeController@index');
 $router->add('/TFG/Codigo/home', 'HomeController@index');
 
 $router->add('/TFG/Codigo/buscar', 'buscadorController@search');
+$router->add('/TFG/Codigo/cards/{id}', 'CardController@show');
 
 $router->dispatch($_SERVER['REQUEST_URI']);
