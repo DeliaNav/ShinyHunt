@@ -196,7 +196,7 @@ $typeColors = [
 
                 <!-- Botones (sin funcionalidad aún) -->
                 <div class="card-actions">
-                    <button class="btn-collection" disabled>
+                    <button class="btn-collection" disabled><!--conexion con js con fetch lo pasa a php y asi-->
                         + Añadir a Mi Colección
                     </button>
                     <button class="btn-wishlist" disabled>

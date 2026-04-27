@@ -45,7 +45,7 @@ class Collection {
         $stmt = $this->pdo->prepare("SELECT COALESCE(SUM(quantity), 0) FROM collections WHERE user_id = ?");
         //COALESCE devuelve primer valor no nulo encontrado
         $stmt->execute([$userId]);
-        return (int) $stmt-fetchColumn();
+        return (int) $stmt->fetchColumn();
     }
 
 }

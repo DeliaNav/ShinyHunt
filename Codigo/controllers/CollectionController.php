@@ -18,7 +18,7 @@ class CollectionController {
         $total = $this->model->count($userId);
 
         $pageTitle = "Mi coleccion";
-        $extraCss = 'collection.css';//esto es para el css que dudo que lo pueda poner en el html directamente
+        $extraCss = 'collections.css';//esto es para el css que dudo que lo pueda poner en el html directamente
 
         require_once __DIR__ . '/../views/collection.php';//vista collection
     }
