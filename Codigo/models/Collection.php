@@ -23,7 +23,7 @@ class Collection {
             VALUES (?, ?, ?, ?, 1)
             ON DUPLICATE KEY UPDATE quantity = quantity + 1");
 
-        return $stmt->execute([$userId, $cardId, $cardId, $cardName, $imageUrl]);
+        return $stmt->execute([$userId, $cardId, $cardName, $imageUrl]);
     }
 
     public function remove(int $userId, string $cardId){
