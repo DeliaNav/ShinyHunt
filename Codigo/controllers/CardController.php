@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/../lib/Auth.php';
 require_once __DIR__ . '/../lib/TCGApi.php';
+require_once __DIR__ . '/../models/Collection.php';
 
 class CardController {
 
@@ -19,8 +20,13 @@ class CardController {
             return;
         }
 
+        //comprueba si el usuario ya tiene esta carta en su colección
+        $collection   = new Collection();
+        $inCollection = $collection->hasCard(Auth::userId(), $id);
+
         $pageTitle = htmlspecialchars($card['name']) . ' · TCGMarket';
         $extraCss  = 'card-detail.css';
+
         require_once __DIR__ . '/../views/cards/show.php';
     }
 }

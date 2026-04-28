@@ -1,5 +1,5 @@
 /* ================================================
-   card-detail.css — Ficha de carta · TCGMarket
+   card-detail.css — Ficha de carta Provisional 
    ================================================ */
 
 .card-detail-wrap {
@@ -14,7 +14,7 @@
     padding: 2rem 2rem;
 }
 
-/* ─── BACK LINK ─────────────────────────────────── */
+/* BACK LINK  */
 .back-link {
     display: inline-flex;
     align-items: center;
@@ -26,7 +26,7 @@
 }
 .back-link:hover { color: #2563eb; }
 
-/* ─── LAYOUT ─────────────────────────────────────── */
+/* LAYOUT  */
 .card-detail {
     display: grid;
     grid-template-columns: 320px 1fr;
@@ -40,7 +40,7 @@
     }
 }
 
-/* ─── LEFT: IMAGEN ───────────────────────────────── */
+/*  LEFT: IMAGEN  */
 .card-detail-left {
     position: sticky;
     top: 80px;
@@ -60,14 +60,14 @@
     display: block;
 }
 
-/* ─── RIGHT: INFO ────────────────────────────────── */
+/* RIGHT: INFO ─ */
 .card-detail-right {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
 }
 
-/* ─── HEADER ─────────────────────────────────────── */
+/* HEADER  */
 .card-detail-header {
     background: #fff;
     border: 1px solid #e3e6f0;
@@ -116,7 +116,7 @@
     color: #9aa0b5;
 }
 
-/* ─── STATS ──────────────────────────────────────── */
+/* STATS */
 .card-stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
@@ -146,7 +146,7 @@
     color: #18192a;
 }
 
-/* ─── PRECIO ─────────────────────────────────────── */
+/* PRECIO */
 .price-box {
     background: #fff;
     border: 1px solid #e3e6f0;
@@ -202,7 +202,7 @@
     color: #2563eb;
 }
 
-/* ─── SECCIONES ──────────────────────────────────── */
+/* SECCIONES */
 .card-section {
     background: #fff;
     border: 1px solid #e3e6f0;
@@ -235,6 +235,7 @@
     margin-bottom: .4rem;
 }
 
+
 .ability-type {
     font-size: .7rem;
     font-weight: 600;
@@ -259,6 +260,7 @@
     padding: .85rem 1rem;
     margin-bottom: .6rem;
 }
+
 .attack-card:last-child { margin-bottom: 0; }
 
 .attack-header {
@@ -338,7 +340,7 @@
 .wr-weak   { background: #fff0f0; color: #e53935; border: 1px solid #ffcdd2; }
 .wr-resist { background: #f0fff4; color: #2e7d32; border: 1px solid #c8e6c9; }
 
-/* ─── BOTONES ─────────────────────────────────────── */
+/* BOTONES */
 .card-actions {
     display: flex;
     gap: .75rem;
@@ -360,9 +362,8 @@
 }
 
 .btn-collection {
-    background: #2563eb;
+    background: #2563eb;/*Este ya se ve bien si no lo ves te pones en incognito*/
     color: #fff;
-    opacity: .5;
 }
 
 .btn-wishlist {

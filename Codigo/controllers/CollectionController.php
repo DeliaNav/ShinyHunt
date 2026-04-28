@@ -6,54 +6,80 @@ require_once __DIR__ . '/../models/Collection.php';
 class CollectionController {
     private Collection $model;
 
-    public function __construct(){
-        $this->model = new Collection;
+    public function __construct() {
+        $this->model = new Collection();
     }
 
-    public function index(){
-        //vista principal para la colecion
-        Auth::require();//para el id user
-        $userId = Auth::userId();
-        $cards = $this->model->getByUser($userId);
-        $total = $this->model->count($userId);
-
-        $pageTitle = "Mi coleccion";
-        $extraCss = 'collections.css';//esto es para el css que dudo que lo pueda poner en el html directamente
-
-        require_once __DIR__ . '/../views/collection.php';//vista collection
-    }
-
-    public function add(){
-        //anadir carta
+    public function index() {
         Auth::require();
         $userId = Auth::userId();
+        $cards  = $this->model->getByUser($userId);
+        $total  = $this->model->count($userId);
+
+        $pageTitle = 'Mi Colección · TCGMarket';
+        require_once __DIR__ . '/../views/collection.php';
+    }
+
+    //Llamado por fetch desde show.php — devuelve JSON
+    public function add() {
+        Auth::require();
+        header('Content-Type: application/json');
+
+        $userId   = Auth::userId();
         $cardId   = trim($_POST['card_id']   ?? '');
         $cardName = trim($_POST['card_name'] ?? '');
         $imageUrl = trim($_POST['image_url'] ?? '');
 
-        if($cardId && $cardName){
-            $this->model->add($userId, $cardId, $cardName, $imageUrl);
+        if (!$cardId || !$cardName) {
+            echo json_encode(['success' => false, 'message' => 'Datos incompletos']);
+            exit();
         }
 
-        //redireccion
-        $redirect = $_POST['redirect'] ?? '/TFG/Codigo/coleccion';
-        header("Location: {$redirect}");//mirar si funciona
+        $ok = $this->model->add($userId, $cardId, $cardName, $imageUrl);
+        echo json_encode([
+            'success'  => $ok,
+            'inCollection' => true,
+            'message'  => $ok ? 'Carta añadida a tu colección' : 'Error al añadir'
+        ]);
         exit();
     }
 
-    public function remove(){
-        //eliminar carta
+    // Llamado por fetch desde show.php — devuelve JSON
+    public function remove() {
         Auth::require();
-        $userId = Auth::userId();
-        $cardId = tirm($_POST['card_id'] ?? '');
+        header('Content-Type: application/json');
 
-        if($cardId){
-            $this->model->remove($userId, $cardId);
+        $userId = Auth::userId();
+        $cardId = trim($_POST['card_id'] ?? '');
+
+        if (!$cardId) {
+            echo json_encode(['success' => false, 'message' => 'Datos incompletos']);
+            exit();
         }
 
-        //redireccion
-        $redirect = $_POST['redirect'] ?? '/TFG/Codigo/coleccion';
-        header("Location: {$redirect}");//mirar si funciona
+        $ok = $this->model->remove($userId, $cardId);
+        echo json_encode([
+            'success'      => $ok,
+            'inCollection' => false,
+            'message'      => $ok ? 'Carta eliminada de tu colección' : 'Error al eliminar'
+        ]);
         exit();
+    }
+
+    private function json(array $data): void {
+        header('Content-Type: application/json');
+        echo json_encode($data);
+        exit();
+    }
+ 
+    /**
+     * PARA RUTAS AJAX: comprueba sesión y devuelve JSON 401
+     * en lugar de redirigir al login (que rompe el fetch).
+     */
+    private function requireAjax(): void {
+        header('Content-Type: application/json');   // primero, antes de cualquier salida
+        if (!Auth::check()) {
+            $this->json(['success' => false, 'message' => 'Sesión expirada. Recarga la página.']);
+        }
     }
 }

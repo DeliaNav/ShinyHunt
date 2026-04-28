@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../views/layout/header.php';
 ?>
+<link rel="stylesheet" href="/TFG/Codigo/public/css/collections.css">
 
 <div class="collection-hero">
     <div class="container">
@@ -19,7 +20,7 @@ require_once __DIR__ . '/../views/layout/header.php';
 <div class="container">
     <?php if (empty($cards)): ?>
         <div class="collection-empty">
-            <div class="empty-icon">🗂️</div>
+            <div class="empty-icon">🗂️</div><!--Emoji cambiar mirar si faIcon-->
             <h3>Tu colección está vacía</h3>
             <p>Busca cartas y añádelas para llevar un registro de tu colección física.</p>
             <a href="/TFG/Codigo/home" class="btn-explore">Explorar cartas</a>
