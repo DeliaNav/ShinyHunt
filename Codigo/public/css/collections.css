@@ -1,8 +1,8 @@
 /* ================================================
-   collection.css — Mi Colección · TCGMarket
+   collection.css — Mi Colección
    ================================================ */
 
-/* ─── HERO ───────────────────────────────────────── */
+/*  HERO  */
 .collection-hero {
     background: #ffffff;
     border-bottom: 1px solid #e3e6f0;
@@ -30,14 +30,14 @@
     color: #9aa0b5;
 }
 
-/* ─── CONTAINER ──────────────────────────────────── */
+/*  CONTAINER  */
 .container {
     max-width: 1300px;
     margin: 0 auto;
     padding: 2rem 2rem;
 }
 
-/* ─── BOTÓN EXPLORAR ─────────────────────────────── */
+/*  BOTÓN EXPLORAR  */
 .btn-explore {
     display: inline-flex;
     align-items: center;
@@ -53,7 +53,7 @@
 }
 .btn-explore:hover { background: #1d4ed8; }
 
-/* ─── EMPTY STATE ────────────────────────────────── */
+/*  EMPTY STATE  */
 .collection-empty {
     text-align: center;
     padding: 5rem 1rem;
@@ -74,14 +74,14 @@
     margin-bottom: 1.5rem;
 }
 
-/* ─── CARDS GRID ─────────────────────────────────── */
+/*  CARDS GRID  */
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(172px, 1fr));
     gap: 1.1rem;
 }
 
-/* ─── CARD ITEM ──────────────────────────────────── */
+/*  CARD ITEM  */
 .card-item {
     position: relative;
     background: #ffffff;
@@ -99,7 +99,7 @@
 
 .card-link { display: block; text-decoration: none; color: inherit; }
 
-/* ─── CARD IMAGE ─────────────────────────────────── */
+/*  CARD IMAGE  */
 .card-img-wrap {
     aspect-ratio: 2.5 / 3.5;
     overflow: hidden;
@@ -126,7 +126,7 @@
     z-index: 2;
 }
 
-/* ─── CARD INFO ──────────────────────────────────── */
+/*  CARD INFO  */
 .card-info {
     padding: 0.8rem;
     border-top: 1px solid #edf0f7;
@@ -147,7 +147,7 @@
     color: #9aa0b5;
 }
 
-/* ─── BOTÓN ELIMINAR ─────────────────────────────── */
+/*  BOTÓN ELIMINAR  */
 .btn-remove {
     width: 100%;
     margin-top: 0.2rem;
@@ -163,7 +163,7 @@
     justify-content: center;
 }
 
-/* ─── RESPONSIVE ─────────────────────────────────── */
+/*  RESPONSIVE  */
 @media (max-width: 700px) {
     .container { padding: 1.5rem 1.25rem; }
     .collection-hero { padding: 1.5rem 0; }
