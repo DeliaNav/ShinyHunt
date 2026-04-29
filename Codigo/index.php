@@ -22,4 +22,8 @@ $router->add('/TFG/Codigo/coleccion', 'CollectionController@index');
 $router->add('/TFG/Codigo/coleccion/add', 'CollectionController@add');
 $router->add('/TFG/Codigo/coleccion/remove', 'CollectionController@remove');
 
+$router->add('/TFG/Codigo/wishlist', 'WishListController@index');
+$router->add('/TFG/Codigo/wishlist/add', 'WishListController@add');
+$router->add('/TFG/Codigo/wishlist/remove', 'WishListController@remove');
+
 $router->dispatch($_SERVER['REQUEST_URI']);
