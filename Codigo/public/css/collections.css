@@ -128,11 +128,11 @@
 
 /* ─── CARD INFO ──────────────────────────────────── */
 .card-info {
-    padding: .7rem .9rem .8rem;
+    padding: 0.8rem;
     border-top: 1px solid #edf0f7;
     display: flex;
     flex-direction: column;
-    gap: .2rem;
+    gap: 0.4rem;
 }
 .card-name {
     font-size: .875rem;
@@ -148,25 +148,20 @@
 }
 
 /* ─── BOTÓN ELIMINAR ─────────────────────────────── */
-.remove-form {
-    position: absolute;
-    top: .45rem;
-    right: .45rem;
-    z-index: 3;
-}
 .btn-remove {
-    width: 26px; height: 26px;
-    border-radius: 50%;
-    background: rgba(229,57,53,.85);
+    width: 100%;
+    margin-top: 0.2rem;
+    background-color: #fee2e2 ;
+    color: rgb(255, 0, 0);
     border: none;
-    color: #fff;
-    font-size: .7rem;
-    display: flex; align-items: center; justify-content: center;
-    opacity: 0;
-    transition: opacity .2s;
+    font-size: 0.8rem;
+    font-weight: 600;
     cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.card-item:hover .btn-remove { opacity: 1; }
 
 /* ─── RESPONSIVE ─────────────────────────────────── */
 @media (max-width: 700px) {
