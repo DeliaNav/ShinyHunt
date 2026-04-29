@@ -95,7 +95,7 @@ $typeColors = [
                     <?php $price = $card['pricing']['cardmarket']; ?>
                     <div class="price-box">
                         <div class="price-header">
-                            <span class="price-label">💶 Precio en Cardmarket</span>
+                            <span class="price-label"> Precio en Cardmarket</span>
                             <span class="price-updated">Actualizado: <?= date('d/m/Y', strtotime($price['updated'])) ?></span>
                         </div>
                         <div class="price-grid">
@@ -194,19 +194,29 @@ $typeColors = [
                     </div>
                 <?php endif; ?>
 
-                <!-- Botones (sin funcionalidad aún) -->
+                <!-- Botones -->
                 <div class="card-actions">
-                    <button class="btn-collection" disabled>
+                    <button id="btn-collection" class="btn-collection" disabled>
                         + Añadir a Mi Colección
                     </button>
                     <button class="btn-wishlist" disabled>
                         ⭐ Añadir a Lista de Deseos
-                    </button>
+                    </button><!--Cambiar estrella emoji por otra mejor-->
                 </div>
-
             </div>
         </div>
     </div>
 </div>
+
+<!-- Datos de la carta para el JS (escapados y seguros) -->
+<script>
+window.cardData = {
+    cardId:       <?= json_encode($card['id']   ?? '') ?>,
+    cardName:     <?= json_encode($card['name'] ?? '') ?>,
+    imageUrl:     <?= json_encode($imgUrl) ?>,
+    inCollection: <?= json_encode($inCollection) ?>,
+};
+</script>
+<script src="/TFG/Codigo/public/js/collection.js"></script>
 
 <?php require_once 'views/layout/footer.php'; ?>
