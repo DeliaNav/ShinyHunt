@@ -8,15 +8,19 @@
         <div class="profile-hero">
             <div class="profile-avatar-wrap">
                 <?php if (!empty($user['avatar'])): ?>
-                    <img src="<?= htmlspecialchars($user['avatar']) ?>"
-                         alt="Avatar" class="profile-avatar">
+                    <img src="<?= htmlspecialchars($user['avatar']) ?>" alt="Avatar" class="profile-avatar">
+                    
+                    <form action="/TFG/Codigo/perfil/avatar" method="POST"> <input type="hidden" name="action" value="delete">
+                        <button type="submit" class="avatar-delete-btn" onclick="return confirm('¿Borrar foto?')">
+                            &times;
+                        </button>
+                    </form>
                 <?php else: ?>
                     <div class="profile-avatar-placeholder">
                         <?= strtoupper(substr($user['username'], 0, 1)) ?>
                     </div>
                 <?php endif; ?>
 
-                <!-- Botón de cambio de avatar -->
                 <label class="avatar-edit-btn" title="Cambiar avatar">
                     ✎
                     <input type="file" name="avatar" accept="image/*" id="avatar-input" hidden>

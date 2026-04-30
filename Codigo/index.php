@@ -35,6 +35,7 @@ $router->add('/TFG/Codigo/wishlist',        'WishListController@index');
 $router->add('/TFG/Codigo/perfil/update',   'ProfileController@update');
 $router->add('/TFG/Codigo/perfil/password', 'ProfileController@password');
 $router->add('/TFG/Codigo/perfil/avatar',   'ProfileController@avatar');
+$router->add('/TFG/Codigo/perfil/avatar/delete',   'ProfileController@avatar');
 $router->add('/TFG/Codigo/perfil',          'ProfileController@index');
 
 $router->dispatch($_SERVER['REQUEST_URI']);

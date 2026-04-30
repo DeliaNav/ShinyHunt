@@ -106,6 +106,7 @@ class ProfileController {
     }
 
     /** POST /perfil/avatar — sube avatar */
+    /** POST /perfil/avatar — sube o borra el avatar */
     public function avatar() {
         Auth::require();
         $userId = Auth::userId();
@@ -116,6 +117,21 @@ class ProfileController {
         $error   = null;
         $success = null;
 
+        // --- 1. LÓGICA PARA BORRAR AVATAR ---
+        if (isset($_POST['action']) && $_POST['action'] === 'delete') {
+            $user = $this->userModel->getById($userId);
+            if (!empty($user['avatar'])) {
+                $destDir = __DIR__ . '/../public/img/avatars/';
+                $oldFile = $destDir . basename($user['avatar']);
+                if (file_exists($oldFile)) unlink($oldFile);
+                $this->userModel->updateAvatar($userId, '');
+            }
+            // Redirigir para limpiar los datos de POST y evitar re-envíos
+            header("Location: /TFG/Codigo/perfil?success=Foto eliminada");
+            exit;
+        }
+
+        // --- 2. LÓGICA PARA SUBIR AVATAR (Original) ---
         if (empty($_FILES['avatar']) || $_FILES['avatar']['error'] !== UPLOAD_ERR_OK) {
             $error = 'No se ha subido ningún archivo.';
         } else {
@@ -158,4 +174,5 @@ class ProfileController {
         $extraCss  = 'profile.css';
         require_once __DIR__ . '/../views/profile.php';
     }
+   
 }
