@@ -36,6 +36,7 @@ CREATE TABLE IF NOT EXISTS wishlists (
     id          INT AUTO_INCREMENT PRIMARY KEY,
     user_id     INT          NOT NULL,
     card_id     VARCHAR(50)  NOT NULL,
+    quantity    INT          NOT NULL,
     card_name   VARCHAR(100) NOT NULL,
     image_url   VARCHAR(255) DEFAULT NULL,
     added_at    DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,

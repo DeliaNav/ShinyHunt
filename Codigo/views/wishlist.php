@@ -7,8 +7,8 @@
     <div class="container">
         <div class="collection-hero-inner">
             <div>
-                <h1 class="collection-title">Mi Lista de deseos</h1>
-                <p class="collection-sub" id="collection-count">
+                <h1 class="collection-title">Mi Lista de Deseos</h1>
+                <p class="collection-sub" id="wishlist-count">
                     <?= $total ?> carta<?= $total !== 1 ? 's' : '' ?> en tu lista de deseos
                 </p>
             </div>
@@ -19,7 +19,7 @@
 
 <div class="container">
     <?php if (empty($cards)): ?>
-        <div class="collection-empty" id="collection-empty">
+        <div class="collection-empty" id="wishlist-empty">
             <div class="empty-icon">🗂️</div>
             <h3>Tu lista de deseos está vacía</h3>
             <p>Busca cartas y añádelas para llevar un registro de tu lista de deseos.</p>
@@ -46,8 +46,7 @@
                     </a>
                     <button class="btn-remove"
                             title="Eliminar"
-                            data-card-id="<?= htmlspecialchars($card['card_id']) ?>">Eliminar</button>
-                            
+                            data-card-id="<?= htmlspecialchars($card['card_id']) ?>">✕</button>
                 </div>
             <?php endforeach; ?>
         </div>
@@ -56,7 +55,7 @@
 
 <!-- Datos para el JS -->
 <script>
-    window.collectionData = { total: <?= (int) $total ?> };
+    window.wishlistData = { total: <?= (int) $total ?> };
 </script>
 <script src="/TFG/Codigo/public/js/wishlist-page.js"></script>
 
