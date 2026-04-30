@@ -1,5 +1,7 @@
 <?php
-
+ini_set('display_errors', 1);
+ini_set('log_errors', 1);
+ini_set('error_log', __DIR__ . '/php_errors.log');
 session_start();
 require_once 'lib/Auth.php';
 require_once 'lib/Router.php';
@@ -18,8 +20,14 @@ $router->add('/TFG/Codigo/home', 'HomeController@index');
 $router->add('/TFG/Codigo/buscar', 'buscadorController@search');
 $router->add('/TFG/Codigo/cards/{id}', 'CardController@show');
 
-$router->add('/TFG/Codigo/coleccion', 'CollectionController@index');
-$router->add('/TFG/Codigo/coleccion/add', 'CollectionController@add');
+// Específicas antes que la genérica
+$router->add('/TFG/Codigo/coleccion/add',    'CollectionController@add');
 $router->add('/TFG/Codigo/coleccion/remove', 'CollectionController@remove');
+$router->add('/TFG/Codigo/coleccion',        'CollectionController@index');
+
+// Específicas antes que la genérica
+$router->add('/TFG/Codigo/wishlist/add',    'WishListController@add');
+$router->add('/TFG/Codigo/wishlist/remove', 'WishListController@remove');
+$router->add('/TFG/Codigo/wishlist',        'WishListController@index');
 
 $router->dispatch($_SERVER['REQUEST_URI']);
