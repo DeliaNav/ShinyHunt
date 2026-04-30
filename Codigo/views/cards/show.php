@@ -196,11 +196,11 @@ $typeColors = [
 
                 <!-- Botones -->
                 <div class="card-actions">
-                    <button id="btn-collection" class="btn-collection" disabled>
+                    <button id="btn-collection" class="btn-collection">
                         + Añadir a Mi Colección
                     </button>
-                    <button class="btn-wishlist" disabled>
-                        ⭐ Añadir a Lista de Deseos
+                    <button class="btn-wishlist">
+                        ☆ Añadir a Lista de Deseos
                     </button><!--Cambiar estrella emoji por otra mejor-->
                 </div>
             </div>
