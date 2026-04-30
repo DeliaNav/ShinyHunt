@@ -10,7 +10,7 @@
 
 <div class="login-container">
     <h2>Iniciar Sesión</h2>
-    <p style="text-align: center; font-size: 0.8rem; margin-top: 1rem;">registro 123456</p>
+    <p style="text-align: center; font-size: 0.8rem; margin-top: 1rem;">delia 1234</p>
 
 
     <?php

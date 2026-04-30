@@ -1,7 +1,8 @@
 <?php
-ini_set('display_errors', 1);
+ini_set('display_errors', 0);
 ini_set('log_errors', 1);
 ini_set('error_log', __DIR__ . '/php_errors.log');
+
 session_start();
 require_once 'lib/Auth.php';
 require_once 'lib/Router.php';
@@ -29,5 +30,11 @@ $router->add('/TFG/Codigo/coleccion',        'CollectionController@index');
 $router->add('/TFG/Codigo/wishlist/add',    'WishListController@add');
 $router->add('/TFG/Codigo/wishlist/remove', 'WishListController@remove');
 $router->add('/TFG/Codigo/wishlist',        'WishListController@index');
+
+// Perfil — específicas antes que la genérica
+$router->add('/TFG/Codigo/perfil/update',   'ProfileController@update');
+$router->add('/TFG/Codigo/perfil/password', 'ProfileController@password');
+$router->add('/TFG/Codigo/perfil/avatar',   'ProfileController@avatar');
+$router->add('/TFG/Codigo/perfil',          'ProfileController@index');
 
 $router->dispatch($_SERVER['REQUEST_URI']);

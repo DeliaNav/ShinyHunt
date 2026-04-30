@@ -1,0 +1,205 @@
+.profile-wrap {
+    padding: 2rem 0 4rem;
+}
+
+.profile-hero {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background: var(--card-bg, #ffffff);
+    border: 1px solid var(--border, #e2e8f0);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.profile-avatar-wrap {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.profile-avatar,
+.profile-avatar-placeholder {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent, #7c3aed);
+}
+
+.profile-avatar-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent, #7c3aed);
+    color: #ffffff;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.avatar-edit-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--accent, #7c3aed);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .85rem;
+    cursor: pointer;
+    border: 2px solid #ffffff;
+    transition: opacity .2s;
+}
+.avatar-edit-btn:hover { opacity: .8; }
+
+.profile-hero-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.profile-username {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0 0 .2rem;
+    color: var(--text, #1a1a1a);
+}
+
+.profile-email {
+    color: var(--text-muted, #64748b);
+    font-size: .9rem;
+    margin: 0 0 .5rem;
+}
+
+.profile-bio {
+    color: var(--text, #475569);
+    font-size: .9rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.profile-stats {
+    display: flex;
+    gap: 1rem;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.stat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--bg, #f8fafc);
+    border: 1px solid var(--border, #e2e8f0);
+    border-radius: 12px;
+    padding: .8rem 1.4rem;
+    text-decoration: none;
+    transition: border-color .2s, transform .2s;
+}
+.stat-card:hover {
+    border-color: var(--accent, #7c3aed);
+    transform: translateY(-2px);
+}
+
+.stat-number {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--accent, #7c3aed);
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: .75rem;
+    color: var(--text-muted, #64748b);
+    margin-top: .3rem;
+}
+
+.profile-alert {
+    padding: .85rem 1.2rem;
+    border-radius: 10px;
+    font-size: .9rem;
+    margin-bottom: 1.5rem;
+}
+
+.profile-alert--error   { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
+.profile-alert--success { background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; }
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+@media (max-width: 700px) {
+    .profile-grid { grid-template-columns: 1fr; }
+    .profile-stats { margin-left: 0; width: 100%; justify-content: center; }
+}
+
+.profile-card {
+    background: var(--card-bg, #ffffff);
+    border: 1px solid var(--border, #e2e8f0);
+    border-radius: 14px;
+    padding: 1.8rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.profile-card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text, #1a1a1a);
+    margin: 0 0 1.4rem;
+    padding-bottom: .7rem;
+    border-bottom: 1px solid var(--border, #e2e8f0);
+}
+
+.profile-form { display: flex; flex-direction: column; gap: 1rem; }
+
+.form-group { display: flex; flex-direction: column; gap: .35rem; }
+
+.form-group label {
+    font-size: .8rem;
+    font-weight: 500;
+    color: var(--text-muted, #64748b);
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
+
+.form-group input,
+.form-group textarea {
+    background: var(--bg, #ffffff);
+    border: 1px solid var(--border, #cbd5e1);
+    border-radius: 8px;
+    padding: .6rem .9rem;
+    color: var(--text, #1e293b);
+    font-size: .9rem;
+    transition: border-color .2s;
+    font-family: inherit;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent, #7c3aed);
+    box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.1);
+}
+
+.btn-save {
+    align-self: flex-start;
+    margin-top: .4rem;
+    padding: .6rem 1.4rem;
+    background: var(--accent, #7c3aed);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: .9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .2s;
+}
+.btn-save:hover { background: #6d28d9; }
