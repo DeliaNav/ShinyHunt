@@ -70,16 +70,47 @@
     transform: scale(1.1);
 }
 
+.avatar-delete-btn {
+    position: absolute;
+    /* Cambiamos bottom por top y right por left */
+    top: 5px; 
+    left: 5px; 
+    
+    background: #e74c3c;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    border: none;
+    padding: 0;
+    font-size: 20px;
+    
+    cursor: pointer;
+    transition: transform 0.2s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    
+    outline: none;
+}
+
+.avatar-delete-btn:hover {
+    transform: scale(1.1);
+    background: #c0392b; 
+}
+
+.avatar-delete-btn:focus {
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.4);
+}
+
+
 /* Contenedor del avatar (necesario para posicionar el botón dentro) */
 .profile-avatar-wrap {
     position: relative;
     width: 120px; /* Ajusta según el tamaño de tu avatar */
     height: 120px;
-}
-
-/* Para asegurar que el símbolo X esté centrado */
-.avatar-delete-btn::after {
-    margin-bottom: 2px; /* Ajuste visual fino para el símbolo × */
 }
 
 .profile-hero-info {
