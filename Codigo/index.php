@@ -38,4 +38,12 @@ $router->add('/TFG/Codigo/perfil/avatar',   'ProfileController@avatar');
 $router->add('/TFG/Codigo/perfil/avatar/delete',   'ProfileController@avatar');
 $router->add('/TFG/Codigo/perfil',          'ProfileController@index');
 
+$router->add('/TFG/Codigo/vender/{cardId}',  'ListingController@create');
+$router->add('/TFG/Codigo/vender',           'ListingController@store');
+$router->add('/TFG/Codigo/vender/cancelar',  'ListingController@cancel');
+$router->add('/TFG/Codigo/carrito',          'CartController@index');
+$router->add('/TFG/Codigo/carrito/add',      'CartController@add');
+$router->add('/TFG/Codigo/carrito/remove',   'CartController@remove');
+$router->add('/TFG/Codigo/carrito/checkout', 'CartController@checkout');
+
 $router->dispatch($_SERVER['REQUEST_URI']);

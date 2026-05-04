@@ -1,0 +1,320 @@
+/* listing.css — Poner en venta */
+
+.listing-wrap { 
+    background: #f4f5f9; 
+    min-height: 100vh; 
+    padding-bottom: 4rem; 
+}
+
+.container { 
+    max-width: 1000px; 
+    margin: 0 auto; 
+    padding: 2rem; 
+}
+
+.back-link { 
+    display: inline-flex; 
+    align-items: center; 
+    gap: .4rem; color: #56607a; 
+    font-size: .875rem; 
+    margin-bottom: 1.5rem; 
+    transition: color .2s; 
+}
+.back-link:hover { 
+    color: #2563eb; 
+}
+
+.listing-layout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+@media (max-width: 640px) { 
+    .listing-layout { grid-template-columns: 1fr; } 
+}
+
+.listing-card-preview img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,.12);
+}
+.listing-card-name { 
+    font-weight: 600; 
+    text-align: center; 
+    margin-top: .75rem; 
+    font-size: .95rem; 
+}
+.listing-card-set  { 
+    text-align: center; 
+    font-size: .8rem; 
+    color: #9aa0b5; 
+    margin-top: .2rem; 
+}
+
+.listing-form-wrap { 
+    background: #fff; 
+    border: 1px solid #e3e6f0; 
+    border-radius: 14px; 
+    padding: 2rem; 
+}
+.listing-title { 
+    font-family: var(--font-head); 
+    font-size: 1.5rem; 
+    margin-bottom: 1.5rem; 
+}
+
+.listing-alert { 
+    padding: .85rem 1rem; 
+    border-radius: 8px; 
+    font-size: .875rem; 
+    margin-bottom: 1.25rem; 
+}
+.listing-alert--error   { 
+    background: #fff0f0; 
+    color: #c62828;
+    border: 1px solid #ffcdd2; 
+}
+
+.listing-alert--warning { 
+    background: #fff8e1; 
+    color: #e65100; 
+    border: 1px solid #ffe082; 
+}
+
+.listing-form { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 1.1rem; 
+}
+
+.form-group { 
+    display: flex; 
+    flex-direction: column; 
+    gap: .4rem; 
+}
+
+.form-group label { 
+    font-size: .85rem; 
+    font-weight: 500; 
+    color: #56607a; 
+}
+
+.optional { 
+    font-weight: 400; 
+    color: #9aa0b5; 
+}
+
+.form-group input,.form-group select,.form-group textarea {
+    border: 1.5px solid #e3e6f0;
+    border-radius: 8px;
+    padding: .65rem .9rem;
+    font-size: .9rem;
+    font-family: var(--font-body);
+    color: #18192a;
+    outline: none;
+    transition: border-color .2s;
+    background: #fafbff;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { 
+    border-color: #2563eb; 
+    background: #fff; 
+}
+
+.price-input-wrap { 
+    display: flex; 
+    align-items: center;
+    border: 1.5px solid #e3e6f0; 
+    border-radius: 8px; overflow: hidden; 
+    background: #fafbff; 
+    transition: border-color .2s; 
+}
+
+.price-input-wrap:focus-within { 
+    border-color: #2563eb; 
+    background: #fff; 
+}
+
+.price-symbol { 
+    padding: 0 .75rem; 
+    color: #9aa0b5; 
+    font-weight: 600; 
+    font-size: .9rem; 
+}
+
+.price-input-wrap input { 
+    border: none; 
+    background: transparent; 
+    flex: 1; 
+    padding: .65rem .5rem .65rem 0; 
+}
+
+.price-input-wrap input:focus { 
+    outline: none;
+}
+
+.btn-publish {
+    background: #2563eb; 
+    color: #fff; 
+    border: none;
+    border-radius: 8px; 
+    padding: .85rem; 
+    font-size: .95rem;
+    font-weight: 600; 
+    font-family: var(--font-body);
+    cursor: pointer; 
+    transition: background .2s; 
+    margin-top: .5rem;
+}
+
+.btn-publish:hover { 
+    background: #1d4ed8; 
+}
+
+.btn-cancel-listing {
+    background: #fff0f0; 
+    color: #c62828; 
+    border: 1px solid #ffcdd2;
+    border-radius: 8px; 
+    padding: .65rem 1.25rem; 
+    font-size: .875rem;
+    font-weight: 600; 
+    cursor: pointer; 
+    transition: background .2s;
+}
+.btn-cancel-listing:hover { 
+    background: #ffcdd2; 
+}
+
+/* ── Listings en show.php ── */
+.listings-section { 
+    margin-top: 3rem; 
+}
+
+.listings-title { 
+    font-family: var(--font-head); 
+    font-size: 1.2rem; 
+    margin-bottom: 1.25rem; 
+    padding-bottom: .5rem; 
+    border-bottom: 1px solid #e3e6f0; 
+}
+
+.listings-empty { 
+    background: #fff; 
+    border: 1px solid #e3e6f0; 
+    border-radius: 10px; 
+    padding: 2rem; 
+    text-align: center; 
+    color: #9aa0b5; 
+    font-size: .9rem; 
+}
+
+.listings-empty a { 
+    color: #2563eb; 
+}
+
+.listings-table { 
+    background: #fff; 
+    border: 1px solid #e3e6f0; 
+    border-radius: 12px; 
+    overflow: hidden; 
+}
+
+.listings-head {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1.2fr;
+    gap: 1rem;
+    padding: .75rem 1.25rem;
+    background: #f4f5f9;
+    border-bottom: 1px solid #e3e6f0;
+    font-size: .75rem;
+    font-weight: 600;
+    color: #9aa0b5;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+}
+.listing-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1.2fr;
+    gap: 1rem;
+    padding: .9rem 1.25rem;
+    border-bottom: 1px solid #f0f2f8;
+    align-items: center;
+    font-size: .875rem;
+    transition: background .15s;
+}
+.listing-row:last-child { 
+    border-bottom: none; 
+}
+
+.listing-row:hover { 
+    background: #fafbff; 
+}
+
+.listing-seller a { 
+    color: #2563eb; 
+    font-weight: 500; 
+}
+
+.listing-price { 
+    font-weight: 700; 
+    color: #18192a; 
+}
+
+.listing-own-badge { 
+    font-size: .75rem; 
+    background: #eff4ff; 
+    color: #2563eb; 
+    border: 1px solid #c7d7fd; 
+    border-radius: 4px; 
+    padding: .2rem .5rem; 
+}
+
+.btn-add-cart {
+    background: #2563eb; 
+    color: #fff; 
+    border: none;
+    border-radius: 6px; 
+    padding: .4rem .9rem;
+    font-size: .8rem; 
+    font-weight: 600;
+    cursor: pointer; 
+    transition: background .2s;
+}
+
+.btn-add-cart:hover { 
+    background: #1d4ed8; 
+}
+
+.btn-add-cart:disabled { 
+    background: #9aa0b5; 
+    cursor: not-allowed; 
+}
+
+.cart-qty-badge { 
+    font-size: .75rem; 
+    font-weight: 700; 
+    color: #2563eb; 
+    margin-left: .4rem; 
+}
+
+.btn-sell {
+    display: inline-flex; 
+    align-items: center;
+    gap: .4rem;
+    padding: .7rem 1.25rem; 
+    background: #f59f00; 
+    color: #fff;
+    border-radius: 8px; 
+    font-size: .875rem; 
+    font-weight: 600;
+    transition: background .2s; 
+    text-decoration: none;
+}
+.btn-sell:hover { background: #e08e00; }
+
+@media (max-width: 640px) {
+    .listings-head, .listing-row { grid-template-columns: 1fr 1fr 1fr; }
+    .listings-head span:nth-child(2),
+    .listing-row .listing-condition { display: none; }
+}

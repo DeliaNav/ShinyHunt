@@ -4,6 +4,7 @@ require_once __DIR__ . '/../lib/Auth.php';
 require_once __DIR__ . '/../lib/TCGApi.php';
 require_once __DIR__ . '/../models/Collection.php';
 require_once __DIR__ . '/../models/wishList.php';
+require_once __DIR__ . '/../models/Listing.php';
 
 class CardController {
 
@@ -24,8 +25,11 @@ class CardController {
         $userId       = Auth::userId();
         $collection   = new Collection();
         $wishlist     = new WishList();
+        $listingModel = new Listing();
+
         $inCollection = $collection->hasCard($userId, $id);
         $inWishlist   = $wishlist->hasCard($userId, $id);
+        $listings     = $listingModel->getByCard($id);
 
         $pageTitle = htmlspecialchars($card['name']) . ' · TCGMarket';
         $extraCss  = 'card-detail.css';

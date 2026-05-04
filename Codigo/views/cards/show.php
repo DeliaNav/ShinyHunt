@@ -1,21 +1,24 @@
 <?php
 require_once 'views/layout/header.php';
 
-$imgUrl    = TCGApi::getImageUrl($card, 'high', 'webp');
+$imgUrl      = TCGApi::getImageUrl($card, 'high', 'webp');
 $imageUrlLow = TCGApi::getImageUrl($card, 'low', 'png');
 
 $typeColors = [
-    'Fire'      => '#FF6B35',
-    'Water'     => '#4FC3F7',
-    'Grass'     => '#66BB6A',
-    'Lightning' => '#FFD54F',
-    'Psychic'   => '#CE93D8',
-    'Fighting'  => '#A1887F',
-    'Darkness'  => '#78909C',
-    'Metal'     => '#B0BEC5',
-    'Dragon'    => '#7E57C2',
-    'Colorless' => '#BDBDBD',
+    'Fire'      => '#FF6B35', 'Water'     => '#4FC3F7',
+    'Grass'     => '#66BB6A', 'Lightning' => '#FFD54F',
+    'Psychic'   => '#CE93D8', 'Fighting'  => '#A1887F',
+    'Darkness'  => '#78909C', 'Metal'     => '#B0BEC5',
+    'Dragon'    => '#7E57C2', 'Colorless' => '#BDBDBD',
     'Fairy'     => '#F48FB1',
+];
+
+// Estado de la carta
+$conditionLabels = [
+    'mint'         => 'Mint',        'near_mint'    => 'Near Mint',
+    'excellent'    => 'Excellent',   'good'         => 'Good',
+    'light_played' => 'Light Played','played'       => 'Played',
+    'poor'         => 'Poor',
 ];
 ?>
 
@@ -23,10 +26,9 @@ $typeColors = [
     <div class="container">
 
         <a href="javascript:history.back()" class="back-link">← Volver</a>
-     
+
         <div class="card-detail">
 
-            <!-- Imagen -->
             <div class="card-detail-left">
                 <div class="card-detail-img-wrap">
                     <img src="<?= $imgUrl ?>"
@@ -35,7 +37,6 @@ $typeColors = [
                 </div>
             </div>
 
-            <!-- Info -->
             <div class="card-detail-right">
 
                 <div class="card-detail-header">
@@ -151,7 +152,7 @@ $typeColors = [
                     </div>
                 <?php endif; ?>
 
-                <!-- Botones -->
+                <!-- Botones colección / wishlist / vender -->
                 <div class="card-actions">
                     <button id="btn-collection"
                             class="btn-collection <?= $inCollection ? 'btn-collection--active' : '' ?>"
@@ -163,14 +164,69 @@ $typeColors = [
                             disabled>
                         <?= $inWishlist ? '✓ En tu Lista de Deseos' : '☆ Añadir a Lista de Deseos' ?>
                     </button>
+                    <a href="/TFG/Codigo/vender/<?= htmlspecialchars($card['id']) ?>" class="btn-sell">
+                        Poner en venta
+                    </a>
                 </div>
 
             </div>
         </div>
+
+        <!-- Sección de listings aun se ve fea-->
+        <div class="listings-section">
+            <h2 class="listings-title">En venta por la comunidad</h2>
+
+            <?php if (empty($listings)): ?>
+                <div class="listings-empty">
+                    <p>Nadie tiene esta carta en venta todavía.</p>
+                    <a href="/TFG/Codigo/vender/<?= htmlspecialchars($card['id']) ?>">¿Tienes una? Véndela aquí</a>
+                </div>
+            <?php else: ?>
+                <div class="listings-table">
+                    <div class="listings-head">
+                        <span>Vendedor</span>
+                        <span>Estado</span>
+                        <span>Cantidad</span>
+                        <span>Precio</span>
+                        <span></span>
+                    </div>
+                    <?php foreach ($listings as $listing): ?>
+                        <div class="listing-row" id="listing-row-<?= $listing['id'] ?>">
+                            <span class="listing-seller">
+                                <a href="/TFG/Codigo/perfil/<?= htmlspecialchars($listing['seller_name']) ?>">
+                                    <?= htmlspecialchars($listing['seller_name']) ?>
+                                </a>
+                            </span>
+                            <span class="listing-condition">
+                                <?= htmlspecialchars($conditionLabels[$listing['condition']] ?? $listing['condition']) ?>
+                            </span>
+                            <span class="listing-qty" id="listing-qty-<?= $listing['id'] ?>">
+                                <?= $listing['quantity'] ?>
+                            </span>
+                            <span class="listing-price">
+                                <?= number_format($listing['price'], 2) ?> €
+                            </span>
+                            <span class="listing-actions">
+                                <?php if ($listing['seller_id'] == Auth::userId()): ?>
+                                    <span class="listing-own-badge">Tu anuncio</span>
+                                <?php else: ?>
+                                    <button class="btn-add-cart"
+                                            data-listing-id="<?= $listing['id'] ?>"
+                                            data-stock="<?= $listing['quantity'] ?>">
+                                        + Añadir
+                                    </button>
+                                    <span class="cart-qty-badge" id="cart-qty-<?= $listing['id'] ?>"></span>
+                                <?php endif; ?>
+                            </span>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
+        </div>
+
     </div>
 </div>
 
-<!-- Datos para los JS -->
 <script>
 window.cardData = {
     cardId:       "<?= htmlspecialchars($card['id']) ?>",
@@ -182,5 +238,6 @@ window.cardData = {
 </script>
 <script src="/TFG/Codigo/public/js/collection.js"></script>
 <script src="/TFG/Codigo/public/js/wishlist.js"></script>
+<script src="/TFG/Codigo/public/js/cart-detail.js"></script>
 
 <?php require_once 'views/layout/footer.php'; ?>
