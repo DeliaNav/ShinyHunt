@@ -21,29 +21,36 @@ $router->add('/TFG/Codigo/home', 'HomeController@index');
 $router->add('/TFG/Codigo/buscar', 'buscadorController@search');
 $router->add('/TFG/Codigo/cards/{id}', 'CardController@show');
 
-// Específicas antes que la genérica
+// Específicas
 $router->add('/TFG/Codigo/coleccion/add',    'CollectionController@add');
 $router->add('/TFG/Codigo/coleccion/remove', 'CollectionController@remove');
 $router->add('/TFG/Codigo/coleccion',        'CollectionController@index');
 
-// Específicas antes que la genérica
+// Específicas
 $router->add('/TFG/Codigo/wishlist/add',    'WishListController@add');
 $router->add('/TFG/Codigo/wishlist/remove', 'WishListController@remove');
 $router->add('/TFG/Codigo/wishlist',        'WishListController@index');
 
-// Perfil — específicas antes que la genérica
+// Perfil — específicas
 $router->add('/TFG/Codigo/perfil/update',   'ProfileController@update');
 $router->add('/TFG/Codigo/perfil/password', 'ProfileController@password');
 $router->add('/TFG/Codigo/perfil/avatar',   'ProfileController@avatar');
 $router->add('/TFG/Codigo/perfil/avatar/delete',   'ProfileController@avatar');
 $router->add('/TFG/Codigo/perfil',          'ProfileController@index');
 
+// Vender
 $router->add('/TFG/Codigo/vender/{cardId}',  'ListingController@create');
 $router->add('/TFG/Codigo/vender',           'ListingController@store');
 $router->add('/TFG/Codigo/vender/cancelar',  'ListingController@cancel');
-$router->add('/TFG/Codigo/carrito',          'CartController@index');
-$router->add('/TFG/Codigo/carrito/add',      'CartController@add');
-$router->add('/TFG/Codigo/carrito/remove',   'CartController@remove');
-$router->add('/TFG/Codigo/carrito/checkout', 'CartController@checkout');
+
+// Carrito
+$router->add('/TFG/Codigo/carrito','CartController@index');
+$router->add('/TFG/Codigo/carrito/add','CartController@add');
+$router->add('/TFG/Codigo/carrito/remove','CartController@remove');
+$router->add('/TFG/Codigo/carrito/checkout','CartController@checkout');
+
+// Consultar Ventas
+$router->add('/TFG/Codigo/ventas', 'SalesController@index');
+
 
 $router->dispatch($_SERVER['REQUEST_URI']);
