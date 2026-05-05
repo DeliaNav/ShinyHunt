@@ -193,7 +193,7 @@ $conditionLabels = [
                     <?php foreach ($listings as $listing): ?>
                         <div class="listing-row" id="listing-row-<?= $listing['id'] ?>">
                             <span class="listing-seller">
-                                <a href="/TFG/Codigo/perfil/<?= htmlspecialchars($listing['seller_name']) ?>">
+                                <a href="/TFG/Codigo/usuario/<?= htmlspecialchars($listing['seller_id']) ?>">
                                     <?= htmlspecialchars($listing['seller_name']) ?>
                                 </a>
                             </span>
