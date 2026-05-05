@@ -60,3 +60,132 @@ Stack trace:
 [30-Apr-2026 15:12:45 Europe/Berlin] PHP Warning:  Undefined variable $error in C:\xampp\htdocs\TFG\Codigo\views\profile.php on line 53
 [30-Apr-2026 15:13:45 Europe/Berlin] PHP Warning:  Undefined variable $success in C:\xampp\htdocs\TFG\Codigo\views\profile.php on line 56
 [30-Apr-2026 15:13:50 Europe/Berlin] PHP Warning:  Undefined variable $error in C:\xampp\htdocs\TFG\Codigo\views\profile.php on line 53
+[05-May-2026 12:45:28 Europe/Berlin] PHP Warning:  require_once(C:\xampp\htdocs\TFG\Codigo\controllers/model/Listing.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php on line 37
+[05-May-2026 12:45:28 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\TFG\Codigo\controllers/model/Listing.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php:37
+Stack trace:
+#0 C:\xampp\htdocs\TFG\Codigo\lib\Router.php(29): UserController->show(2)
+#1 C:\xampp\htdocs\TFG\Codigo\index.php(59): Router->dispatch('/TFG/Codigo/per...')
+#2 {main}
+  thrown in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php on line 37
+[05-May-2026 12:45:52 Europe/Berlin] PHP Warning:  require_once(C:\xampp\htdocs\TFG\Codigo\controllers/model/Listing.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php on line 37
+[05-May-2026 12:45:52 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\TFG\Codigo\controllers/model/Listing.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php:37
+Stack trace:
+#0 C:\xampp\htdocs\TFG\Codigo\lib\Router.php(29): UserController->show(2)
+#1 C:\xampp\htdocs\TFG\Codigo\index.php(59): Router->dispatch('/TFG/Codigo/per...')
+#2 {main}
+  thrown in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php on line 37
+[05-May-2026 12:46:48 Europe/Berlin] PHP Warning:  require_once(C:\xampp\htdocs\TFG\Codigo\controllers/model/Listing.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php on line 37
+[05-May-2026 12:46:48 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\TFG\Codigo\controllers/model/Listing.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php:37
+Stack trace:
+#0 C:\xampp\htdocs\TFG\Codigo\lib\Router.php(29): UserController->show(2)
+#1 C:\xampp\htdocs\TFG\Codigo\index.php(59): Router->dispatch('/TFG/Codigo/per...')
+#2 {main}
+  thrown in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php on line 37
+[05-May-2026 12:48:10 Europe/Berlin] PHP Warning:  require_once(C:\xampp\htdocs\TFG\Codigo\controllers/model/Listing.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php on line 37
+[05-May-2026 12:48:10 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\TFG\Codigo\controllers/model/Listing.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php:37
+Stack trace:
+#0 C:\xampp\htdocs\TFG\Codigo\lib\Router.php(29): UserController->show(2)
+#1 C:\xampp\htdocs\TFG\Codigo\index.php(60): Router->dispatch('/TFG/Codigo/per...')
+#2 {main}
+  thrown in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php on line 37
+[05-May-2026 12:48:15 Europe/Berlin] PHP Warning:  require_once(C:\xampp\htdocs\TFG\Codigo\controllers/model/Listing.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php on line 37
+[05-May-2026 12:48:15 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\TFG\Codigo\controllers/model/Listing.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php:37
+Stack trace:
+#0 C:\xampp\htdocs\TFG\Codigo\lib\Router.php(29): UserController->show(1)
+#1 C:\xampp\htdocs\TFG\Codigo\index.php(60): Router->dispatch('/TFG/Codigo/per...')
+#2 {main}
+  thrown in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php on line 37
+[05-May-2026 12:48:16 Europe/Berlin] PHP Warning:  require_once(C:\xampp\htdocs\TFG\Codigo\controllers/model/Listing.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php on line 37
+[05-May-2026 12:48:16 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\TFG\Codigo\controllers/model/Listing.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php:37
+Stack trace:
+#0 C:\xampp\htdocs\TFG\Codigo\lib\Router.php(29): UserController->show(2)
+#1 C:\xampp\htdocs\TFG\Codigo\index.php(60): Router->dispatch('/TFG/Codigo/per...')
+#2 {main}
+  thrown in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php on line 37
+[05-May-2026 12:51:04 Europe/Berlin] PHP Warning:  require_once(C:\xampp\htdocs\TFG\Codigo\controllers/model/Listing.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php on line 38
+[05-May-2026 12:51:04 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\TFG\Codigo\controllers/model/Listing.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php:38
+Stack trace:
+#0 C:\xampp\htdocs\TFG\Codigo\lib\Router.php(29): UserController->show(2)
+#1 C:\xampp\htdocs\TFG\Codigo\index.php(60): Router->dispatch('/TFG/Codigo/per...')
+#2 {main}
+  thrown in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php on line 38
+[05-May-2026 12:55:34 Europe/Berlin] PHP Warning:  require_once(C:\xampp\htdocs\TFG\Codigo\controllers/model/Listing.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php on line 38
+[05-May-2026 12:55:34 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\TFG\Codigo\controllers/model/Listing.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php:38
+Stack trace:
+#0 C:\xampp\htdocs\TFG\Codigo\lib\Router.php(29): UserController->show(2)
+#1 C:\xampp\htdocs\TFG\Codigo\index.php(60): Router->dispatch('/TFG/Codigo/use...')
+#2 {main}
+  thrown in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php on line 38
+[05-May-2026 12:56:06 Europe/Berlin] PHP Warning:  require_once(C:\xampp\htdocs\TFG\Codigo\controllers/model/Listing.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php on line 38
+[05-May-2026 12:56:06 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\TFG\Codigo\controllers/model/Listing.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php:38
+Stack trace:
+#0 C:\xampp\htdocs\TFG\Codigo\lib\Router.php(29): UserController->show(2)
+#1 C:\xampp\htdocs\TFG\Codigo\index.php(60): Router->dispatch('/TFG/Codigo/use...')
+#2 {main}
+  thrown in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php on line 38
+[05-May-2026 12:58:09 Europe/Berlin] PHP Warning:  require_once(C:\xampp\htdocs\TFG\Codigo\controllers/model/Listing.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php on line 43
+[05-May-2026 12:58:09 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\TFG\Codigo\controllers/model/Listing.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php:43
+Stack trace:
+#0 C:\xampp\htdocs\TFG\Codigo\lib\Router.php(29): UserController->show(2)
+#1 C:\xampp\htdocs\TFG\Codigo\index.php(60): Router->dispatch('/TFG/Codigo/usu...')
+#2 {main}
+  thrown in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php on line 43
+[05-May-2026 12:58:34 Europe/Berlin] PHP Warning:  require_once(C:\xampp\htdocs\TFG\Codigo\controllers/../model/Listing.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php on line 43
+[05-May-2026 12:58:34 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\TFG\Codigo\controllers/../model/Listing.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php:43
+Stack trace:
+#0 C:\xampp\htdocs\TFG\Codigo\lib\Router.php(29): UserController->show(2)
+#1 C:\xampp\htdocs\TFG\Codigo\index.php(60): Router->dispatch('/TFG/Codigo/usu...')
+#2 {main}
+  thrown in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php on line 43
+[05-May-2026 12:59:03 Europe/Berlin] PHP Warning:  require_once(C:\xampp\htdocs\TFG\Codigo\controllersmodels/Listing.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php on line 43
+[05-May-2026 12:59:03 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\TFG\Codigo\controllersmodels/Listing.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php:43
+Stack trace:
+#0 C:\xampp\htdocs\TFG\Codigo\lib\Router.php(29): UserController->show(2)
+#1 C:\xampp\htdocs\TFG\Codigo\index.php(60): Router->dispatch('/TFG/Codigo/usu...')
+#2 {main}
+  thrown in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php on line 43
+[05-May-2026 12:59:23 Europe/Berlin] PHP Fatal error:  Uncaught Error: Undefined constant "username" in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php:47
+Stack trace:
+#0 C:\xampp\htdocs\TFG\Codigo\lib\Router.php(29): UserController->show(2)
+#1 C:\xampp\htdocs\TFG\Codigo\index.php(60): Router->dispatch('/TFG/Codigo/usu...')
+#2 {main}
+  thrown in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php on line 47
+[05-May-2026 13:05:07 Europe/Berlin] PHP Warning:  Undefined variable $results in C:\xampp\htdocs\TFG\Codigo\models\Listing.php on line 71
+[05-May-2026 13:08:35 Europe/Berlin] PHP Warning:  Undefined variable $userListings in C:\xampp\htdocs\TFG\Codigo\views\users\profile.php on line 36
+[05-May-2026 13:08:35 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in C:\xampp\htdocs\TFG\Codigo\views\users\profile.php:36
+Stack trace:
+#0 C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php(49): require_once()
+#1 C:\xampp\htdocs\TFG\Codigo\lib\Router.php(29): UserController->show(1)
+#2 C:\xampp\htdocs\TFG\Codigo\index.php(60): Router->dispatch('/TFG/Codigo/usu...')
+#3 {main}
+  thrown in C:\xampp\htdocs\TFG\Codigo\views\users\profile.php on line 36
+[05-May-2026 13:09:15 Europe/Berlin] PHP Warning:  Undefined variable $userListings in C:\xampp\htdocs\TFG\Codigo\views\users\profile.php on line 36
+[05-May-2026 13:09:15 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in C:\xampp\htdocs\TFG\Codigo\views\users\profile.php:36
+Stack trace:
+#0 C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php(49): require_once()
+#1 C:\xampp\htdocs\TFG\Codigo\lib\Router.php(29): UserController->show(1)
+#2 C:\xampp\htdocs\TFG\Codigo\index.php(60): Router->dispatch('/TFG/Codigo/usu...')
+#3 {main}
+  thrown in C:\xampp\htdocs\TFG\Codigo\views\users\profile.php on line 36
+[05-May-2026 13:10:39 Europe/Berlin] PHP Warning:  Undefined property: UserController::$listingModel in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php on line 47
+[05-May-2026 13:10:39 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getBySeller() on null in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php:47
+Stack trace:
+#0 C:\xampp\htdocs\TFG\Codigo\lib\Router.php(29): UserController->show(1)
+#1 C:\xampp\htdocs\TFG\Codigo\index.php(60): Router->dispatch('/TFG/Codigo/usu...')
+#2 {main}
+  thrown in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php on line 47
+[05-May-2026 13:10:54 Europe/Berlin] PHP Warning:  Undefined property: UserController::$listingModel in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php on line 47
+[05-May-2026 13:10:54 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getBySeller() on null in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php:47
+Stack trace:
+#0 C:\xampp\htdocs\TFG\Codigo\lib\Router.php(29): UserController->show(1)
+#1 C:\xampp\htdocs\TFG\Codigo\index.php(60): Router->dispatch('/TFG/Codigo/usu...')
+#2 {main}
+  thrown in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php on line 47
+[05-May-2026 14:20:32 Europe/Berlin] PHP Warning:  Undefined variable $userListings in C:\xampp\htdocs\TFG\Codigo\views\users\profile.php on line 36
+[05-May-2026 14:20:32 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in C:\xampp\htdocs\TFG\Codigo\views\users\profile.php:36
+Stack trace:
+#0 C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php(51): require_once()
+#1 C:\xampp\htdocs\TFG\Codigo\lib\Router.php(29): UserController->show(1)
+#2 C:\xampp\htdocs\TFG\Codigo\index.php(60): Router->dispatch('/TFG/Codigo/usu...')
+#3 {main}
+  thrown in C:\xampp\htdocs\TFG\Codigo\views\users\profile.php on line 36

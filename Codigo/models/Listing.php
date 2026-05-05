@@ -64,11 +64,11 @@ class Listing {
 
     //Listings activos de un vendedor
     public function getBySeller(int $userId): array {
-        $stmt = $this->pdo->prepare("
-            SELECT * FROM listings WHERE seller_id = ? ORDER BY created_at DESC
-        ");
+        $stmt = $this->pdo->prepare("SELECT * FROM listings WHERE seller_id = ?");
         $stmt->execute([$userId]);
-        return $stmt->fetchAll();
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+        return $results;
     }
 
     public function cancel(int $listingId, int $userId): bool {
