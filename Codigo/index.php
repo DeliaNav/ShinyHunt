@@ -57,4 +57,9 @@ $router->add('/TFG/Codigo/carrito',          'CartController@index');
 $router->add('/TFG/Codigo/ventas/cancelar', 'SalesController@cancel');
 $router->add('/TFG/Codigo/ventas',          'SalesController@index');
 
+// Chats — especificas primero, luego dinamica
+$router->add('/TFG/Codigo/mensajes/send','MessageController@send');
+$router->add('/TFG/Codigo/mensajes/{username}', 'MessageController@show');
+$router->add('/TFG/Codigo/mensajes', 'MessageController@index');
+
 $router->dispatch($_SERVER['REQUEST_URI']);
