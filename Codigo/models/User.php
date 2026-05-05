@@ -42,4 +42,10 @@ class User {
         $stmt->execute([$username, $excludeId]);
         return (bool) $stmt->fetch();
     }
+
+    public function search(string $user): array{
+        $stmt = $this->pdo->prepare("SELECT id, username, avatar, create_in FROM users WHERE username LIKE ? LIMIT 20");
+        $stmt ->execute(['%' . $user. '%']);
+        return $stmt->fetchAll();
+    }
 }
