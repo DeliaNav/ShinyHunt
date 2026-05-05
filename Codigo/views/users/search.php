@@ -13,7 +13,7 @@
     <?php else: ?>
         <div class="cards-grid">
             <?php foreach ($users as $u): ?>
-                <a href="/TFG/Codigo/perfil/<?= $u['id'] ?>" class="card-item">
+                <a href="/TFG/Codigo/usuario/<?= $u['id'] ?>" class="card-item">
                     <div class="card-img-wrap" style="border-radius: 50%; overflow: hidden; width: 100px; height: 100px; margin: 0 auto;">
                         <img src="<?= $u['avatar'] ?: '/TFG/Codigo/public/img/default-avatar.png' ?>" 
                              alt="<?= htmlspecialchars($u['username']) ?>"
