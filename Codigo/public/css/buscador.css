@@ -248,3 +248,101 @@
         display: none;
     }
 }
+/*--------------------------------------------*/
+/* public/css/buscador.css */
+
+.search-main-container {
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.search-results-title h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.search-results-title em {
+    color: #7c3aed; /* Un color lila/morado para destacar la búsqueda */
+    font-style: normal;
+}
+
+/* Grid de usuarios */
+.user-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 30px;
+}
+
+.user-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.user-card-inner {
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Avatar circular */
+.user-avatar-wrapper {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 15px;
+    border: 3px solid #f0f0f0;
+    transition: border-color 0.3s ease;
+}
+
+.user-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Texto de la tarjeta */
+.user-card-name {
+    display: block;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #222;
+    margin-bottom: 5px;
+}
+
+.user-card-date {
+    display: block;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+/* Hovers */
+.user-card-link:hover .user-card-inner {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    border-color: #ddd;
+}
+
+.user-card-link:hover .user-avatar-wrapper {
+    border-color: #7c3aed;
+}
+
+/* Estado vacío */
+.search-empty {
+    text-align: center;
+    padding: 100px 20px;
+    background: #f9f9f9;
+    border-radius: 20px;
+    color: #666;
+}
+
+.search-empty-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    opacity: 0.5;
+}

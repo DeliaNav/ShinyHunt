@@ -1,278 +1,193 @@
-/* General Layout */
-.profile-wrap {
-    background-color: #f4f7f6;
-    min-height: 100vh;
-    padding: 40px 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
+/* Contenedor Principal */
+.profile-main-container {
+    margin-top: 30px;
+    min-height: 80vh;
 }
 
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-/* Header / Hero Section */
-.profile-hero {
-    background: #ffffff;
+/* Cabecera de Perfil */
+.profile-header-card {
+    background: white;
     padding: 30px;
     border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     display: flex;
     align-items: center;
-    gap: 30px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    margin-bottom: 30px;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.profile-avatar-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    overflow: hidden;
+    border: 4px solid #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.profile-avatar-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Info del Usuario */
+.profile-name-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
-.profile-avatar-wrap {
-    position: relative;
-    width: 120px;
-    height: 120px;
-}
-
-.profile-avatar, .profile-avatar-placeholder {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #eef2f3;
-}
-
-.profile-avatar-placeholder {
-    background: #4a90e2;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3rem;
-    font-weight: bold;
-}
-
-.avatar-edit-btn {
-    position: absolute;
-    bottom: 5px;
-    right: 5px;
-    background: #27ae60;
-    color: white;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: transform 0.2s;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-.avatar-edit-btn:hover {
-    transform: scale(1.1);
-}
-
-.avatar-delete-btn {
-    position: absolute;
-    /* Cambiamos bottom por top y right por left */
-    top: 5px; 
-    left: 5px; 
-    
-    background: #e74c3c;
-    color: white;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    border: none;
-    padding: 0;
-    font-size: 20px;
-    
-    cursor: pointer;
-    transition: transform 0.2s;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    
-    outline: none;
-}
-
-.avatar-delete-btn:hover {
-    transform: scale(1.1);
-    background: #c0392b; 
-}
-
-.avatar-delete-btn:focus {
-    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.4);
-}
-
-
-/* Contenedor del avatar (necesario para posicionar el botón dentro) */
-.profile-avatar-wrap {
-    position: relative;
-    width: 120px; /* Ajusta según el tamaño de tu avatar */
-    height: 120px;
-}
-
-.profile-hero-info {
-    flex: 1;
-    min-width: 250px;
-}
-
 .profile-username {
-    font-size: 2rem;
+    font-family: 'Cinzel', serif;
     margin: 0;
-    color: #2c3e50;
+    font-size: 2.5rem;
+    color: #222;
 }
 
-.profile-email {
-    color: #7f8c8d;
-    margin: 5px 0;
-}
-
-.profile-bio {
-    font-style: italic;
-    color: #555;
-    margin-top: 10px;
-    line-height: 1.4;
-}
-
-/* Estadísticas */
-.profile-stats {
+.profile-date {
+    color: #777;
+    font-size: 0.95rem;
+    margin: 8px 0;
     display: flex;
-    gap: 15px;
+    align-items: center;
+    gap: 5px;
 }
 
-.stat-card {
-    text-decoration: none;
-    background: #f8f9fa;
-    padding: 15px 25px;
-    border-radius: 10px;
-    text-align: center;
-    transition: all 0.3s;
-    border: 1px solid #eee;
-}
-
-.stat-card:hover {
-    background: #e9ecef;
-    transform: translateY(-3px);
-}
-
-.stat-number {
-    display: block;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #4a90e2;
-}
-
-.stat-label {
-    font-size: 0.85rem;
-    color: #666;
-    text-transform: uppercase;
-}
-
-/* Alertas */
-.profile-alert {
+.profile-bio-box {
+    margin-top: 15px;
     padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 25px;
-    font-weight: 500;
-}
-
-.profile-alert--error {
-    background-color: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
-}
-
-.profile-alert--success {
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
-}
-
-/* Grid de Formularios */
-.profile-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 30px;
-}
-
-.profile-card {
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-
-.profile-card-title {
-    font-size: 1.25rem;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #f0f0f0;
-    color: #34495e;
-}
-
-/* Formularios */
-.form-group {
-    margin-bottom: 18px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    font-size: 0.9rem;
+    background: #fdfdfd;
+    border-left: 4px solid #333;
+    border-radius: 4px;
+    font-style: italic;
     color: #444;
 }
 
-.form-group input, 
-.form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-sizing: border-box; /* Importante para que el padding no rompa el ancho */
-    font-size: 1rem;
-    transition: border-color 0.3s;
-}
-
-.form-group input:focus, 
-.form-group textarea:focus {
-    outline: none;
-    border-color: #4a90e2;
-}
-
-/* Botones */
-.btn-save {
-    background-color: #4a90e2;
+/* Botón de Mensaje */
+.btn-message-user {
+    background-color: #333;
     color: white;
-    border: none;
-    padding: 12px 25px;
+    padding: 8px 16px;
     border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btn-message-user:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+}
+
+/* Sección de Cartas */
+.profile-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.profile-section-title {
+    font-family: 'Cinzel', serif;
+    margin: 0;
+}
+
+.profile-listing-count {
+    background: #333;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+/* Grid de Cartas */
+.profile-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 25px;
+}
+
+.profile-card-item {
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease;
+}
+
+.card-inner {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    height: 100%;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-img-container {
+    padding: 10px;
+    background: #fcfcfc;
+}
+
+.card-img-container img {
     width: 100%;
+    height: auto;
+    border-radius: 5px;
+    display: block;
+}
+
+.card-details {
+    padding: 15px;
+    border-top: 1px solid #f5f5f5;
+    flex-grow: 1;
+}
+
+.card-title {
+    font-weight: 600;
     font-size: 1rem;
-    transition: background 0.3s;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.btn-save:hover {
-    background-color: #357abd;
+.card-price {
+    color: #2e7d32;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin: 8px 0;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-    .profile-hero {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .profile-grid {
-        grid-template-columns: 1fr;
-    }
+.card-status {
+    font-size: 0.8rem;
+    color: #777;
+}
 
-    .profile-stats {
-        width: 100%;
-        justify-content: center;
-    }
+/* Hover Effects */
+.profile-card-item:hover {
+    transform: translateY(-5px);
+}
+
+.profile-card-item:hover .card-inner {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Estado Vacío */
+.profile-empty-state {
+    text-align: center;
+    padding: 80px 20px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    border: 2px dashed #ddd;
+}
+
+.empty-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
 }
