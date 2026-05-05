@@ -31,8 +31,6 @@
                     onclick="switchTab('active')">En venta (<?= $activeCount ?>)</button>
             <button class="sales-tab <?= $tab === 'sold' ? 'sales-tab--active' : '' ?>"
                     onclick="switchTab('sold')">Vendidas (<?= $soldCount ?>)</button>
-            <button class="sales-tab <?= $tab === 'cancelled' ? 'sales-tab--active' : '' ?>"
-                    onclick="switchTab('cancelled')">Canceladas (<?= $cancelledCount ?>)</button>
         </div>
 
         <?php if (empty($listings)): ?>
@@ -62,18 +60,14 @@
                             <span class="sale-card-qty">×<?= $l['quantity'] ?> disponibles</span>
                             <span class="sale-card-date"><?= date('d/m/Y', strtotime($l['created_at'])) ?></span>
                             <span class="sale-status sale-status--<?= $l['status'] ?>">
-                                <?= ['active' => 'En venta', 'sold' => 'Vendida', 'cancelled' => 'Cancelada'][$l['status']] ?? $l['status'] ?>
+                                <?= ['active' => 'En venta', 'sold' => 'Vendida'][$l['status']] ?? $l['status'] ?>
                             </span>
                         </div>
                         <?php if ($l['status'] === 'active'): ?>
-                            <div class="sale-card-actions">
-                                <form action="/TFG/Codigo/vender/cancelar" method="POST"
-                                      onsubmit="return confirm('¿Cancelar este listing?')">
-                                    <input type="hidden" name="listing_id" value="<?= $l['id'] ?>">
-                                    <input type="hidden" name="card_id"    value="<?= htmlspecialchars($l['card_id']) ?>">
-                                    <button type="submit" class="btn-cancel-listing">Cancelar</button>
-                                </form>
-                            </div>
+                            <form action="/TFG/Codigo/ventas/cancelar" method="POST">
+                                <input type="hidden" name="listing_id" value="<?= $l['id'] ?>">
+                                <button type="submit" class="btn-danger">Eliminar anuncio</button>
+                            </form>
                         <?php endif; ?>
                     </div>
                 <?php endforeach; ?>
@@ -88,5 +82,6 @@ function switchTab(tab) {
     window.location.href = '/TFG/Codigo/ventas?tab=' + tab;
 }
 </script>
+<script src="/TFG/Codigo/public/js/sales.js"></script>
 
 <?php require_once __DIR__ . '/../../views/layout/footer.php'; ?>

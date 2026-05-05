@@ -11,7 +11,6 @@ class ListingController {
         $this->model = new Listing();
     }
 
-    //GET /vender/{cardId} — formulario para poner en venta
     public function create(string $cardId) {
         Auth::require();
 
@@ -21,7 +20,6 @@ class ListingController {
             exit();
         }
 
-        // Comprueba si ya tiene un listing activo para esta carta
         $existing = $this->model->getByUserAndCard(Auth::userId(), $cardId);
 
         $pageTitle = 'Poner en venta · ' . htmlspecialchars($card['name']);
@@ -29,7 +27,6 @@ class ListingController {
         require_once __DIR__ . '/../views/listings/create.php';
     }
 
-    //POST /vender — guarda el listing
     public function store() {
         Auth::require();
         $userId = Auth::userId();
@@ -38,8 +35,8 @@ class ListingController {
         $cardName    = trim($_POST['card_name']   ?? '');
         $imageUrl    = trim($_POST['image_url']   ?? '');
         $price       = (float) str_replace(',', '.', $_POST['price'] ?? '0');
-        $quantity    = max(1, (int)($_POST['quantity']    ?? 1));
-        $condition   = $_POST['condition']  ?? 'near_mint';
+        $quantity    = max(1, (int)($_POST['quantity'] ?? 1));
+        $condition   = $_POST['condition']   ?? 'near_mint';
         $description = trim($_POST['description'] ?? '');
 
         $validConditions = ['mint','near_mint','excellent','good','light_played','played','poor'];
@@ -48,7 +45,6 @@ class ListingController {
             exit();
         }
 
-        // Solo un listing activo por carta
         $existing = $this->model->getByUserAndCard($userId, $cardId);
         if ($existing) {
             header("Location: /TFG/Codigo/vender/{$cardId}?error=duplicate");
@@ -60,17 +56,17 @@ class ListingController {
         exit();
     }
 
-    //POST /vender/cancelar — cancela un listing
     public function cancel() {
         Auth::require();
-        $listingId = (int)($_POST['listing_id'] ?? 0);
-        $cardId    = trim($_POST['card_id'] ?? '');
 
-        if ($listingId) {
-            $this->model->cancel($listingId, Auth::userId());
+        $listingId = (int)($_POST['listing_id'] ?? 0);
+        $userId    = Auth::userId();
+
+        if ($listingId > 0) {
+            $this->model->cancel($listingId, $userId);
         }
 
-        header("Location: /TFG/Codigo/cards/{$cardId}");
+        header("Location: /TFG/Codigo/ventas");
         exit();
     }
 }

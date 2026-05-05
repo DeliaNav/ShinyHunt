@@ -62,15 +62,6 @@ class Listing {
         return $stmt->execute([$amount, $amount, $listingId, $amount]);
     }
 
-    //Cancela un listing propio
-    public function cancel(int $listingId, int $userId): bool {
-        $stmt = $this->pdo->prepare("
-            UPDATE listings SET status = 'cancelled'
-            WHERE id = ? AND seller_id = ?
-        ");
-        return $stmt->execute([$listingId, $userId]);
-    }
-
     //Listings activos de un vendedor
     public function getBySeller(int $userId): array {
         $stmt = $this->pdo->prepare("
@@ -78,5 +69,11 @@ class Listing {
         ");
         $stmt->execute([$userId]);
         return $stmt->fetchAll();
+    }
+
+    public function cancel(int $listingId, int $userId): bool {
+        $sql  = "DELETE FROM listings WHERE id = ? AND seller_id = ?";
+        $stmt = $this->pdo->prepare($sql);
+        return $stmt->execute([$listingId, $userId]);
     }
 }
