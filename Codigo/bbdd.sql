@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS listings (
     `condition` ENUM('mint','near_mint','excellent','good','light_played','played','poor') 
                                NOT NULL DEFAULT 'near_mint',
     description TEXT           DEFAULT NULL,
-    status      ENUM('active','sold','cancelled') 
+    status      ENUM('active','sold') 
                                NOT NULL DEFAULT 'active',
     created_at  DATETIME       NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at  DATETIME       NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -102,7 +102,7 @@ CREATE TABLE IF NOT EXISTS order_items (
     price       DECIMAL(10,2) NOT NULL,   -- precio en el momento de la compra
     quantity    INT           NOT NULL DEFAULT 1,
     FOREIGN KEY (order_id)   REFERENCES orders(id)   ON DELETE CASCADE,
-    FOREIGN KEY (listing_id) REFERENCES listings(id) ON DELETE RESTRICT,
+    FOREIGN KEY (listing_id) REFERENCES listings(id) ON DELETE CASCADE,
     FOREIGN KEY (seller_id)  REFERENCES users(id)    ON DELETE RESTRICT
 );
 
@@ -147,6 +147,3 @@ CREATE INDEX idx_messages_sender   ON messages(sender_id);
 CREATE INDEX idx_messages_receiver ON messages(receiver_id);
 CREATE INDEX idx_collections_user  ON collections(user_id);
 CREATE INDEX idx_wishlists_user    ON wishlists(user_id);
-
-INSERT INTO users (username, email, password) 
-VALUES ('user', 'user@example.com', '1234');
