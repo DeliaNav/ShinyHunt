@@ -150,3 +150,42 @@ Stack trace:
 #1 C:\xampp\htdocs\TFG\Codigo\index.php(60): Router->dispatch('/TFG/Codigo/usu...')
 #2 {main}
   thrown in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php on line 47
+[05-May-2026 13:05:07 Europe/Berlin] PHP Warning:  Undefined variable $results in C:\xampp\htdocs\TFG\Codigo\models\Listing.php on line 71
+[05-May-2026 13:08:35 Europe/Berlin] PHP Warning:  Undefined variable $userListings in C:\xampp\htdocs\TFG\Codigo\views\users\profile.php on line 36
+[05-May-2026 13:08:35 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in C:\xampp\htdocs\TFG\Codigo\views\users\profile.php:36
+Stack trace:
+#0 C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php(49): require_once()
+#1 C:\xampp\htdocs\TFG\Codigo\lib\Router.php(29): UserController->show(1)
+#2 C:\xampp\htdocs\TFG\Codigo\index.php(60): Router->dispatch('/TFG/Codigo/usu...')
+#3 {main}
+  thrown in C:\xampp\htdocs\TFG\Codigo\views\users\profile.php on line 36
+[05-May-2026 13:09:15 Europe/Berlin] PHP Warning:  Undefined variable $userListings in C:\xampp\htdocs\TFG\Codigo\views\users\profile.php on line 36
+[05-May-2026 13:09:15 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in C:\xampp\htdocs\TFG\Codigo\views\users\profile.php:36
+Stack trace:
+#0 C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php(49): require_once()
+#1 C:\xampp\htdocs\TFG\Codigo\lib\Router.php(29): UserController->show(1)
+#2 C:\xampp\htdocs\TFG\Codigo\index.php(60): Router->dispatch('/TFG/Codigo/usu...')
+#3 {main}
+  thrown in C:\xampp\htdocs\TFG\Codigo\views\users\profile.php on line 36
+[05-May-2026 13:10:39 Europe/Berlin] PHP Warning:  Undefined property: UserController::$listingModel in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php on line 47
+[05-May-2026 13:10:39 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getBySeller() on null in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php:47
+Stack trace:
+#0 C:\xampp\htdocs\TFG\Codigo\lib\Router.php(29): UserController->show(1)
+#1 C:\xampp\htdocs\TFG\Codigo\index.php(60): Router->dispatch('/TFG/Codigo/usu...')
+#2 {main}
+  thrown in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php on line 47
+[05-May-2026 13:10:54 Europe/Berlin] PHP Warning:  Undefined property: UserController::$listingModel in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php on line 47
+[05-May-2026 13:10:54 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getBySeller() on null in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php:47
+Stack trace:
+#0 C:\xampp\htdocs\TFG\Codigo\lib\Router.php(29): UserController->show(1)
+#1 C:\xampp\htdocs\TFG\Codigo\index.php(60): Router->dispatch('/TFG/Codigo/usu...')
+#2 {main}
+  thrown in C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php on line 47
+[05-May-2026 14:20:32 Europe/Berlin] PHP Warning:  Undefined variable $userListings in C:\xampp\htdocs\TFG\Codigo\views\users\profile.php on line 36
+[05-May-2026 14:20:32 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in C:\xampp\htdocs\TFG\Codigo\views\users\profile.php:36
+Stack trace:
+#0 C:\xampp\htdocs\TFG\Codigo\controllers\UserController.php(51): require_once()
+#1 C:\xampp\htdocs\TFG\Codigo\lib\Router.php(29): UserController->show(1)
+#2 C:\xampp\htdocs\TFG\Codigo\index.php(60): Router->dispatch('/TFG/Codigo/usu...')
+#3 {main}
+  thrown in C:\xampp\htdocs\TFG\Codigo\views\users\profile.php on line 36

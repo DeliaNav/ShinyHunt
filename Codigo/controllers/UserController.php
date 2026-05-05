@@ -21,31 +21,26 @@ class UserController {
         }
 
         $pageTitle = 'Buscar Usuarios · TCGMarket';
-        // Puedes reutilizar el CSS del buscador o crear uno nuevo
         $extraCss  = 'buscador.css';
         require_once __DIR__ . '/../views/users/search.php';
     }
 
-    public function show(int $id){
-        
-        ini_set('display_errors', 1);
-        ini_set('display_startup_errors', 1);
-        error_reporting(E_ALL);
-
+    public function show(int $id) {
         Auth::require();
 
         $user = $this->model->getById($id);
-        if(!$user){
+
+        if (!$user) {
             header("Location: /TFG/Codigo/home");
             exit();
         }
 
-        require_once __DIR__ . '/../models/Listing.php';
-        $listingModel = new Listing;
-        $userListing = $listingModel->getBySeller($id);
+        $listingModel = new Listing();
+        $all          = $listingModel->getBySeller($id);
+        $userListings = array_values(array_filter($all, fn($l) => $l['status'] === 'active'));
 
         $pageTitle = 'Perfil de ' . htmlspecialchars($user['username']);
-        $extraCss = 'profile.css';
+        $extraCss  = 'profile.css';
         require_once __DIR__ . '/../views/users/profile.php';
     }
 }
