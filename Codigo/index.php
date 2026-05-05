@@ -26,35 +26,40 @@ $router->add('/TFG/Codigo/usuarios/buscar', 'UserController@search');
 $router->add('/TFG/Codigo/usuario/{id}', 'UserController@show');
 
 // Colección — específicas primero
-$router->add('/TFG/Codigo/coleccion/add',    'CollectionController@add');
+$router->add('/TFG/Codigo/coleccion/add', 'CollectionController@add');
 $router->add('/TFG/Codigo/coleccion/remove', 'CollectionController@remove');
-$router->add('/TFG/Codigo/coleccion',        'CollectionController@index');
+$router->add('/TFG/Codigo/coleccion', 'CollectionController@index');
 
 // Wishlist — específicas primero
-$router->add('/TFG/Codigo/wishlist/add',    'WishListController@add');
+$router->add('/TFG/Codigo/wishlist/add', 'WishListController@add');
 $router->add('/TFG/Codigo/wishlist/remove', 'WishListController@remove');
-$router->add('/TFG/Codigo/wishlist',        'WishListController@index');
+$router->add('/TFG/Codigo/wishlist', 'WishListController@index');
 
 // Tu perfil edicion y ajustes
-$router->add('/TFG/Codigo/perfil/update',        'ProfileController@update');
-$router->add('/TFG/Codigo/perfil/password',      'ProfileController@password');
+$router->add('/TFG/Codigo/perfil/update', 'ProfileController@update');
+$router->add('/TFG/Codigo/perfil/password', 'ProfileController@password');
 $router->add('/TFG/Codigo/perfil/avatar/delete', 'ProfileController@avatar');
-$router->add('/TFG/Codigo/perfil/avatar',        'ProfileController@avatar');
-$router->add('/TFG/Codigo/perfil',               'ProfileController@index');
+$router->add('/TFG/Codigo/perfil/avatar', 'ProfileController@avatar');
+$router->add('/TFG/Codigo/perfil', 'ProfileController@index');
 
 // Vender — específicas primero, dinámica al final
 $router->add('/TFG/Codigo/vender/cancelar', 'ListingController@cancel');
-$router->add('/TFG/Codigo/vender',          'ListingController@store');
+$router->add('/TFG/Codigo/vender', 'ListingController@store');
 $router->add('/TFG/Codigo/vender/{cardId}', 'ListingController@create');
 
 // Carrito — específicas primero
-$router->add('/TFG/Codigo/carrito/add',      'CartController@add');
-$router->add('/TFG/Codigo/carrito/remove',   'CartController@remove');
+$router->add('/TFG/Codigo/carrito/add', 'CartController@add');
+$router->add('/TFG/Codigo/carrito/remove', 'CartController@remove');
 $router->add('/TFG/Codigo/carrito/checkout', 'CartController@checkout');
-$router->add('/TFG/Codigo/carrito',          'CartController@index');
+$router->add('/TFG/Codigo/carrito', 'CartController@index');
 
 // Ventas — específicas primero
 $router->add('/TFG/Codigo/ventas/cancelar', 'SalesController@cancel');
 $router->add('/TFG/Codigo/ventas',          'SalesController@index');
+
+// Chats — especificas primero, luego dinamica
+$router->add('/TFG/Codigo/mensajes/send','MessageController@send');
+$router->add('/TFG/Codigo/mensajes/{username}', 'MessageController@show');
+$router->add('/TFG/Codigo/mensajes', 'MessageController@index');
 
 $router->dispatch($_SERVER['REQUEST_URI']);

@@ -10,8 +10,6 @@
 
 <div class="login-container">
     <h2>Iniciar Sesión</h2>
-    <p style="text-align: center; font-size: 0.8rem; margin-top: 1rem;">delia 12345678</p>
-
 
     <?php
     if (isset($_GET['error'])) {
@@ -38,7 +36,7 @@
         <button type="submit">Entrar</button>
     </form>
     
-    <p style="text-align: center; font-size: 0.8rem; margin-top: 1rem;">
+    <p id="registro">
         ¿No tienes cuenta? <a href="/TFG/Codigo/registro">Regístrate aquí</a>
     </p>
 </div>
