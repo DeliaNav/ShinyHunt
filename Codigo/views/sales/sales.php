@@ -66,7 +66,7 @@
                         <?php if ($l['status'] === 'active'): ?>
                             <form action="/TFG/Codigo/ventas/cancelar" method="POST">
                                 <input type="hidden" name="listing_id" value="<?= $l['id'] ?>">
-                                <button type="submit" class="btn-danger">Eliminar anuncio</button>
+                                <button type="submit" class="btn-danger">Eliminar anuncio</button><!--btn-danger porque pensaba que bootstrap hacia algo-->
                             </form>
                         <?php endif; ?>
                     </div>
