@@ -1,12 +1,12 @@
 /* --- Variables de Marca --- */
 :root {
-    --primary: #3b82f6;       /* Azul moderno */
-    --primary-dark: #1d4ed8;
-    --accent: #f59e0b;        /* Dorado para elementos TCG */
+    --primary: #d49af3;
+    --primary-dark: #b439f7;
+    --accent: #a70bf5;
     --bg-navbar: rgba(255, 255, 255, 0.95);
-    --text-main: #1f2937;
-    --text-muted: #6b7280;
-    --border-color: #e5e7eb;
+    --text-main: #8a36ce;
+    --text-muted: #796b80;
+    --border-color: #eae5eb;
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
@@ -65,7 +65,7 @@ body {
     color: var(--primary);
 }
 
-/* --- Barra de Búsqueda --- */
+/* --- Barra de Búsqueda (Escritorio) --- */
 .nav-search {
     display: flex;
     flex-direction: row;
@@ -75,7 +75,7 @@ body {
     max-width: 400px;
 }
 
-.nav-search form{
+.nav-search form {
     flex: 1;
     margin: 0;
 }
@@ -85,13 +85,6 @@ body {
     display: flex;
     align-items: center;
     width: 100%;
-}
-
-@media (max-width: 600px) {
-    .nav-search {
-        flex-direction: column;
-        width: 100%;
-    }
 }
 
 .search-wrap input {
@@ -108,7 +101,7 @@ body {
     outline: none;
     border-color: var(--primary);
     background: #fff;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    box-shadow: 0 0 0 3px rgba(187, 59, 246, 0.1);
 }
 
 .search-wrap button {
@@ -144,23 +137,9 @@ body {
     color: var(--primary);
 }
 
-/* Icono de mensajes y Badge */
-.nav-link--icon {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.badge {
-    position: absolute;
-    top: -8px;
-    right: -10px;
-    background: #ef4444;
-    color: white;
-    font-size: 0.7rem;
-    padding: 2px 6px;
-    border-radius: 10px;
-    border: 2px solid #fff;
+/* --- Control de visibilidad para Responsive --- */
+.mobile-only {
+    display: none;
 }
 
 /* --- Avatar --- */
@@ -186,7 +165,19 @@ body {
     font-weight: bold;
 }
 
-/* --- Logout --- */
+/* --- Badge de Mensajes --- */
+.badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: #ef4444;
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 10px;
+    border: 2px solid #fff;
+}
+
 .nav-link--logout {
     color: #ef4444 !important;
 }
@@ -198,6 +189,7 @@ body {
     background: none;
     border: none;
     cursor: pointer;
+    color: var(--text-main);
 }
 
 /* --- Contenido Principal --- */
@@ -207,35 +199,68 @@ body {
     padding: 0 1.5rem;
 }
 
-/* --- Responsive --- */
-@media (max-width: 992px) {
-    .nav-search {
-        display: none; /* Ocultar búsqueda en tablets pequeñas si no hay espacio */
-    }
-}
+/* --- Media Queries (Responsive) --- */
 
-@media (max-width: 768px) {
+/* Ocultar buscadores de la cabecera en tablets y móviles */
+@media (max-width: 992px) {
+    .nav-search.desktop-only {
+        display: none;
+    }
+
     .nav-toggle {
         display: block;
     }
 
+    /* Estilo del menú lateral desplegable */
     .nav-links {
         position: absolute;
         top: 70px;
         right: 0;
         background: #fff;
-        width: 250px;
+        width: 280px;
         flex-direction: column;
-        padding: 2rem;
-        gap: 2rem;
+        padding: 1.5rem;
+        gap: 1.5rem;
         box-shadow: -4px 10px 15px rgba(0,0,0,0.1);
-        display: none; /* Se activa con la clase .open */
+        display: none;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
     }
 
     .nav-links.open {
         display: flex;
     }
 
+    /* Mostrar buscadores dentro del menú móvil */
+    .mobile-only {
+        display: block;
+        width: 100%;
+    }
+
+    .mobile-search-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid var(--border-color);
+        width: 100%;
+    }
+
+    .mobile-form {
+        width: 100%;
+    }
+
+    .mobile-form .search-wrap input {
+        background: #f9fafb;
+    }
+
+    .nav-link {
+        width: 100%;
+    }
+}
+
+/* Ajustes finales para pantallas muy pequeñas */
+@media (max-width: 600px) {
     .nav-inner {
         gap: 0;
     }

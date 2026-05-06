@@ -33,7 +33,7 @@ $unread = 0;
             <span class="logo-text">TCG<em>Market</em></span>
         </a>
 
-        <div class="nav-search">
+        <div class="nav-search desktop-only">
             <form action="/TFG/Codigo/buscar" method="GET">
                 <div class="search-wrap">
                     <input type="text" name="q" placeholder="Buscar Pokémon..." autocomplete="off"
@@ -54,6 +54,26 @@ $unread = 0;
         </div>
 
         <ul class="nav-links">
+            <li class="mobile-only mobile-search-container"><!--Para que desde un movil tambien se pueda buscar-->
+                <form action="/TFG/Codigo/buscar" method="GET" class="mobile-form">
+                    <div class="search-wrap">
+                        <input type="text" name="q" placeholder="Pokémon...">
+                        <button type="submit">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        </button>
+                    </div>
+                </form>
+                <form action="/TFG/Codigo/usuarios/buscar" method="GET" class="mobile-form">
+                    <div class="search-wrap">
+                        <input type="text" name="q" placeholder="Usuarios...">
+                        <button type="submit">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        </button>
+                        </button>
+                    </div>
+                </form>
+            </li>
+
             <li><a href="/TFG/Codigo/home" class="nav-link <?= str_contains($_SERVER['REQUEST_URI'], 'home') ? 'active' : '' ?>">Inicio</a></li>
             <li><a href="/TFG/Codigo/wishlist" class="nav-link <?= str_contains($_SERVER['REQUEST_URI'], 'market') ? 'active' : '' ?>">Mi lista de deseos</a></li>
             <li><a href="/TFG/Codigo/coleccion" class="nav-link <?= str_contains($_SERVER['REQUEST_URI'], 'coleccion') ? 'active' : '' ?>">Mi Colección</a></li>
