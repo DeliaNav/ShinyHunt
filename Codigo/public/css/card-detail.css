@@ -1,9 +1,9 @@
 /* ================================================
-   card-detail.css — Ficha de carta Provisional 
+   card-detail.css — Ficha de carta Final 
    ================================================ */
 
 .card-detail-wrap {
-    background: #f4f5f9;
+    background: #EFE6DE;
     min-height: 100vh;
     padding-bottom: 4rem;
 }
@@ -23,8 +23,12 @@
     font-size: .875rem;
     margin-bottom: 1.5rem;
     transition: color .2s;
+    font-weight: 500;
 }
-.back-link:hover { color: #2563eb; }
+
+.back-link:hover { 
+    color: #9A0002; 
+}
 
 /* LAYOUT  */
 .card-detail {
@@ -40,14 +44,14 @@
     }
 }
 
-/*  LEFT: IMAGEN  */
+/* LEFT: IMAGEN  */
 .card-detail-left {
     position: sticky;
     top: 80px;
 }
 
 .card-detail-img-wrap {
-    background: #fff;
+    background: #ffffff;
     border: 1px solid #e3e6f0;
     border-radius: 18px;
     padding: 1.5rem;
@@ -60,7 +64,7 @@
     display: block;
 }
 
-/* RIGHT: INFO ─ */
+/* RIGHT: INFO */
 .card-detail-right {
     display: flex;
     flex-direction: column;
@@ -69,10 +73,11 @@
 
 /* HEADER  */
 .card-detail-header {
-    background: #fff;
+    background: #ffffff;
     border: 1px solid #e3e6f0;
     border-radius: 14px;
     padding: 1.5rem;
+    border-left: 5px solid #9A0002;
 }
 
 .card-detail-types {
@@ -87,7 +92,8 @@
     font-weight: 600;
     padding: .2rem .75rem;
     border-radius: 20px;
-    border: 1px solid;
+    border: 1px solid #9A0002;
+    color: #9A0002;
     text-transform: uppercase;
     letter-spacing: .04em;
 }
@@ -98,12 +104,12 @@
     padding: .2rem .75rem;
     border-radius: 20px;
     background: #fff8e1;
-    color: #f59f00;
+    color: #b08000;
     border: 1px solid #ffe082;
 }
 
 .card-detail-name {
-    font-family: var(--font-head);
+    font-family: 'Cinzel', Georgia, serif;
     font-size: clamp(1.6rem, 4vw, 2.2rem);
     font-weight: 700;
     color: #18192a;
@@ -124,7 +130,7 @@
 }
 
 .stat-box {
-    background: #fff;
+    background: #ffffff;
     border: 1px solid #e3e6f0;
     border-radius: 10px;
     padding: .75rem 1rem;
@@ -199,12 +205,12 @@
 .price-item strong {
     font-size: 1rem;
     font-weight: 700;
-    color: #2563eb;
+    color: #9A0002;
 }
 
 /* SECCIONES */
 .card-section {
-    background: #fff;
+    background: #ffffff;
     border: 1px solid #e3e6f0;
     border-radius: 14px;
     padding: 1.25rem 1.5rem;
@@ -212,133 +218,70 @@
 
 .card-section-title {
     font-size: .8rem;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: .08em;
     color: #9aa0b5;
     margin-bottom: 1rem;
 }
 
-/* Abilities */
-.ability-card {
+/* Abilities & Attacks */
+.ability-card, .attack-card {
     background: #f4f5f9;
     border-radius: 8px;
     padding: .85rem 1rem;
     margin-bottom: .6rem;
-}
-.ability-card:last-child { margin-bottom: 0; }
-
-.ability-header {
-    display: flex;
-    align-items: center;
-    gap: .6rem;
-    margin-bottom: .4rem;
+    border-left: 3px solid transparent;
+    transition: border-color 0.2s;
 }
 
+.ability-card:hover, .attack-card:hover {
+    border-left-color: #9A0002;
+}
 
 .ability-type {
     font-size: .7rem;
     font-weight: 600;
-    background: #eff4ff;
-    color: #2563eb;
+    background: rgba(154, 0, 2, 0.1);
+    color: #9A0002;
     border-radius: 4px;
     padding: .1rem .5rem;
     text-transform: uppercase;
-    letter-spacing: .04em;
 }
 
-.ability-effect {
-    font-size: .85rem;
-    color: #56607a;
-    line-height: 1.6;
+/* TABLA DE LISTINGS */
+.listings-table {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    overflow: hidden;
+    margin-top: 20px;
+    border: 1px solid #e3e6f0;
 }
 
-/* Attacks */
-.attack-card {
-    background: #f4f5f9;
-    border-radius: 8px;
-    padding: .85rem 1rem;
-    margin-bottom: .6rem;
-}
-
-.attack-card:last-child { margin-bottom: 0; }
-
-.attack-header {
-    display: flex;
-    align-items: center;
-    gap: .6rem;
-    flex-wrap: wrap;
-    margin-bottom: .35rem;
-}
-
-.attack-cost {
-    display: flex;
-    gap: .25rem;
-    flex-wrap: wrap;
-}
-
-.cost-badge {
-    font-size: .65rem;
-    font-weight: 600;
-    padding: .1rem .4rem;
-    border-radius: 4px;
-    text-transform: uppercase;
-    letter-spacing: .03em;
-}
-
-.attack-name {
-    font-size: .9rem;
-    color: #18192a;
-    flex: 1;
-}
-
-.attack-damage {
-    font-size: 1rem;
+.listings-head {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1fr 1.2fr 1.5fr;
+    padding: 15px 20px;
+    background: #f8f9fa;
+    border-bottom: 2px solid #9A0002;
     font-weight: 700;
     color: #18192a;
-    background: #fff;
-    border: 1px solid #e3e6f0;
-    border-radius: 6px;
-    padding: .1rem .5rem;
-}
-
-.attack-effect {
-    font-size: .85rem;
-    color: #56607a;
-    line-height: 1.6;
-}
-
-/* Weaknesses / Resistances */
-.card-wr {
-    background: #fff;
-    border: 1px solid #e3e6f0;
-    border-radius: 14px;
-    padding: 1.25rem 1.5rem;
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
-
-.wr-title {
-    font-size: .7rem;
-    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: .08em;
-    color: #9aa0b5;
-    margin-bottom: .6rem;
+    font-size: 0.8rem;
 }
 
-.wr-badge {
-    display: inline-block;
-    font-size: .8rem;
+.listing-seller a {
+    color: #9A0002;
+    text-decoration: none;
     font-weight: 600;
-    padding: .3rem .8rem;
-    border-radius: 20px;
-    margin-right: .4rem;
 }
 
-.wr-weak   { background: #fff0f0; color: #e53935; border: 1px solid #ffcdd2; }
-.wr-resist { background: #f0fff4; color: #2e7d32; border: 1px solid #c8e6c9; }
+.listing-price {
+    font-weight: 800;
+    color: #9A0002;
+    font-size: 1.1rem;
+}
 
 /* BOTONES */
 .card-actions {
@@ -347,165 +290,50 @@
     flex-wrap: wrap;
 }
 
-.btn-collection,
-.btn-wishlist {
-    flex: 1;
-    min-width: 160px;
+.btn-collection, .btn-add-cart, .btn-sell,.listings-empty a {
+    background: #9A0002;
+    color: #ffffff;
     padding: .85rem 1.5rem;
     border-radius: 10px;
     font-size: .9rem;
     font-weight: 600;
-    font-family: var(--font-body);
-    cursor: pointer;
     border: none;
-    transition: all .2s;
+    cursor: pointer;
+    transition: all .3s;
+    text-align: center;
 }
 
-.btn-collection {
-    background: #2563eb;/*Este ya se ve bien si no lo ves te pones en incognito*/
-    color: #fff;
+.btn-collection:hover, .btn-add-cart:hover , .btn-sell:hover{
+    background: #7a0002;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(154, 0, 2, 0.2);
+}
+
+.btn-sell{
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
 }
 
 .btn-wishlist {
-    background: #fff;
-    color: #f59f00;
-    border: 1.5px solid #ffe082;/*Este ya se ve bien si no lo ves te pones en incognito*/
-}
-
-.listings-table {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    overflow: hidden;
-    margin-top: 20px;
-    border: 1px solid #eaeaea;
-}
-
-.listings-head {
-    display: grid;
-    grid-template-columns: 2fr 1.5fr 1fr 1.2fr 1.5fr;
-    padding: 15px 20px;
-    background: #f8f9fa;
-    border-bottom: 2px solid #eee;
-    font-weight: 700;
-    color: #555;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 0.5px;
-}
-
-.listing-row {
-    display: grid;
-    grid-template-columns: 2fr 1.5fr 1fr 1.2fr 1.5fr;
-    padding: 15px 20px;
-    align-items: center;
-    border-bottom: 1px solid #f1f1f1;
-    transition: background 0.2s ease;
-}
-
-.listing-row:last-child {
-    border-bottom: none;
-}
-
-.listing-row:hover {
-    background-color: #fcfcfc;
-}
-
-.listing-seller a {
-    color: #4a90e2;
-    text-decoration: none;
+    background: #ffffff;
+    color: #9A0002;
+    border: 1.5px solid #9A0002;
+    padding: .85rem 1.5rem;
+    border-radius: 10px;
     font-weight: 600;
-}
-
-.listing-seller a:hover {
-    text-decoration: underline;
-}
-
-.listing-condition {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: #444;
-}
-
-.listing-qty {
-    color: #666;
-    font-family: 'Inter', sans-serif;
-}
-
-.listing-price {
-    font-weight: 700;
-    color: #27ae60;
-    font-size: 1.1rem;
-}
-
-.btn-add-cart {
-    background: #4a90e2;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 6px;
     cursor: pointer;
-    font-weight: 600;
-    font-size: 0.85rem;
-    transition: all 0.2s;
+    transition: all .3s;
 }
 
-.btn-add-cart:hover {
-    background: #357abd;
-    transform: translateY(-1px);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.btn-add-cart:active {
-    transform: translateY(0);
-}
-
-.listing-own-badge {
-    background: #eee;
-    color: #888;
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    display: inline-block;
+.btn-wishlist:hover {
+    background: rgba(154, 0, 2, 0.05);
 }
 
 /* Estado Vacío */
 .listings-empty {
     text-align: center;
     padding: 40px 20px;
-    background: #fdfdfd;
-    border: 2px dashed #ddd;
+    background: #ffffff;
+    border: 2px dashed #9A0002;
     border-radius: 12px;
-}
-
-.listings-empty p {
-    color: #777;
-    margin-bottom: 15px;
-    font-size: 1.1rem;
-}
-
-.listings-empty a {
-    display: inline-block;
-    color: #fff;
-    background: #27ae60;
-    padding: 10px 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: opacity 0.2s;
-}
-
-.listings-empty a:hover {
-    opacity: 0.9;
-}
-
-.cart-qty-badge {
-    margin-left: 8px;
-    background: #e74c3c;
-    color: white;
-    font-size: 0.7rem;
-    padding: 2px 6px;
-    border-radius: 10px;
-    display: none;
 }

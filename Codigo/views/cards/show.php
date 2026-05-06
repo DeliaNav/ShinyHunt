@@ -78,7 +78,7 @@ $conditionLabels = [
                     <?php $price = $card['pricing']['cardmarket']; ?>
                     <div class="price-box">
                         <div class="price-header">
-                            <span class="price-label">💶 Precio en Cardmarket</span>
+                            <span class="price-label">Precio en Cardmarket</span>
                             <span class="price-updated">Actualizado: <?= date('d/m/Y', strtotime($price['updated'])) ?></span>
                         </div>
                         <div class="price-grid">
@@ -179,7 +179,7 @@ $conditionLabels = [
             <?php if (empty($listings)): ?>
                 <div class="listings-empty">
                     <p>Nadie tiene esta carta en venta todavía.</p>
-                    <a href="/TFG/Codigo/vender/<?= htmlspecialchars($card['id']) ?>">¿Tienes una? Véndela aquí</a>
+                    <a href="/TFG/Codigo/vender/<?= htmlspecialchars($card['id']) ?>" class="btn-sell">¿Tienes una? Véndela aquí</a>
                 </div>
             <?php else: ?>
                 <div class="listings-table">

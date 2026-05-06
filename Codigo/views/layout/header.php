@@ -29,8 +29,10 @@ $unread = 0;
 <nav class="navbar">
     <div class="nav-inner">
         <a href="/TFG/Codigo/home" class="nav-logo">
-            <span class="logo-icon">◆</span>
-            <span class="logo-text">TCG<em>Market</em></span>
+            <span class="logo-icon">
+                <img src="/TFG/Codigo/public/img/Logo.png" alt="Logo ShinyyHunt" style="height: 32px; width: auto;">
+            </span>
+            <span class="logo-text">Shinny<em>Hunt</em></span>
         </a>
 
         <div class="nav-search desktop-only">
