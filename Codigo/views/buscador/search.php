@@ -53,6 +53,15 @@ require_once __DIR__ . '/../../views/layout/header.php';
             <?php endforeach; ?>
         </div>
     <?php endif; ?>
+    <?php if (!empty($cards) && count($cards) >= 40): ?>
+        <div class="pagination-container" style="text-align: center; margin-top: 30px;">
+            <?php $nextPage = ($page ?? 1) + 1; ?>
+            <a href="/TFG/Codigo/buscar?q=<?= urlencode($query) ?>&page=<?= $nextPage ?>" class="btn-next-page">
+                <span>Ver siguientes 40 cartas</span>
+                <i class="arrow-icon">→</i>
+            </a>
+        </div>
+    <?php endif; ?>
 
 </div>
 
