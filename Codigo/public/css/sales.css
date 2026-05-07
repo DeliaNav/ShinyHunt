@@ -1,4 +1,10 @@
-.sales-wrap { padding: 2rem 0 4rem; background-color: #fcfcfc; }
+/* ================================================
+   sales.css — Sales Final
+   ================================================ */
+
+body{background-color: #EFE6DE;}
+
+.sales-wrap { padding: 2rem 0 4rem; background-color: #EFE6DE; }
 
 .sales-hero {
     display: flex;
@@ -7,7 +13,7 @@
     flex-wrap: wrap;
     gap: 1.5rem;
     background: #ffffff;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #d6ccc2;
     border-radius: 16px;
     padding: 2rem;
     margin-bottom: 1.5rem;
@@ -18,10 +24,10 @@
     font-size: 1.6rem;
     font-weight: 700;
     margin: 0 0 .3rem;
-    color: #2d3436;
+    color: #1a1a1a;
 }
 
-.sales-sub { color: #636e72; margin: 0; font-size: .9rem; }
+.sales-sub { color: #666; margin: 0; font-size: .9rem; }
 
 .sales-stats { display: flex; gap: 1.5rem; flex-wrap: wrap; }
 
@@ -29,8 +35,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #f8f9fa;
-    border: 1px solid #e9ecef;
+    background: #fdfaf8;
+    border: 1px solid #EFE6DE;
     border-radius: 12px;
     padding: .8rem 1.4rem;
     min-width: 90px;
@@ -39,23 +45,23 @@
 .sales-stat-number {
     font-size: 1.4rem;
     font-weight: 700;
-    color: #7c3aed;
+    color: #9A0002;
 }
 
-.sales-stat-label { font-size: .75rem; color: #636e72; margin-top: .2rem; }
+.sales-stat-label { font-size: .75rem; color: #666; margin-top: .2rem; }
 
 .sales-tabs {
     display: flex;
     gap: .5rem;
     margin-bottom: 1.5rem;
-    border-bottom: 2px solid #f1f1f1;
+    border-bottom: 2px solid #EFE6DE;
     padding-bottom: .5rem;
 }
 
 .sales-tab {
     background: none;
     border: none;
-    color: #b2bec3;
+    color: #888;
     font-size: .9rem;
     padding: .5rem 1.1rem;
     border-radius: 8px;
@@ -64,13 +70,13 @@
     font-weight: 500;
 }
 
-.sales-tab:hover { background: #f1f2f6; color: #2d3436; }
-.sales-tab--active { background: #7c3aed; color: #ffffff; }
+.sales-tab:hover { background: #f2ece6; color: #1a1a1a; }
+.sales-tab--active { background: #9A0002; color: #ffffff; }
 
 .sales-empty {
     text-align: center;
     padding: 4rem 1rem;
-    color: #b2bec3;
+    color: #888;
 }
 
 .sales-empty-icon { font-size: 3rem; margin-bottom: 1rem; opacity: 0.5; }
@@ -87,15 +93,15 @@
     align-items: center;
     gap: 1.2rem;
     background: #ffffff;
-    border: 1px solid #eaeaea;
+    border: 1px solid #EFE6DE;
     border-radius: 12px;
     padding: 1rem 1.2rem;
     transition: all .2s ease;
 }
 
 .sale-card:hover { 
-    border-color: #7c3aed; 
-    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.08);
+    border-color: #9A0002; 
+    box-shadow: 0 4px 12px rgba(154, 0, 2, 0.08);
 }
 
 .sale-card-img img {
@@ -106,10 +112,10 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.sale-card-name { font-weight: 600; color: #2d3436; margin: 0 0 .2rem; }
-.sale-card-id   { font-size: .78rem; color: #636e72; margin: 0 0 .2rem; }
-.sale-card-condition { font-size: .8rem; color: #2d3436; font-weight: 500; margin: 0 0 .2rem; }
-.sale-card-desc { font-size: .8rem; color: #636e72; margin: 0; }
+.sale-card-name { font-weight: 600; color: #1a1a1a; margin: 0 0 .2rem; }
+.sale-card-id   { font-size: .78rem; color: #666; margin: 0 0 .2rem; }
+.sale-card-condition { font-size: .8rem; color: #1a1a1a; font-weight: 500; margin: 0 0 .2rem; }
+.sale-card-desc { font-size: .8rem; color: #666; margin: 0; }
 
 .sale-card-meta {
     display: flex;
@@ -118,9 +124,9 @@
     gap: .3rem;
 }
 
-.sale-card-price { font-size: 1.1rem; font-weight: 700; color: #2ecc71; }
-.sale-card-qty   { font-size: .8rem; color: #636e72; }
-.sale-card-date  { font-size: .78rem; color: #b2bec3; }
+.sale-card-price { font-size: 1.1rem; font-weight: 700; color: #9A0002; }
+.sale-card-qty   { font-size: .8rem; color: #666; }
+.sale-card-date  { font-size: .78rem; color: #888; }
 
 .sale-status {
     font-size: .75rem;
@@ -130,14 +136,14 @@
     text-transform: uppercase;
 }
 
-.sale-status--active    { background: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9; }
-.sale-status--sold      { background: #e3f2fd; color: #1565c0; border: 1px solid #bbdefb; }
-.sale-status--cancelled { background: #ffebee; color: #c62828; border: 1px solid #ffcdd2; }
+.sale-status--active    { background: #fdfaf8; color: #9A0002; border: 1px solid #EFE6DE; }
+.sale-status--sold      { background: #9A0002; color: #fff; border: 1px solid #9A0002; }
+.sale-status--cancelled { background: #f4f1ee; color: #888; border: 1px solid #d6ccc2; }
 
 .btn-danger {
     background: #fff;
-    border: 1px solid #ffcdd2;
-    color: #c62828;
+    border: 1px solid #f9d2d2;
+    color: #9A0002;
     border-radius: 8px;
     padding: .4rem .9rem;
     font-size: .82rem;
@@ -146,7 +152,7 @@
     transition: all .2s;
 }
 
-.btn-danger:hover { background: #ffebee; border-color: #ef9a9a; }
+.btn-danger:hover { background: #fce8e8; border-color: #9A0002; }
 
 @media (max-width: 600px) {
     .sale-card {

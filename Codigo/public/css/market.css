@@ -1,4 +1,12 @@
+/* ================================================
+   market.css — Marketplace Final
+   ================================================ */
+
 /* Estructura Principal */
+body {
+    background: #EFE6DE;
+}
+
 .market-page {
     max-width: 1200px;
     margin: 20px auto;
@@ -11,173 +19,152 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
-    border-bottom: 2px solid #f0f0f0;
+    border-bottom: 2px solid #9A0002;
     padding-bottom: 15px;
 }
 
 .market-header h2 {
-    color: #2c3e50;
+    color: #1a1a1a;
+    font-family: 'Cinzel', serif;
     margin: 0;
 }
 
 /* Botones Generales */
 .btn-primary, .btn-save {
-    background-color: #27ae60;
+    background-color: #9A0002;
     color: white;
     border: none;
     padding: 10px 20px;
-    border-radius: 6px;
+    border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .btn-primary:hover, .btn-save:hover {
-    background-color: #219150;
+    background-color: #7a0002;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(154, 0, 2, 0.2);
 }
 
 .btn-cancel {
-    background-color: #95a5a6;
-    color: white;
+    background-color: #d6ccc2;
+    color: #444;
     border: none;
     padding: 10px 20px;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
+    font-weight: 600;
 }
 
 /* Alertas */
-.alert {
-    padding: 15px;
-    border-radius: 6px;
-    margin-bottom: 20px;
-}
-
 .alert-success {
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
+    background-color: #fdfaf8;
+    color: #9A0002;
+    border: 1px solid #9A0002;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
 
 /* Formulario de Venta */
 .card-form {
-    background: #f8f9fa;
+    background: #fdfaf8;
     padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     margin-bottom: 40px;
-    border: 1px solid #e9ecef;
+    border: 1px solid #EFE6DE;
 }
 
-.form-group {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    margin: 20px 0;
+.card-form h3 {
+    color: #9A0002;
+    margin-top: 0;
 }
 
 .form-group input, .form-group select {
     padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
+    border: 1px solid #EFE6DE;
+    border-radius: 8px;
     font-size: 14px;
+    background: #fff;
 }
 
-.form-actions {
-    display: flex;
-    gap: 10px;
-    justify-content: flex-end;
-}
-
-/* Grid de Listados */
-.listings-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 25px;
+.form-group input:focus, .form-group select:focus {
+    outline: none;
+    border-color: #9A0002;
 }
 
 /* Card del Producto */
 .listing-card {
     background: white;
-    border-radius: 12px;
-    border: 1px solid #eee;
+    border-radius: 14px;
+    border: 1px solid #EFE6DE;
     padding: 20px;
     transition: transform 0.2s, box-shadow 0.2s;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 8px rgba(154, 0, 2, 0.03);
 }
 
 .listing-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-}
-
-.card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 15px;
+    box-shadow: 0 8px 20px rgba(154, 0, 2, 0.1);
 }
 
 .card-header h4 {
     margin: 0;
-    color: #34495e;
+    color: #1a1a1a;
     font-size: 1.1rem;
-    flex: 1;
+    font-weight: 700;
 }
 
 /* Badges de Condición */
 .badge {
     font-size: 0.7rem;
-    padding: 4px 8px;
-    border-radius: 4px;
+    padding: 4px 10px;
+    border-radius: 20px;
     text-transform: uppercase;
     font-weight: bold;
-    margin-left: 10px;
 }
 
-.badge.near_mint { background: #e8f5e9; color: #2e7d32; }
-.badge.excellent { background: #e3f2fd; color: #1565c0; }
-.badge.good { background: #fff3e0; color: #ef6c00; }
-.badge.played { background: #ffebee; color: #c62828; }
-
-.card-body {
-    margin-bottom: 20px;
-}
+.badge.near_mint { background: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9; }
+.badge.excellent { background: #e3f2fd; color: #1565c0; border: 1px solid #bbdefb; }
+.badge.good { background: #fff3e0; color: #ef6c00; border: 1px solid #ffe0b2; }
+.badge.played { background: #fce8e8; color: #9A0002; border: 1px solid #f9d2d2; }
 
 .price {
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: #2c3e50;
-    margin: 10px 0;
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: #9A0002;
+    margin: 15px 0;
 }
 
-.seller, .stock {
-    font-size: 0.85rem;
-    color: #7f8c8d;
-    margin: 4px 0;
+.seller strong {
+    color: #1a1a1a;
 }
 
 /* Botón Comprar */
 .btn-buy {
     width: 100%;
-    background-color: #3498db;
+    background-color: #9A0002;
     color: white;
     border: none;
     padding: 12px;
-    border-radius: 6px;
+    border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: all 0.3s;
 }
 
 .btn-buy:hover:not(:disabled) {
-    background-color: #2980b9;
+    background-color: #7a0002;
 }
 
 .btn-buy:disabled {
-    background-color: #bdc3c7;
+    background-color: #d6ccc2;
+    color: #888;
     cursor: not-allowed;
-    opacity: 0.7;
+    opacity: 0.8;
 }

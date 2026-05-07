@@ -4,7 +4,7 @@
 /* .profile-main-container {
     margin-top: 30px;
     min-height: 80vh;
-    background-color: #fcfaff; 
+    background-color: #EFE6DE; 
 } */
 
 /* Cabecera de Perfil */
@@ -12,22 +12,22 @@
     background: white;
     padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(155, 114, 207, 0.1); /* Sombra lila */
+    box-shadow: 0 8px 25px rgba(154, 0, 2, 0.1);
     display: flex;
     align-items: center;
     gap: 40px;
     margin-bottom: 50px;
-    border: 1px solid #f3ebff;
+    border: 1px solid #EFE6DE;
 }
 
 .profile-avatar-circle {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    background: #f3ebff;
+    background: #EFE6DE;
     overflow: hidden;
     border: 4px solid #fff;
-    box-shadow: 0 4px 12px rgba(155, 114, 207, 0.2);
+    box-shadow: 0 4px 12px rgba(154, 0, 2, 0.2);
 }
 
 .profile-avatar-circle img {
@@ -40,7 +40,7 @@
 .profile-name-row {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Separa nombre de botón */
+    justify-content: space-between;
     gap: 20px;
     flex-wrap: wrap;
 }
@@ -49,11 +49,11 @@
     font-family: 'Cinzel', serif;
     margin: 0;
     font-size: 2.5rem;
-    color: #4a3461; /* Morado muy oscuro */
+    color: #1a1a1a;
 }
 
 .profile-date {
-    color: #9b72cf;
+    color: #9A0002;
     font-size: 0.95rem;
     margin: 8px 0;
     display: flex;
@@ -64,16 +64,16 @@
 .profile-bio-box {
     margin-top: 15px;
     padding: 15px;
-    background: #fdfaff;
-    border-left: 4px solid #9b72cf; /* Borde lila */
+    background: #fdfaf8;
+    border-left: 4px solid #9A0002;
     border-radius: 4px;
     font-style: italic;
-    color: #6a5a83;
+    color: #444;
 }
 
-/* Botón de Mensaje Morado Pastel */
+/* Botón de Mensaje Vino */
 .btn-message-user {
-    background-color: #9b72cf;
+    background-color: #9A0002;
     color: white;
     padding: 10px 20px;
     border-radius: 12px;
@@ -85,9 +85,9 @@
 }
 
 .btn-message-user:hover {
-    background-color: #7c5295;
+    background-color: #7a0002;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(155, 114, 207, 0.4);
+    box-shadow: 0 5px 15px rgba(154, 0, 2, 0.4);
 }
 
 /* Sección de Cartas */
@@ -96,19 +96,19 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 25px;
-    border-bottom: 2px solid #f3ebff;
+    border-bottom: 2px solid #EFE6DE;
     padding-bottom: 10px;
 }
 
 .profile-section-title {
     font-family: 'Cinzel', serif;
-    color: #4a3461;
+    color: #1a1a1a;
     margin: 0;
 }
 
 .profile-listing-count {
-    background: #dcd0ff; /* Fondo lila pastel */
-    color: #4a3461;
+    background: #d6ccc2;
+    color: #1a1a1a;
     padding: 4px 15px;
     border-radius: 20px;
     font-size: 0.85rem;
@@ -134,14 +134,14 @@
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0,0,0,0.04);
     height: 100%;
-    border: 1px solid #f3ebff;
+    border: 1px solid #EFE6DE;
     display: flex;
     flex-direction: column;
 }
 
 .card-img-container {
     padding: 12px;
-    background: #fdfaff;
+    background: #fdfaf8;
 }
 
 .card-img-container img {
@@ -153,18 +153,18 @@
 
 .card-details {
     padding: 15px;
-    border-top: 1px solid #f3ebff;
+    border-top: 1px solid #EFE6DE;
     flex-grow: 1;
 }
 
 .card-title {
     font-weight: 600;
-    color: #4a3461;
+    color: #1a1a1a;
     margin-bottom: 5px;
 }
 
 .card-price {
-    color: #9b72cf; /* Precio en morado */
+    color: #9A0002;
     font-weight: 800;
     font-size: 1.2rem;
     margin: 8px 0;
@@ -172,7 +172,7 @@
 
 .card-status {
     font-size: 0.8rem;
-    color: #9a8bb0;
+    color: #666;
 }
 
 /* Hover Effects */
@@ -181,21 +181,21 @@
 }
 
 .profile-card-item:hover .card-inner {
-    box-shadow: 0 12px 25px rgba(155, 114, 207, 0.15);
-    border-color: #dcd0ff;
+    box-shadow: 0 12px 25px rgba(154, 0, 2, 0.15);
+    border-color: #d6ccc2;
 }
 
 /* Estado Vacío */
 .profile-empty-state {
     text-align: center;
     padding: 80px 20px;
-    background: #fdfaff;
+    background: #fdfaf8;
     border-radius: 20px;
-    border: 2px dashed #dcd0ff;
+    border: 2px dashed #d6ccc2;
 }
 
 .empty-icon {
     font-size: 50px;
     margin-bottom: 15px;
-    filter: sepia(1) hue-rotate(220deg); /* Hace el emoji un poco más lila */
+    filter: sepia(1) hue-rotate(-50deg) saturate(5); 
 }
