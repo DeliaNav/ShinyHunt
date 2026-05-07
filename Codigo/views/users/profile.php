@@ -1,7 +1,7 @@
 <?php
     require_once __DIR__ . '/../../views/layout/header.php';
 ?>
-<link rel="stylesheet" href="/TFG/Codigo/public/css/profile.css">
+<link rel="stylesheet" href="/TFG/Codigo/public/css/user.css">
 
 <div class="container profile-main-container">
     <!-- TARJETA DE PERFIL -->

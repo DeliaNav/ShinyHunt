@@ -15,13 +15,15 @@ class BuscadorController {
         Auth::require();
 
         $query = trim($_GET['q'] ?? '');
+        $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+
         $cards = [];
 
         if ($query !== '') {
-            $cards = $this->model->buscar(ucfirst(strtolower($query)));
+            $cards = $this->model->buscar(ucfirst(strtolower($query)), $page);
         }
 
-        $pageTitle = 'Búsqueda · TCGMarket';
+        $pageTitle = 'Búsqueda · ShinnyHunt';
         $extraCss  = 'buscador.css';
         require_once __DIR__ . '/../views/buscador/search.php';
     }

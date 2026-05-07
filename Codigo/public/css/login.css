@@ -7,20 +7,21 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f4f4f4;
+    background-color: #EFE6DE; /* Crema */
 }
 
 .login-container {
     background: white;
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(154, 0, 2, 0.1); /* Sombra con toque vino */
     width: 300px;
+    border: 1px solid #d6ccc2;
 }
 
 h2 {
     text-align: center;
-    color: #333;
+    color: #9A0002; /* Vino */
     margin-top: 0;
 }
 
@@ -31,21 +32,26 @@ h2 {
 label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #666;
+    color: #444;
 }
 
 input {
     width: 100%;
     padding: 0.5rem;
-    border: 1px solid #ddd;
+    border: 1px solid #d6ccc2; /* Crema oscuro */
     border-radius: 4px;
     box-sizing: border-box; /* Evita que el padding ensanche el input */
+    outline: none;
+}
+
+input:focus {
+    border-color: #9A0002; /* Vino al enfocar */
 }
 
 button {
     width: 100%;
     padding: 0.7rem;
-    background-color: #007bff;
+    background-color: #9A0002; /* Vino */
     color: white;
     border: none;
     border-radius: 4px;
@@ -55,13 +61,13 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #7a0002; /* Vino más oscuro */
 }
 
 .error {
-    color: #d9534f;
-    background-color: #f2dede;
-    border: 1px solid #ebccd1;
+    color: #9A0002; /* Vino */
+    background-color: #fce8e8; /* Rosado muy claro */
+    border: 1px solid #f9d2d2;
     padding: 10px;
     border-radius: 4px;
     font-size: 0.8rem;
@@ -73,4 +79,11 @@ button:hover {
     text-align: center; 
     font-size: 0.8rem; 
     margin-top: 1rem;
+    color: #666;
+}
+
+#registro a {
+    color: #9A0002;
+    font-weight: bold;
+    text-decoration: none;
 }

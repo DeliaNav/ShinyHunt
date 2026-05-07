@@ -16,7 +16,7 @@ class WishListController {
         $cards  = $this->model->getByUser($userId);
         $total  = $this->model->count($userId);
 
-        $pageTitle = 'Mi Lista de Deseos · TCGMarket';
+        $pageTitle = 'Mi Lista de Deseos · ShinnyHunt';
         require_once __DIR__ . '/../views/wishlist.php';
     }
 

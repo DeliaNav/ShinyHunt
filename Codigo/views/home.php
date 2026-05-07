@@ -1,10 +1,10 @@
 <?php
-$pageTitle = 'Inicio · TCGMarket';
-$extraCss  = 'home.css';
-require_once 'views/layout/header.php';
+    $pageTitle = 'Inicio · ShinnyHunt';
+    $extraCss  = 'home.css';
+    require_once 'views/layout/header.php';
 ?>
 <?php if (!empty($extraCss)): ?>
-     <link rel="stylesheet" href="/TFG/Codigo/public/css/<?= $extraCss ?>"> 
+     <link rel="stylesheet" href="/TFG/Codigo/public/css/<?= $extraCss ?>">
 <?php endif; ?>
 <div class="page-hero">
     <div class="page-hero-content">

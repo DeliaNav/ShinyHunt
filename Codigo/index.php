@@ -15,7 +15,7 @@ $router->add('/TFG/Codigo/auth', 'LoginController@authenticate');
 $router->add('/TFG/Codigo/registro', 'LoginController@showRegister');
 $router->add('/TFG/Codigo/do-register', 'LoginController@register');
 
-$router->add('/TFG/Codigo/welcome', 'WelcomeController@index');
+$router->add('/TFG/Codigo/', 'WelcomeController@index');
 $router->add('/TFG/Codigo/home', 'HomeController@index');
 
 $router->add('/TFG/Codigo/buscar', 'buscadorController@search');

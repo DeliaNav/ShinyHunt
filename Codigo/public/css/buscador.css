@@ -1,6 +1,6 @@
 .search-hero {
-    background: #ffffff;
-    border-bottom: 1px solid #e3e6f0;
+    background: #EFE6DE;
+    border-bottom: 1px solid #d9ccc4;
     padding: 2.5rem 2rem;
 }
 
@@ -14,7 +14,7 @@
     font-family: var(--font-head);
     font-size: clamp(1.4rem, 3vw, 1.9rem);
     font-weight: 600;
-    color: var(--text);
+    color: #1a0a0a;
     margin-bottom: 1.25rem;
     letter-spacing: -.015em;
 }
@@ -26,8 +26,8 @@
 .search-input-wrap {
     display: flex;
     align-items: center;
-    background: #f4f5f9;
-    border: 1.5px solid #e3e6f0;
+    background: #f7f2ee;
+    border: 1.5px solid #d9ccc4;
     border-radius: 50px;
     padding: .35rem .35rem .35rem 1.1rem;
     gap: .75rem;
@@ -35,13 +35,13 @@
 }
 
 .search-input-wrap:focus-within {
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, .1);
+    border-color: #9A0002;
+    box-shadow: 0 0 0 3px rgba(154, 0, 2, .1);
     background: #ffffff;
 }
 
 .search-icon {
-    color: #9aa0b5;
+    color: #9a7070;
     flex-shrink: 0;
 }
 
@@ -52,17 +52,17 @@
     outline: none;
     font-family: var(--font-body);
     font-size: .95rem;
-    color: var(--text);
+    color: #1a0a0a;
     padding: .45rem 0;
 }
 
 .search-input-wrap input::placeholder {
-    color: #9aa0b5;
+    color: #9a7070;
 }
 
 .search-input-wrap button {
-    background: #2563eb;
-    color: #ffffff;
+    background: #9A0002;
+    color: #EFE6DE;
     border: none;
     border-radius: 50px;
     padding: .55rem 1.4rem;
@@ -76,7 +76,7 @@
 }
 
 .search-input-wrap button:hover {
-    background: #1d4ed8;
+    background: #c00003;
 }
 
 .container {
@@ -94,9 +94,9 @@
 }
 
 .results-count {
-    background: #eff4ff;
-    color: #2563eb;
-    border: 1px solid #c7d7fd;
+    background: rgba(154, 0, 2, 0.08);
+    color: #9A0002;
+    border: 1px solid rgba(154, 0, 2, 0.25);
     border-radius: 20px;
     font-size: .8rem;
     font-weight: 600;
@@ -105,38 +105,39 @@
 
 .results-query {
     font-size: .9rem;
-    color: #56607a;
+    color: #5c3a3a;
 }
 
 .results-query strong {
-    color: #18192a;
+    color: #1a0a0a;
 }
 
 .search-empty {
     text-align: center;
     padding: 5rem 1rem;
-    color: #9aa0b5;
+    color: #9a7070;
 }
 
 .search-empty-icon {
     font-size: 3.5rem;
     margin-bottom: 1rem;
     line-height: 1;
+    opacity: .4;
 }
 
 .search-empty p {
     font-size: 1rem;
-    color: #56607a;
+    color: #5c3a3a;
     margin-bottom: .4rem;
 }
 
 .search-empty strong {
-    color: #18192a;
+    color: #1a0a0a;
 }
 
 .search-empty span {
     font-size: .85rem;
-    color: #9aa0b5;
+    color: #9a7070;
 }
 
 .cards-grid {
@@ -149,24 +150,24 @@
     display: flex;
     flex-direction: column;
     background: #ffffff;
-    border: 1px solid #e3e6f0;
+    border: 1px solid #d9ccc4;
     border-radius: 14px;
     overflow: hidden;
-    box-shadow: 0 1px 3px rgba(20,25,60,.07), 0 4px 12px rgba(20,25,60,.05);
+    box-shadow: 0 1px 3px rgba(154,0,2,.05), 0 4px 12px rgba(0,0,0,.06);
     transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
     cursor: pointer;
 }
 
 .card-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(20,25,60,.08), 0 12px 28px rgba(20,25,60,.10);
-    border-color: rgba(37, 99, 235, .35);
+    box-shadow: 0 4px 10px rgba(154,0,2,.08), 0 12px 28px rgba(154,0,2,.10);
+    border-color: rgba(154, 0, 2, .35);
 }
 
 .card-img-wrap {
     aspect-ratio: 2.5 / 3.5;
     overflow: hidden;
-    background: #eef0f6;
+    background: #f7f2ee;
     position: relative;
 }
 
@@ -174,7 +175,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, #eef0f6 25%, #e3e6f0 50%, #eef0f6 75%);
+    background: linear-gradient(90deg, #f7f2ee 25%, #e5dbd4 50%, #f7f2ee 75%);
     background-size: 200% 100%;
     animation: shimmer 1.5s infinite linear;
     z-index: 0;
@@ -201,7 +202,7 @@
 
 .card-info {
     padding: .75rem .9rem .85rem;
-    border-top: 1px solid #edf0f7;
+    border-top: 1px solid #e5dbd4;
     display: flex;
     flex-direction: column;
     gap: .2rem;
@@ -210,7 +211,7 @@
 .card-name {
     font-size: .875rem;
     font-weight: 600;
-    color: #18192a;
+    color: #1a0a0a;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -218,7 +219,7 @@
 
 .card-id {
     font-size: .75rem;
-    color: #9aa0b5;
+    color: #9a7070;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -248,8 +249,8 @@
         display: none;
     }
 }
+
 /*--------------------------------------------*/
-/* public/css/buscador.css */
 
 .search-main-container {
     margin-top: 40px;
@@ -259,16 +260,15 @@
 .search-results-title h1 {
     font-family: 'Cinzel', serif;
     font-size: 1.8rem;
-    color: #333;
+    color: #1a0a0a;
     margin-bottom: 30px;
 }
 
 .search-results-title em {
-    color: #7c3aed; /* Un color lila/morado para destacar la búsqueda */
+    color: #9A0002;
     font-style: normal;
 }
 
-/* Grid de usuarios */
 .user-cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -281,22 +281,21 @@
 }
 
 .user-card-inner {
-    background: #fff;
+    background: #ffffff;
     padding: 25px;
     border-radius: 15px;
-    border: 1px solid #eee;
+    border: 1px solid #d9ccc4;
     text-align: center;
     transition: all 0.3s ease;
 }
 
-/* Avatar circular */
 .user-avatar-wrapper {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto 15px;
-    border: 3px solid #f0f0f0;
+    border: 3px solid #e5dbd4;
     transition: border-color 0.3s ease;
 }
 
@@ -306,43 +305,40 @@
     object-fit: cover;
 }
 
-/* Texto de la tarjeta */
 .user-card-name {
     display: block;
     font-weight: 700;
     font-size: 1.1rem;
-    color: #222;
+    color: #1a0a0a;
     margin-bottom: 5px;
 }
 
 .user-card-date {
     display: block;
     font-size: 0.85rem;
-    color: #888;
+    color: #9a7070;
 }
 
-/* Hovers */
 .user-card-link:hover .user-card-inner {
     transform: translateY(-8px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    border-color: #ddd;
+    box-shadow: 0 10px 25px rgba(154,0,2,0.08);
+    border-color: rgba(154,0,2,0.25);
 }
 
 .user-card-link:hover .user-avatar-wrapper {
-    border-color: #7c3aed;
+    border-color: #9A0002;
 }
 
-/* Estado vacío */
 .search-empty {
     text-align: center;
     padding: 100px 20px;
-    background: #f9f9f9;
+    background: #f7f2ee;
     border-radius: 20px;
-    color: #666;
+    color: #5c3a3a;
 }
 
 .search-empty-icon {
     font-size: 4rem;
     margin-bottom: 20px;
-    opacity: 0.5;
+    opacity: 0.4;
 }

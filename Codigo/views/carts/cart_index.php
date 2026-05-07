@@ -26,7 +26,12 @@
                             </a>
                             <div class="cart-item-info">
                                 <p class="cart-item-name"><?= htmlspecialchars($item['card_name']) ?></p>
-                                <p class="cart-item-seller">Vendido por <a href="/TFG/Codigo/perfil/<?= htmlspecialchars($item['seller_name']) ?>"><?= htmlspecialchars($item['seller_name']) ?></a></p>
+                                <p class="cart-item-seller">
+                                    Vendido por
+                                    <a href="/TFG/Codigo/usuario/<?= $item['seller_id'] ?>">
+                                        <?= htmlspecialchars($item['seller_name']) ?>
+                                    </a>
+                                </p>
                                 <p class="cart-item-condition"><?= htmlspecialchars(ucfirst(str_replace('_', ' ', $item['condition']))) ?></p>
                                 <p class="cart-item-price"><?= number_format($item['price'], 2) ?> € / ud</p>
                             </div>

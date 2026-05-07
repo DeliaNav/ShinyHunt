@@ -1,8 +1,8 @@
 :root {
-    --primary: #4f46e5;
-    --primary-hover: #4338ca;
-    --bg: #f3f4f6;
-    --text: #1f2937;
+    --primary: #9A0002;          /* Vino */
+    --primary-hover: #7a0002;    /* Vino oscuro */
+    --bg: #EFE6DE;               /* Crema */
+    --text: #1a1a1a;             /* Negro suave */
     --white: #ffffff;
 }
 
@@ -20,9 +20,10 @@ body {
     background: var(--white);
     padding: 2rem;
     border-radius: 1rem;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(154, 0, 2, 0.1); /* Sombra con matiz vino */
     width: 100%;
     max-width: 400px;
+    border: 1px solid #d6ccc2;
 }
 
 h1 {
@@ -39,20 +40,22 @@ label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 600;
+    color: #444;
 }
 
 input {
     width: 100%;
     padding: 0.75rem;
-    border: 1px solid #d1d5db;
+    border: 1px solid #d6ccc2;
     border-radius: 0.5rem;
     box-sizing: border-box; 
+    background-color: #fdfaf8;
 }
 
 input:focus {
     outline: none;
     border-color: var(--primary);
-    ring: 2px var(--primary);
+    box-shadow: 0 0 0 2px rgba(154, 0, 2, 0.1);
 }
 
 button {
@@ -76,9 +79,15 @@ button:hover {
     text-align: center;
     margin-top: 1rem;
     font-size: 0.9rem;
+    color: #666;
 }
 
 .footer-link a {
     color: var(--primary);
     text-decoration: none;
+    font-weight: 600;
+}
+
+.footer-link a:hover {
+    text-decoration: underline;
 }

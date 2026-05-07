@@ -27,7 +27,7 @@ class ProfileController {
         $error           = null;
         $success         = null;
 
-        $pageTitle = 'Mi Perfil · TCGMarket';
+        $pageTitle = 'Mi Perfil · ShinnyHunt';
         $extraCss  = 'profile.css';
         require_once __DIR__ . '/../views/profile.php';
     }
@@ -67,7 +67,7 @@ class ProfileController {
             }
         }
 
-        $pageTitle = 'Mi Perfil · TCGMarket';
+        $pageTitle = 'Mi Perfil · ShinnyHunt';
         $extraCss  = 'profile.css';
         require_once __DIR__ . '/../views/profile.php';
     }
@@ -100,7 +100,7 @@ class ProfileController {
             $success = $ok ? 'Contraseña actualizada correctamente.' : 'Error al cambiar la contraseña.';
         }
 
-        $pageTitle = 'Mi Perfil · TCGMarket';
+        $pageTitle = 'Mi Perfil · ShinnyHunt';
         $extraCss  = 'profile.css';
         require_once __DIR__ . '/../views/profile.php';
     }
@@ -170,7 +170,7 @@ class ProfileController {
             }
         }
 
-        $pageTitle = 'Mi Perfil · TCGMarket';
+        $pageTitle = 'Mi Perfil · ShinnyHunt';
         $extraCss  = 'profile.css';
         require_once __DIR__ . '/../views/profile.php';
     }
