@@ -48,4 +48,10 @@ class User {
         $stmt ->execute(['%' . $user. '%']);
         return $stmt->fetchAll();
     }
+
+    public function delete($id) {
+        $sql = "DELETE FROM users WHERE id = :id";
+        $stmt = $this->pdo->prepare($sql);
+        return $stmt->execute(['id' => $id]);
+    }
 }

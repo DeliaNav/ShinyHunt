@@ -20,6 +20,9 @@ $router->add('/TFG/Codigo/do-register', 'LoginController@register');
 // Cierre de sesion
 $router->add('/TFG/Codigo/logout', 'AuthController@logout');
 
+// Dase de baja/ Borrar usuario
+$router->add('/TFG/Codigo/delete-account', 'AuthController@deleteAccount');
+
 //Welcome y Home
 $router->add('/TFG/Codigo/', 'WelcomeController@index');
 $router->add('/TFG/Codigo/home', 'HomeController@index');

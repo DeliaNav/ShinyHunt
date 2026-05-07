@@ -1,7 +1,10 @@
 <?php
+
+require_once __DIR__ . '/../models/User.php';
+
 class AuthController {
     
-    // Método para cerrar sesión
+    // Cerrar sesión
     public function logout() {
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
@@ -22,4 +25,33 @@ class AuthController {
         header("Location: /TFG/Codigo/");
         exit();
     }
+
+    // Borrar usuario
+    public function deleteAccount(){
+        if(session_status() === PHP_SESSION_NONE){
+            session_start();
+        }
+
+        if(!isset($_SESSION['user_id'])){
+            header("Location: /TFG/Codigo/login");
+            exit();
+        }
+
+        $userId = $_SESSION['user_id'];
+
+        $userModel = new User();
+        $success = $userModel->delete($userId);
+
+        if ($success) {
+            $_SESSION = array();
+            session_destroy();
+            
+            header("Location: /TFG/Codigo/");
+            exit();
+        } else {
+            header("Location: /TFG/Codigo/profile?error=cannot_delete");
+            exit();
+        }
+    }
+
 }
