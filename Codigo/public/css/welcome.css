@@ -1,14 +1,15 @@
 /* welcome.css */
 :root {
-  --bg:      #0a0a0f;
-  --accent:  #e8534b;
-  --text:    #e8e8f0;
-  --muted:   #7a7a95;
-  --border:  #2a2a3a;
+  --bg:      #EFE6DE;               /* Crema */
+  --accent:  #9A0002;               /* Vino */
+  --text:    #1a1a1a;               /* Negro suave para lectura */
+  --muted:   #665f58;               /* Gris cálido */
+  --border:  #d6ccc2;               /* Crema oscuro para bordes */
   --radius:  10px;
   --font-head: 'Cinzel', Georgia, serif;
   --font-body: 'Inter', system-ui, sans-serif;
 }
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: var(--font-body); background: var(--bg); color: var(--text); }
 a { text-decoration: none; color: inherit; }
@@ -27,15 +28,17 @@ a { text-decoration: none; color: inherit; }
   pointer-events: none;
   overflow: hidden;
 }
+
+/* Orbes decorativos adaptados a la nueva paleta */
 .orb {
   position: absolute;
   border-radius: 50%;
   filter: blur(80px);
-  opacity: .18;
+  opacity: .12; /* Bajada un poco la opacidad por el fondo claro */
 }
-.orb1 { width: 500px; height: 500px; background: #e84b4b; top: -100px; right: -100px; }
-.orb2 { width: 400px; height: 400px; background: #6b4fe8; bottom: 0; left: -80px; }
-.orb3 { width: 300px; height: 300px; background: #e84b4b; bottom: 200px; right: 200px; opacity: .08; }
+.orb1 { width: 500px; height: 500px; background: #9A0002; top: -100px; right: -100px; }
+.orb2 { width: 400px; height: 400px; background: #d6ccc2; bottom: 0; left: -80px; }
+.orb3 { width: 300px; height: 300px; background: #9A0002; bottom: 200px; right: 200px; opacity: .05; }
 
 .top-nav {
   position: relative;
@@ -70,8 +73,8 @@ a { text-decoration: none; color: inherit; }
   display: inline-flex;
   align-items: center;
   gap: .5rem;
-  background: rgba(232,184,75,.1);
-  border: 1px solid rgba(232,184,75,.3);
+  background: rgba(154, 0, 2, 0.1); /* Fondo vino muy suave */
+  border: 1px solid rgba(154, 0, 2, 0.2);
   color: var(--accent);
   padding: .35rem .9rem;
   border-radius: 20px;
@@ -88,6 +91,7 @@ a { text-decoration: none; color: inherit; }
   line-height: 1.1;
   margin-bottom: 1.25rem;
   max-width: 700px;
+  color: #1a1a1a;
 }
 .hero-title em { color: var(--accent); font-style: normal; }
 .hero-subtitle {
@@ -110,12 +114,10 @@ a { text-decoration: none; color: inherit; }
   transition: all .2s;
   cursor: pointer;
 }
-.btn-primary  { background: var(--accent); color: #000; border-color: var(--accent); }
-.btn-primary:hover { background: #e84b4b; transform: translateY(-1px); }
+.btn-primary  { background: var(--accent); color: #ffffff; border-color: var(--accent); }
+.btn-primary:hover { background: #7a0002; transform: translateY(-1px); }
 .btn-outline  { background: transparent; color: var(--text); border-color: var(--border); }
-.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); background: rgba(154, 0, 2, 0.05); }
 .btn-ghost    { background: transparent; color: var(--muted); border-color: transparent; }
-.btn-ghost:hover { color: var(--text); }
+.btn-ghost:hover { color: var(--accent); }
 .btn-lg { padding: .9rem 2.2rem; font-size: 1rem; }
-
-
