@@ -2,8 +2,13 @@
    card-detail.css — Ficha de carta Final 
    ================================================ */
 
+body {
+    background: #EFE6DE; /* Crema */
+    color: #2D2D2D;
+}
+
 .card-detail-wrap {
-    background: #EFE6DE;
+    background: #EFE6DE; /* Crema */
     min-height: 100vh;
     padding-bottom: 4rem;
 }
@@ -19,15 +24,16 @@
     display: inline-flex;
     align-items: center;
     gap: .4rem;
-    color: #56607a;
+    color: #666;
     font-size: .875rem;
     margin-bottom: 1.5rem;
     transition: color .2s;
     font-weight: 500;
+    text-decoration: none;
 }
 
 .back-link:hover { 
-    color: #9A0002; 
+    color: #9A0002; /* Vino */
 }
 
 /* LAYOUT  */
@@ -52,10 +58,10 @@
 
 .card-detail-img-wrap {
     background: #ffffff;
-    border: 1px solid #e3e6f0;
+    border: 1px solid #EFE6DE;
     border-radius: 18px;
     padding: 1.5rem;
-    box-shadow: 0 4px 24px rgba(20,25,60,.08);
+    box-shadow: 0 4px 24px rgba(154, 0, 2, 0.05);
 }
 
 .card-detail-img-wrap img {
@@ -74,10 +80,10 @@
 /* HEADER  */
 .card-detail-header {
     background: #ffffff;
-    border: 1px solid #e3e6f0;
+    border: 1px solid #EFE6DE;
     border-radius: 14px;
     padding: 1.5rem;
-    border-left: 5px solid #9A0002;
+    border-left: 5px solid #9A0002; /* Vino */
 }
 
 .card-detail-types {
@@ -112,14 +118,14 @@
     font-family: 'Cinzel', Georgia, serif;
     font-size: clamp(1.6rem, 4vw, 2.2rem);
     font-weight: 700;
-    color: #18192a;
+    color: #1a1a1a;
     margin-bottom: .3rem;
     letter-spacing: -.02em;
 }
 
 .card-detail-set {
     font-size: .875rem;
-    color: #9aa0b5;
+    color: #666;
 }
 
 /* STATS */
@@ -131,7 +137,7 @@
 
 .stat-box {
     background: #ffffff;
-    border: 1px solid #e3e6f0;
+    border: 1px solid #EFE6DE;
     border-radius: 10px;
     padding: .75rem 1rem;
     display: flex;
@@ -141,7 +147,7 @@
 
 .stat-label {
     font-size: .7rem;
-    color: #9aa0b5;
+    color: #888;
     text-transform: uppercase;
     letter-spacing: .06em;
 }
@@ -149,13 +155,13 @@
 .stat-value {
     font-size: .95rem;
     font-weight: 600;
-    color: #18192a;
+    color: #1a1a1a;
 }
 
 /* PRECIO */
 .price-box {
     background: #fff;
-    border: 1px solid #e3e6f0;
+    border: 1px solid #EFE6DE;
     border-radius: 14px;
     padding: 1.25rem 1.5rem;
 }
@@ -172,12 +178,12 @@
 .price-label {
     font-weight: 600;
     font-size: .95rem;
-    color: #18192a;
+    color: #1a1a1a;
 }
 
 .price-updated {
     font-size: .75rem;
-    color: #9aa0b5;
+    color: #888;
 }
 
 .price-grid {
@@ -187,17 +193,18 @@
 }
 
 .price-item {
-    background: #f4f5f9;
+    background: #fdfaf8;
     border-radius: 8px;
     padding: .65rem .9rem;
     display: flex;
     flex-direction: column;
     gap: .2rem;
+    border: 1px solid #f2ece6;
 }
 
 .price-item span {
     font-size: .72rem;
-    color: #9aa0b5;
+    color: #666;
     text-transform: uppercase;
     letter-spacing: .05em;
 }
@@ -205,13 +212,13 @@
 .price-item strong {
     font-size: 1rem;
     font-weight: 700;
-    color: #9A0002;
+    color: #9A0002; /* Vino */
 }
 
 /* SECCIONES */
 .card-section {
     background: #ffffff;
-    border: 1px solid #e3e6f0;
+    border: 1px solid #EFE6DE;
     border-radius: 14px;
     padding: 1.25rem 1.5rem;
 }
@@ -221,22 +228,24 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: .08em;
-    color: #9aa0b5;
+    color: #888;
     margin-bottom: 1rem;
 }
 
 /* Abilities & Attacks */
 .ability-card, .attack-card {
-    background: #f4f5f9;
+    background: #fdfaf8;
     border-radius: 8px;
     padding: .85rem 1rem;
     margin-bottom: .6rem;
+    border: 1px solid #f2ece6;
     border-left: 3px solid transparent;
-    transition: border-color 0.2s;
+    transition: all 0.2s;
 }
 
 .ability-card:hover, .attack-card:hover {
     border-left-color: #9A0002;
+    background: #fff;
 }
 
 .ability-type {
@@ -253,22 +262,30 @@
 .listings-table {
     background: #ffffff;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(154, 0, 2, 0.05);
     overflow: hidden;
     margin-top: 20px;
-    border: 1px solid #e3e6f0;
+    border: 1px solid #EFE6DE;
 }
 
 .listings-head {
     display: grid;
     grid-template-columns: 2fr 1.5fr 1fr 1.2fr 1.5fr;
     padding: 15px 20px;
-    background: #f8f9fa;
-    border-bottom: 2px solid #9A0002;
+    background: #fdfaf8;
+    border-bottom: 2px solid #9A0002; /* Vino */
     font-weight: 700;
-    color: #18192a;
+    color: #1a1a1a;
     text-transform: uppercase;
     font-size: 0.8rem;
+}
+
+.listing-row {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1fr 1.2fr 1.5fr;
+    padding: 15px 20px;
+    align-items: center;
+    border-bottom: 1px solid #EFE6DE;
 }
 
 .listing-seller a {
@@ -290,8 +307,8 @@
     flex-wrap: wrap;
 }
 
-.btn-collection, .btn-add-cart, .btn-sell,.listings-empty a {
-    background: #9A0002;
+.btn-collection, .btn-add-cart, .btn-sell, .listings-empty a {
+    background: #9A0002; /* Vino */
     color: #ffffff;
     padding: .85rem 1.5rem;
     border-radius: 10px;
@@ -299,19 +316,15 @@
     font-weight: 600;
     border: none;
     cursor: pointer;
-    transition: all .3s;
+    transition: all 0.3s;
     text-align: center;
+    text-decoration: none;
 }
 
-.btn-collection:hover, .btn-add-cart:hover , .btn-sell:hover{
+.btn-collection:hover, .btn-add-cart:hover, .btn-sell:hover, .listings-empty a:hover {
     background: #7a0002;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(154, 0, 2, 0.2);
-}
-
-.btn-sell{
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: none;
 }
 
 .btn-wishlist {
@@ -322,11 +335,51 @@
     border-radius: 10px;
     font-weight: 600;
     cursor: pointer;
-    transition: all .3s;
+    transition: all 0.3s;
+    text-decoration: none;
 }
 
 .btn-wishlist:hover {
     background: rgba(154, 0, 2, 0.05);
+}
+
+.card-wr {
+    display: flex;
+    gap: 2rem;
+    background: #ffffff;
+    border: 1px solid #EFE6DE;
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem;
+}
+
+.wr-title {
+    font-size: .7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: #888;
+    margin-bottom: .75rem;
+}
+
+.wr-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: .3rem .75rem;
+    border-radius: 8px;
+    font-size: .85rem;
+    font-weight: 600;
+}
+
+.wr-weak {
+    background: rgba(154, 0, 2, 0.1);
+    color: #9A0002;
+    border: 1px solid rgba(154, 0, 2, 0.2);
+}
+
+.wr-resist {
+    background: #fdfaf8;
+    color: #444;
+    border: 1px solid #EFE6DE;
 }
 
 /* Estado Vacío */
