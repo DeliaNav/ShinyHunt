@@ -9,15 +9,22 @@ require_once 'lib/Router.php';
 
 $router = new Router();
 
+// Inicio de Sesion
 $router->add('/TFG/Codigo/login', 'LoginController@index');
 $router->add('/TFG/Codigo/auth', 'LoginController@authenticate');
 
+// Registro de usuario
 $router->add('/TFG/Codigo/registro', 'LoginController@showRegister');
 $router->add('/TFG/Codigo/do-register', 'LoginController@register');
 
+// Cierre de sesion
+$router->add('/TFG/Codigo/logout', 'AuthController@logout');
+
+//Welcome y Home
 $router->add('/TFG/Codigo/', 'WelcomeController@index');
 $router->add('/TFG/Codigo/home', 'HomeController@index');
 
+// Buscador de cartas
 $router->add('/TFG/Codigo/buscar', 'buscadorController@search');
 $router->add('/TFG/Codigo/cards/{id}', 'CardController@show');
 
