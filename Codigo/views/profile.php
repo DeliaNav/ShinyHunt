@@ -108,6 +108,18 @@
             </section>
 
         </div>
+        <div class="profile-card" style="border-color: #f9d2d2;">
+            <h3 class="profile-card-title" style="color: #9A0002;">Zona Peligrosa</h3>
+            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1.5rem;">
+                Una vez que elimines tu cuenta, no hay marcha atrás. Por favor, asegúrate.
+            </p>
+            
+            <form action="/TFG/Codigo/delete-account" method="POST" onsubmit="return confirm('¿Estás COMPLETAMENTE seguro? Esta acción no se puede deshacer.');">
+                <button type="submit" class="btn-danger" style="background-color: #9A0002; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold;">
+                    Eliminar mi cuenta permanentemente
+                </button>
+            </form>
+        </div>
     </div>
 </div>
 
