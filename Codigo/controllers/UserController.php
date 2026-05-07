@@ -20,7 +20,7 @@ class UserController {
             $users = $this->model->search($query);
         }
 
-        $pageTitle = 'Buscar Usuarios · TCGMarket';
+        $pageTitle = 'Buscar Usuarios · ShinnyHunt';
         $extraCss  = 'buscador.css';
         require_once __DIR__ . '/../views/users/search.php';
     }

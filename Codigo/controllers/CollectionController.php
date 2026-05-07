@@ -16,7 +16,7 @@ class CollectionController {
         $cards  = $this->model->getByUser($userId);
         $total  = $this->model->count($userId);
 
-        $pageTitle = 'Mi Colección · TCGMarket';
+        $pageTitle = 'Mi Colección · ShinnyHunt';
         require_once __DIR__ . '/../views/collection.php';
     }
 

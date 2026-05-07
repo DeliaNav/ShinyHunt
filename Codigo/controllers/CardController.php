@@ -31,7 +31,7 @@ class CardController {
         $inWishlist   = $wishlist->hasCard($userId, $id);
         $listings     = $listingModel->getByCard($id);
 
-        $pageTitle = htmlspecialchars($card['name']) . ' · TCGMarket';
+        $pageTitle = htmlspecialchars($card['name']) . ' · ShinnyHunt';
         $extraCss  = 'card-detail.css';
         require_once __DIR__ . '/../views/cards/show.php';
     }

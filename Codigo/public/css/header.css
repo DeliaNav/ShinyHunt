@@ -102,6 +102,7 @@
 
 .nav-link {
     text-decoration: none;
+    font-family: 'Inter', system-ui, sans-serif;
     color: #56607a;
     font-size: .875rem;
     font-weight: 500;
@@ -109,7 +110,7 @@
     position: relative;
 }
 
-.nav-link:hover, .nav-link.active { color: #9A0002; }
+.nav-link:hover, .nav-link.active { color: #9A0002; }/*.active si se ve diferente la letra lo quitas*/
 
 /* Avatar */
 .nav-avatar {

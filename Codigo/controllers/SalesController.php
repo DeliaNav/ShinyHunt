@@ -26,7 +26,7 @@ class SalesController {
         $total          = array_sum(array_column(array_values($sold), 'quantity'));
         $totalEarned    = array_sum(array_map(fn($l) => $l['price'] * $l['quantity'], array_values($sold)));
 
-        $pageTitle = 'Mis Ventas · TCGMarket';
+        $pageTitle = 'Mis Ventas · ShinnyHunt';
         $extraCss  = 'sales.css';
         require_once __DIR__ . '/../views/sales/sales.php';
     }

@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'Búsqueda · TCGMarket';
+$pageTitle = 'Búsqueda · ShinnyHunt';
 $extraCss  = 'buscador.css';
 require_once __DIR__ . '/../../views/layout/header.php';
 ?>

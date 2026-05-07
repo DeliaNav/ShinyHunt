@@ -17,7 +17,7 @@ class MessageController {
         $conversations = $this->model->getConversations($userId);
         $totalUnread  = $this->model->countUnread($userId);
 
-        $pageTitle = 'Mensajes · TCGMarket';
+        $pageTitle = 'Mensajes · ShinnyHunt';
         $extraCss  = 'chat.css';
         require_once __DIR__ . '/../views/messages/chat_list.php';
     }

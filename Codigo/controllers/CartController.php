@@ -20,7 +20,7 @@ class CartController {
         $items  = $this->cart->getByUser($userId);
         $total  = $this->cart->total($userId);
 
-        $pageTitle = 'Mi Carrito · TCGMarket';
+        $pageTitle = 'Mi Carrito · ShinnyHunt';
         $extraCss  = 'cart.css';
         require_once __DIR__ . '/../views/carts/cart_index.php';
     }

@@ -23,7 +23,7 @@ class BuscadorController {
             $cards = $this->model->buscar(ucfirst(strtolower($query)), $page);
         }
 
-        $pageTitle = 'Búsqueda · TCGMarket';
+        $pageTitle = 'Búsqueda · ShinnyHunt';
         $extraCss  = 'buscador.css';
         require_once __DIR__ . '/../views/buscador/search.php';
     }
