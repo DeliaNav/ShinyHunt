@@ -97,8 +97,104 @@ class CartController {
             exit();
         }
 
-        // Aquí  irá la pasarela de pago (feature/pasarela-pagos)
-        header("Location: /TFG/Codigo/pago");
+        // Pasarela de pago
+        $total     = $this->cart->total($userId);
+        $pageTitle = 'Pagar · ShinnyHunt';
+        $extraCss  = 'cart.css';
+ 
+        require_once __DIR__ . '/../lib/stripe.php';
+        require_once __DIR__ . '/../vendor/autoload.php';
+        require_once __DIR__ . '/../views/carts/checkout.php';
+
+    }
+
+    // post carrito/pagar - fetch desde checkout
+    public function pagar() {
+        Auth::require();
+        header('Content-Type: application/json');
+ 
+        $userId = Auth::userId();
+        $items  = $this->cart->getByUser($userId);
+ 
+        if (empty($items)) {
+            http_response_code(400);
+            echo json_encode(['error' => 'Carrito vacío']);
+            exit();
+        }
+ 
+        // Total desde BD — nunca del cliente IMPORTANTE
+        $totalCentimos = (int) round($this->cart->total($userId) * 100);
+ 
+        if ($totalCentimos <= 0) {
+            http_response_code(400);
+            echo json_encode(['error' => 'Importe inválido']);
+            exit();
+        }
+ 
+        require_once __DIR__ . '/../lib/stripe.php';
+        require_once __DIR__ . '/../vendor/autoload.php';
+ 
+        try {
+            $stripe = new \Stripe\StripeClient(STRIPE_SECRET_KEY);
+ 
+            $intent = $stripe->paymentIntents->create([
+                'amount'                    => $totalCentimos,
+                'currency'                  => 'eur',
+                'automatic_payment_methods' => ['enabled' => true],
+                'metadata'                  => ['user_id' => $userId],
+            ]);
+ 
+            // Guarda el ID en sesión para verificarlo al volver
+            $_SESSION['stripe_intent'] = $intent->id;
+ 
+            echo json_encode(['clientSecret' => $intent->client_secret]);
+ 
+        } catch (\Stripe\Exception\ApiErrorException $e) {
+            http_response_code(500);
+            echo json_encode(['error' => $e->getMessage()]);
+        }
+ 
         exit();
     }
+
+    // get /carrito/resultado - stripe redirige aqu idespues de pagar
+     public function resultado() {
+        Auth::require();
+ 
+        $userId = Auth::userId();
+        $paymentIntentId = $_GET['payment_intent'] ?? '';
+ 
+        if (!$paymentIntentId) {
+            header('Location: /TFG/Codigo/carrito');
+            exit();
+        }
+ 
+        // Verifica que el intent pertenece a esta sesión
+        if (($_SESSION['stripe_intent'] ?? '') !== $paymentIntentId) {
+            header('Location: /TFG/Codigo/carrito');
+            exit();
+        }
+ 
+        require_once __DIR__ . '/../lib/stripe.php';
+        require_once __DIR__ . '/../vendor/autoload.php';
+ 
+        try {
+            $stripe = new \Stripe\StripeClient(STRIPE_SECRET_KEY);
+            $intent = $stripe->paymentIntents->retrieve($paymentIntentId);
+            $status = $intent->status;
+        } catch (\Exception $e) {
+            $status = 'error';
+        }
+ 
+        // Pago exitoso - vacia carrito y limpia sesión
+        if ($status === 'succeeded') {
+            $this->cart->clear($userId);
+            unset($_SESSION['stripe_intent']);
+        }
+ 
+        $pageTitle = 'Resultado del pago · ShinnyHunt';
+        $extraCss  = 'cart.css';
+        require_once __DIR__ . '/../views/carts/checkout_resultado.php';
+    }
+
 }

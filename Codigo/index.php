@@ -62,6 +62,9 @@ $router->add('/TFG/Codigo/carrito/add', 'CartController@add');
 $router->add('/TFG/Codigo/carrito/remove', 'CartController@remove');
 $router->add('/TFG/Codigo/carrito/checkout', 'CartController@checkout');
 $router->add('/TFG/Codigo/carrito', 'CartController@index');
+$router->add('/TFG/Codigo/carrito/pagar', 'CartController@pagar');
+$router->add('/TFG/Codigo/carrito/resultado', 'CartController@resultado');
+
 
 // Ventas — específicas primero
 $router->add('/TFG/Codigo/ventas/cancelar', 'SalesController@cancel');

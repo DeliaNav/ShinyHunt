@@ -1,0 +1,35 @@
+/* public/css/checkout.css */
+
+#payment-message {
+    display: none;
+    background: rgba(154, 0, 2, 0.08);
+    color: #9A0002;
+    border: 1px solid rgba(154, 0, 2, 0.25);
+    border-radius: 8px;
+    padding: .75rem 1rem;
+    font-size: .875rem;
+    margin: .75rem 0;
+}
+
+#payment-element {
+    margin: 1rem 0;
+}
+
+#btn-cargando {
+    display: none;
+}
+
+.summary-note {
+    font-size: 0.8rem;
+    color: #666;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.summary-row--note {
+    font-size: 0.85rem;
+    color: #5c3a3a;
+    border-top: 1px dashed #d9ccc4;
+    padding-top: 0.5rem;
+    margin-top: 0.5rem;
+}
