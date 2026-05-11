@@ -41,3 +41,40 @@
     background-color: #7a0002;
     color: white;
 }
+
+.checkout-success {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.success-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.btn-return {
+    display: inline-block;
+    width: auto !important;
+    padding: 10px 30px;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.cart-empty-state {
+    text-align: center;
+    padding: 20px;
+}
+
+.link-store {
+    color: #a00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.link-store:hover {
+    text-decoration: underline;
+}
+
+#btn-cargando {
+    display: none;
+}
