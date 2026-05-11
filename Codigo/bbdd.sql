@@ -1,5 +1,5 @@
 -- ================================================
--- TCG Market — Database Schema completo
+-- ShinnyHunt — Database Schema completo
 -- ================================================
 
 CREATE DATABASE IF NOT EXISTS shinny_hunt CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -8,13 +8,14 @@ USE shinny_hunt;
 -- ─── USUARIOS ─────────────────────────────────────
 CREATE TABLE IF NOT EXISTS users (
     id          INT AUTO_INCREMENT PRIMARY KEY,
-    username    VARCHAR(50)  NOT NULL UNIQUE,
-    email       VARCHAR(100) NOT NULL UNIQUE,
-    password    VARCHAR(255) NOT NULL,
-    phone       VARCHAR(20)  DEFAULT NULL,
-    avatar      VARCHAR(255) DEFAULT NULL,
-    bio         TEXT         DEFAULT NULL,
-    create_in   DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP
+    username        VARCHAR(50)  NOT NULL UNIQUE,
+    email           VARCHAR(100) NOT NULL UNIQUE,
+    password        VARCHAR(255) NOT NULL,
+    phone           VARCHAR(20)  DEFAULT NULL,
+    avatar          VARCHAR(255) DEFAULT NULL,
+    bio             TEXT         DEFAULT NULL,
+    saldo_acumulado DECIMAL(10,2) DEFAULT 0.00,
+    create_in       DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 -- ─── COLECCIÓN PERSONAL ───────────────────────────
