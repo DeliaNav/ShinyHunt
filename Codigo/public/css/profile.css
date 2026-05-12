@@ -166,7 +166,7 @@ body{background-color: #EFE6DE;}
     gap: 15px;
 }
 
-.stat-card {
+.stat-card, .saldo-info {
     text-decoration: none;
     background: #f8f9fa;
     padding: 15px 25px;
@@ -181,18 +181,32 @@ body{background-color: #EFE6DE;}
     transform: translateY(-3px);
 }
 
-.stat-number {
+.stat-number, .saldo-amount {
     display: block;
     font-size: 1.5rem;
     font-weight: bold;
     color: #721c24;
 }
 
-.stat-label {
+.stat-label, .saldo-sub {
     font-size: 0.85rem;
     color: #666;
     text-transform: uppercase;
 }
+
+.btn-retirar{
+    background-color: #9A0002;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    transition: background 0.3s, transform 0.2s;
+}
+
 .profile-alert {
     padding: 15px;
     border-radius: 8px;

@@ -1,3 +1,4 @@
+// public/js/collection
 document.addEventListener('DOMContentLoaded', () => {
 
     const btn = document.getElementById('btn-collection');

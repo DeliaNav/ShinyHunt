@@ -18,10 +18,10 @@
                     <span class="sales-stat-number"><?= $soldCount ?></span>
                     <span class="sales-stat-label">Vendidas</span>
                 </div>
-                <div class="sales-stat">
+                <!-- <div class="sales-stat">
                     <span class="sales-stat-number"><?= number_format($totalEarned, 2) ?> €</span>
                     <span class="sales-stat-label">Total ganado</span>
-                </div>
+                </div> -->
             </div>
         </div>
 

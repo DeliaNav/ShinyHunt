@@ -1,7 +1,4 @@
-/**
- * collection-page.js
- * Gestiona la eliminación de cartas en la vista Mi Colección sin recargar la página.
- */
+// public/js/collection-page
 
 (function () {
     let totalCards = window.collectionData?.total ?? 0;

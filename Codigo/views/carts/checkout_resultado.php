@@ -3,6 +3,47 @@ $pago_exitoso = isset($_GET['payment_intent_client_secret']);
 $items = $items ?? [];
 $total = $total ?? 0.00;
 
+// ─── Lógica post-pago ────────────────────────────────────────────────────────
+// Se ejecuta una sola vez por sesión de pago exitoso para evitar duplicados.
+if ($pago_exitoso && !empty($items)) {
+
+    // $pdo debe estar disponible desde el controlador que incluye esta vista.
+    // Si usas otro nombre de conexión (p.ej. $db, $conn), cámbialo aquí.
+    if (isset($pdo)) {
+
+        // Preparamos ambas sentencias fuera del bucle para mayor eficiencia
+        $stmtSaldo = $pdo->prepare(
+            "UPDATE users
+             SET saldo_acumulado = saldo_acumulado + :importe
+             WHERE id = :seller_id"
+        );
+
+        $stmtStock = $pdo->prepare(
+            "UPDATE listings
+             SET stock = GREATEST(stock - :cantidad, 0)
+             WHERE id = :listing_id"
+        );
+
+        foreach ($items as $item) {
+            $importe  = round($item['price'] * $item['quantity'], 2);
+            $cantidad = (int) $item['quantity'];
+
+            // 1. Sumar importe de la venta al saldo acumulado del vendedor
+            $stmtSaldo->execute([
+                ':importe'   => $importe,
+                ':seller_id' => $item['seller_id'],
+            ]);
+
+            // 2. Restar stock del listing vendido (nunca baja de 0 gracias a GREATEST)
+            $stmtStock->execute([
+                ':cantidad'   => $cantidad,
+                ':listing_id' => $item['listing_id'],  // asegúrate de que $item tenga este campo
+            ]);
+        }
+    }
+}
+// ─────────────────────────────────────────────────────────────────────────────
+
 require_once __DIR__ . '/../../views/layout/header.php';
 ?>
 <link rel="stylesheet" href="/TFG/Codigo/public/css/checkout.css">

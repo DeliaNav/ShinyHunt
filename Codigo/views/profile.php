@@ -9,8 +9,8 @@
             <div class="profile-avatar-wrap">
                 <?php if (!empty($user['avatar'])): ?>
                     <img src="<?= htmlspecialchars($user['avatar']) ?>" alt="Avatar" class="profile-avatar">
-                    
-                    <form action="/TFG/Codigo/perfil/avatar" method="POST"> <input type="hidden" name="action" value="delete">
+                    <form action="/TFG/Codigo/perfil/avatar" method="POST">
+                        <input type="hidden" name="action" value="delete">
                         <button type="submit" class="avatar-delete-btn" onclick="return confirm('¿Borrar foto?')">
                             &times;
                         </button>
@@ -45,6 +45,13 @@
                     <span class="stat-number"><?= $totalWishlist ?></span>
                     <span class="stat-label">En wishlist</span>
                 </a>
+                <div class="saldo-info">
+                    <span class="saldo-amount"><?= number_format($user['saldo_acumulado'] ?? 0, 2) ?> €</span>
+                    <span class="saldo-sub">Ganancias de tus ventas</span>
+                    <button class="btn-retirar" onclick="alert('Funcionalidad de retirada próximamente disponible.')">
+                        Retirar saldo
+                    </button>
+                </div>
             </div>
         </div>
 
@@ -55,6 +62,18 @@
         <?php if ($success): ?>
             <div class="profile-alert profile-alert--success"><?= htmlspecialchars($success) ?></div>
         <?php endif; ?>
+
+        <!-- Saldo acumulado -->
+        <!-- <div class="saldo-card">
+            <div class="saldo-info">
+                <span class="saldo-label">Saldo disponible</span>
+                <span class="saldo-amount"><?= number_format($user['saldo_acumulado'] ?? 0, 2) ?> €</span>
+                <span class="saldo-sub">Ganancias de tus ventas</span>
+            </div>
+            <button class="btn-retirar" onclick="alert('Funcionalidad de retirada próximamente disponible.')">
+                Retirar saldo
+            </button>
+        </div> -->
 
         <div class="profile-grid">
 
@@ -74,13 +93,11 @@
                     </div>
                     <div class="form-group">
                         <label for="phone">Teléfono</label>
-                        <input type="tel" id="phone" name="phone"
-                               value="<?= htmlspecialchars($user['phone'] ?? '') ?>">
+                        <input type="tel" id="phone" name="phone" value="<?= htmlspecialchars($user['phone'] ?? '') ?>">
                     </div>
                     <div class="form-group">
                         <label for="bio">Biografía</label>
-                        <textarea id="bio" name="bio" rows="3"
-                                  placeholder="Cuéntanos algo sobre ti..."><?= htmlspecialchars($user['bio'] ?? '') ?></textarea>
+                        <textarea id="bio" name="bio" rows="3" placeholder="Cuéntanos algo sobre ti..."><?= htmlspecialchars($user['bio'] ?? '') ?></textarea>
                     </div>
                     <button type="submit" class="btn-save">Guardar cambios</button>
                 </form>
@@ -108,22 +125,25 @@
             </section>
 
         </div>
-        <div class="profile-card" style="border-color: #f9d2d2;">
+
+        <!-- Zona peligrosa -->
+        <div class="profile-card" style="border-color: #f9d2d2; margin-top: 30px;">
             <h3 class="profile-card-title" style="color: #9A0002;">Zona Peligrosa</h3>
             <p style="font-size: 0.9rem; color: #666; margin-bottom: 1.5rem;">
                 Una vez que elimines tu cuenta, no hay marcha atrás. Por favor, asegúrate.
             </p>
-            
-            <form action="/TFG/Codigo/delete-account" method="POST" onsubmit="return confirm('¿Estás COMPLETAMENTE seguro? Esta acción no se puede deshacer.');">
-                <button type="submit" class="btn-danger" style="background-color: #9A0002; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold;">
+            <form action="/TFG/Codigo/delete-account" method="POST"
+                  onsubmit="return confirm('¿Estás COMPLETAMENTE seguro? Esta acción no se puede deshacer.');">
+                <button type="submit" class="btn-danger"
+                        style="background-color: #9A0002; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold;">
                     Eliminar mi cuenta permanentemente
                 </button>
             </form>
         </div>
+
     </div>
 </div>
 
-<!-- Avatar upload via fetch -->
 <form id="avatar-form" action="/TFG/Codigo/perfil/avatar" method="POST"
       enctype="multipart/form-data" hidden></form>
 
