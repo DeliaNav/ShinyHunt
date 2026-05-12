@@ -23,7 +23,11 @@
             </div>
             <div class="form-group">
                 <label>Teléfono</label>
-                <input type="text" name="phone" placeholder="Ej: 600000000">
+                <input type="tel" name="phone" placeholder="Ej: 600000000">
+            </div>
+            <div class="form-group">
+                <label>Dirección</label>
+                <input type="text" name="adress" placeholder="Calle inventada, Ficticio, 20">
             </div>
             <button type="submit">Registrarse</button>
         </form>

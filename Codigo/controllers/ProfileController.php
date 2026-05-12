@@ -41,6 +41,7 @@ class ProfileController {
         $email    = trim($_POST['email']    ?? '');
         $bio      = trim($_POST['bio']      ?? '');
         $phone    = trim($_POST['phone']    ?? '');
+        $adress   = trim($_POST['adress']  ?? '');
 
         $user            = $this->userModel->getById($userId);
         $totalCollection = $this->collection->count($userId);
@@ -57,7 +58,7 @@ class ProfileController {
         } elseif ($this->userModel->emailExists($email, $userId)) {
             $error = 'Ese email ya está registrado.';
         } else {
-            $ok = $this->userModel->update($userId, $username, $email, $bio, $phone);
+            $ok = $this->userModel->update($userId, $username, $email, $bio, $phone, $adress);
             if ($ok) {
                 $_SESSION['nombre'] = $username;
                 $success = 'Perfil actualizado correctamente.';
@@ -105,7 +106,6 @@ class ProfileController {
         require_once __DIR__ . '/../views/profile.php';
     }
 
-    /** POST /perfil/avatar — sube avatar */
     /** POST /perfil/avatar — sube o borra el avatar */
     public function avatar() {
         Auth::require();

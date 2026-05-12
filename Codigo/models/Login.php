@@ -34,7 +34,7 @@ class Login {
         try{
             $newpassword = password_hash($data['password'], PASSWORD_DEFAULT);
 
-            $sql = "INSERT INTO users (username, email, password, phone, create_in) VALUES (?,?,?,?,?)";
+            $sql = "INSERT INTO users (username, email, password, phone, adress, create_in) VALUES (?,?,?,?,?,?)";
             $stmt = $this->pdo->prepare($sql);
 
             return $stmt->execute([
@@ -42,6 +42,7 @@ class Login {
                 $data['email'],
                 $newpassword,
                 $data['phone'],
+                $data['adress'],
                 date("Y-m-d H:i:s")
             ]);
         }catch(PDOException $e){

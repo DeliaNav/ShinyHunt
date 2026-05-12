@@ -14,6 +14,7 @@ CREATE TABLE IF NOT EXISTS users (
     phone           VARCHAR(20)  DEFAULT NULL,
     avatar          VARCHAR(255) DEFAULT NULL,
     bio             TEXT         DEFAULT NULL,
+    adress         VARCHAR(255)      NOT NULL,
     saldo_acumulado DECIMAL(10,2) DEFAULT 0.00,
     create_in       DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP
 );

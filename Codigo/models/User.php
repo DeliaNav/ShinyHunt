@@ -16,9 +16,9 @@ class User {
         return $row ?: null;
     }
 
-    public function update(int $id, string $username, string $email, string $bio, string $phone): bool {
-        $stmt = $this->pdo->prepare("UPDATE users SET username = ?, email = ?, bio = ?, phone = ? WHERE id = ?");
-        return $stmt->execute([$username, $email, $bio, $phone, $id]);
+    public function update(int $id, string $username, string $email, string $bio, string $phone, string $adress): bool {
+        $stmt = $this->pdo->prepare("UPDATE users SET username = ?, email = ?, bio = ?, phone = ?, adress = ? WHERE id = ?");
+        return $stmt->execute([$username, $email, $bio, $phone, $adress, $id]);
     }
 
     public function updatePassword(int $id, string $hashedPassword): bool {
