@@ -3,17 +3,20 @@
 require_once __DIR__ . '/../lib/Auth.php';
 require_once __DIR__ . '/../models/Cart.php';
 require_once __DIR__ . '/../models/Listing.php';
+require_once __DIR__ . '/../lib/Database.php';
 
 class CartController {
     private Cart    $cart;
     private Listing $listing;
+    private $pdo;
 
     public function __construct() {
         $this->cart    = new Cart();
         $this->listing = new Listing();
+        $this->pdo     = Database::getInstance()->getPdo();
     }
 
-    // GET /carrito — vista del carrito
+    // GET /carrito
     public function index() {
         Auth::require();
         $userId = Auth::userId();
@@ -25,7 +28,7 @@ class CartController {
         require_once __DIR__ . '/../views/carts/cart_index.php';
     }
 
-    // POST /carrito/add — añade 1 unidad al carrito (llamado por fetch)
+    // POST /carrito/add
     public function add() {
         Auth::require();
         header('Content-Type: application/json');
@@ -68,7 +71,7 @@ class CartController {
         exit();
     }
 
-    // POST /carrito/remove — elimina un item del carrito
+    // POST /carrito/remove
     public function remove() {
         Auth::require();
         header('Content-Type: application/json');
@@ -84,7 +87,7 @@ class CartController {
         exit();
     }
 
-    // GET /carrito/checkout — pasarela de pago
+    // GET /carrito/checkout
     public function checkout() {
         Auth::require();
         $userId = Auth::userId();
@@ -104,7 +107,7 @@ class CartController {
         require_once __DIR__ . '/../views/carts/checkout.php';
     }
 
-    //  POST /carrito/pagar — crea PaymentIntent (fetch desde checkout)
+    // POST /carrito/pagar
     public function pagar() {
         Auth::require();
         header('Content-Type: application/json');
@@ -151,7 +154,7 @@ class CartController {
         exit();
     }
 
-    // GET /carrito/resultado — Stripe redirige aquí tras el pago
+    // GET /carrito/resultado
     public function resultado() {
         Auth::require();
 
@@ -180,13 +183,25 @@ class CartController {
         }
 
         if ($status === 'succeeded') {
-            // se quita del stock (si hay mas de 1 se resta y ya)
             $items = $this->cart->getByUser($userId);
+
             foreach ($items as $item) {
-                $this->listing->decreaseQuantity(
-                    (int) $item['listing_id'],
-                    (int) $item['quantity']
-                );
+                $listingId  = (int) $item['listing_id'];
+                $cantidad   = (int) $item['quantity'];
+                $precio     = (float) $item['price'];
+                $sellerId   = (int) $item['seller_id'];
+                $subtotal   = $precio * $cantidad;
+
+                // retira del stock
+                $this->listing->decreaseQuantity($listingId, $cantidad);
+
+                // se añade el importe del saldo acumulado (para la simulacion)
+                $stmt = $this->pdo->prepare("
+                    UPDATE users
+                    SET saldo_acumulado = saldo_acumulado + ?
+                    WHERE id = ?
+                ");
+                $stmt->execute([$subtotal, $sellerId]);
             }
 
             $this->cart->clear($userId);

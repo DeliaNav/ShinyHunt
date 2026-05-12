@@ -1,7 +1,4 @@
-/**
- * profile.js
- * Sube el avatar automáticamente al seleccionar un archivo.
- */
+// publiv/js/profile
 document.addEventListener('DOMContentLoaded', () => {
     const input = document.getElementById('avatar-input');
     if (!input) return;

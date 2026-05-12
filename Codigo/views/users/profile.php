@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="/TFG/Codigo/public/css/user.css">
 
 <div class="container profile-main-container">
+
     <!-- TARJETA DE PERFIL -->
     <div class="profile-header-card">
         <div class="profile-avatar-wrapper">
@@ -16,11 +17,9 @@
         <div class="profile-info-content">
             <div class="profile-name-row">
                 <h1 class="profile-username"><?= htmlspecialchars($user['username']) ?></h1>
-                
-                <!-- Botón de mensaje-->
                 <?php if (isset($_SESSION['user_id']) && $_SESSION['user_id'] !== $user['id']): ?>
-                    <a href="/TFG/Codigo/mensajes/<?= htmlspecialchars($user['username']) ?>" class="btn-message-user">
-                        Enviar mensaje
+                    <a href="/TFG/Codigo/chats/<?= $user['id'] ?>" class="btn-message-user">
+                        ✉ Enviar mensaje
                     </a>
                 <?php endif; ?>
             </div>
@@ -41,9 +40,7 @@
     <!-- SECCIÓN DE VENTAS -->
     <div class="profile-section-header">
         <h2 class="profile-section-title">Cartas en venta</h2>
-        <span class="profile-listing-count">
-            <?= count($userListings) ?> Anuncio(s)
-        </span>
+        <span class="profile-listing-count"><?= count($userListings) ?> Anuncio(s)</span>
     </div>
 
     <?php if (empty($userListings)): ?>
@@ -53,28 +50,84 @@
             <p>¡Vuelve más tarde para ver sus novedades!</p>
         </div>
     <?php else: ?>
-        <div class="profile-cards-grid">
+
+        <?php
+        $conditionLabels = [
+            'mint'         => 'Mint',
+            'near_mint'    => 'Near Mint',
+            'excellent'    => 'Excellent',
+            'good'         => 'Good',
+            'light_played' => 'Light Played',
+            'played'       => 'Played',
+            'poor'         => 'Poor',
+        ];
+        ?>
+
+        <div class="listings-table">
+            <div class="listings-head">
+                <span>Carta</span>
+                <span>Estado</span>
+                <span>Descripción</span>
+                <span>Cantidad</span>
+                <span>Precio</span>
+                <span></span>
+            </div>
+
             <?php foreach ($userListings as $listing): ?>
-                <a href="/TFG/Codigo/cards/<?= htmlspecialchars($listing['card_id']) ?>" class="profile-card-item">
-                    <div class="card-inner">
-                        <div class="card-img-container">
-                            <img src="<?= htmlspecialchars($listing['image_url']) ?>" 
-                                 alt="<?= htmlspecialchars($listing['card_name']) ?>">
-                        </div>
-                        <div class="card-details">
-                            <div class="card-title"><?= htmlspecialchars($listing['card_name']) ?></div>
-                            <div class="card-price"><?= number_format($listing['price'], 2, ',', '.') ?> €</div>
-                            <div class="card-status">
-                                <span>Estado: <strong><?= ucfirst(htmlspecialchars($listing['condition'])) ?></strong></span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
+                <div class="listing-row" id="listing-row-<?= $listing['id'] ?>">
+
+                    <!-- Imagen + nombre -->
+                    <span class="listing-card-info">
+                        <a href="/TFG/Codigo/cards/<?= htmlspecialchars($listing['card_id']) ?>" class="listing-card-link">
+                            <img src="<?= htmlspecialchars($listing['image_url']) ?>"
+                                 alt="<?= htmlspecialchars($listing['card_name']) ?>"
+                                 class="listing-card-thumb"
+                                 onerror="this.src='/TFG/Codigo/public/img/card-placeholder.png'">
+                            <span><?= htmlspecialchars($listing['card_name']) ?></span>
+                        </a>
+                    </span>
+
+                    <!-- Condición -->
+                    <span class="listing-condition">
+                        <?= htmlspecialchars($conditionLabels[$listing['condition']] ?? $listing['condition']) ?>
+                    </span>
+
+                    <!-- Descripción -->
+                    <span class="listing-description">
+                        <?= !empty($listing['description']) ? htmlspecialchars($listing['description']) : '<em style="color:#bbb">—</em>' ?>
+                    </span>
+
+                    <!-- Cantidad -->
+                    <span class="listing-qty" id="listing-qty-<?= $listing['id'] ?>">
+                        <?= $listing['quantity'] ?>
+                    </span>
+
+                    <!-- Precio -->
+                    <span class="listing-price">
+                        <?= number_format($listing['price'], 2) ?> €
+                    </span>
+
+                    <!-- Acción -->
+                    <span class="listing-actions">
+                        <?php if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $listing['seller_id']): ?>
+                            <span class="listing-own-badge">Tu anuncio</span>
+                        <?php else: ?>
+                            <button class="btn-add-cart"
+                                    data-listing-id="<?= $listing['id'] ?>"
+                                    data-stock="<?= $listing['quantity'] ?>">
+                                + Añadir
+                            </button>
+                            <span class="cart-qty-badge" id="cart-qty-<?= $listing['id'] ?>"></span>
+                        <?php endif; ?>
+                    </span>
+
+                </div>
             <?php endforeach; ?>
         </div>
+
     <?php endif; ?>
 </div>
 
-<?php 
-require_once __DIR__ . '/../../views/layout/footer.php';
-?>
+<script src="/TFG/Codigo/public/js/cart-detail.js"></script>
+
+<?php require_once __DIR__ . '/../../views/layout/footer.php'; ?>
