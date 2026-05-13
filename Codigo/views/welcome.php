@@ -28,7 +28,7 @@
         <div class="hero-content">
             <div class="hro-badge">Shinny Hunt</div>
             <h1 class="hero-title">Tu mercado de cartas pokemon</h1>
-            <p class="hero-subtitle">descripción de que web y eso, tipo: gestiona tu coleccion o algo asi</p>
+            <p class="hero-subtitle">Compra, vende y colecciona</p>
         </div>
     </div>
 </body>
