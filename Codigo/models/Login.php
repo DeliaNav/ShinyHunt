@@ -30,11 +30,24 @@ class Login {
         }
     }
 
+    // Comprobacion de que no hay 2 personas con mismos datos
+    public function usernameExists(string $username):bool{
+        $stmt = $this->pdo->prepare("SELECT id FROM users WHERE username = ?");
+        $stmt->execute([$username]);
+        return (bool) $stmt->fetch();
+    }
+
+    public function emailExists(string $email): bool {
+        $stmt = $this->pdo->prepare("SELECT id FROM users WHERE email = ?");
+        $stmt->execute([$email]);
+        return (bool) $stmt->fetch();
+    }
+
     public function registro($data) {
         try{
             $newpassword = password_hash($data['password'], PASSWORD_DEFAULT);
 
-            $sql = "INSERT INTO users (username, email, password, phone, create_in) VALUES (?,?,?,?,?)";
+            $sql = "INSERT INTO users (username, email, password, phone, adress, create_in) VALUES (?,?,?,?,?,?)";
             $stmt = $this->pdo->prepare($sql);
 
             return $stmt->execute([
@@ -42,6 +55,7 @@ class Login {
                 $data['email'],
                 $newpassword,
                 $data['phone'],
+                $data['adress'],
                 date("Y-m-d H:i:s")
             ]);
         }catch(PDOException $e){

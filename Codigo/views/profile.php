@@ -99,6 +99,10 @@
                         <label for="bio">Biografía</label>
                         <textarea id="bio" name="bio" rows="3" placeholder="Cuéntanos algo sobre ti..."><?= htmlspecialchars($user['bio'] ?? '') ?></textarea>
                     </div>
+                    <div class="form-group">
+                        <label for="adress">Dirección</label>
+                        <input type="text" id="adress" name="adress" value="<?= htmlspecialchars($user['adress'] ?? '') ?>" placeholder="Calle, Ciudad, CP">
+                    </div>
                     <button type="submit" class="btn-save">Guardar cambios</button>
                 </form>
             </section>

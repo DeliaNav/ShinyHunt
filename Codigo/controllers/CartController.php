@@ -3,16 +3,19 @@
 require_once __DIR__ . '/../lib/Auth.php';
 require_once __DIR__ . '/../models/Cart.php';
 require_once __DIR__ . '/../models/Listing.php';
+require_once __DIR__ . '/../models/Message.php';
 require_once __DIR__ . '/../lib/Database.php';
 
 class CartController {
     private Cart    $cart;
     private Listing $listing;
+    private Message $message;
     private $pdo;
 
     public function __construct() {
         $this->cart    = new Cart();
         $this->listing = new Listing();
+        $this->message = new Message();
         $this->pdo     = Database::getInstance()->getPdo();
     }
 
@@ -185,23 +188,50 @@ class CartController {
         if ($status === 'succeeded') {
             $items = $this->cart->getByUser($userId);
 
+            // Obtener datos del comprador
+            $stmtBuyer = $this->pdo->prepare("SELECT username, adress FROM users WHERE id = ?");
+            $stmtBuyer->execute([$userId]);
+            $buyer = $stmtBuyer->fetch();
+            $buyerUsername = $buyer['username'] ?? 'Usuario';
+            $buyeradress  = $buyer['adress']  ?? 'Dirección no especificada';
+
+            // Agrupar items por vendedor para enviar un único mensaje por vendedor
+            $itemsBySeller = [];
             foreach ($items as $item) {
-                $listingId  = (int) $item['listing_id'];
-                $cantidad   = (int) $item['quantity'];
-                $precio     = (float) $item['price'];
-                $sellerId   = (int) $item['seller_id'];
-                $subtotal   = $precio * $cantidad;
+                $sellerId = (int) $item['seller_id'];
+                $itemsBySeller[$sellerId][] = $item;
+            }
 
-                // retira del stock
-                $this->listing->decreaseQuantity($listingId, $cantidad);
+            foreach ($itemsBySeller as $sellerId => $sellerItems) {
 
-                // se añade el importe del saldo acumulado (para la simulacion)
-                $stmt = $this->pdo->prepare("
-                    UPDATE users
-                    SET saldo_acumulado = saldo_acumulado + ?
-                    WHERE id = ?
-                ");
-                $stmt->execute([$subtotal, $sellerId]);
+                // Resta stock y suma al saldo
+                foreach ($sellerItems as $item) {
+                    $this->listing->decreaseQuantity((int)$item['listing_id'], (int)$item['quantity']);
+
+                    $subtotal = (float)$item['price'] * (int)$item['quantity'];
+                    $stmt = $this->pdo->prepare("
+                        UPDATE users SET saldo_acumulado = saldo_acumulado + ? WHERE id = ?
+                    ");
+                    $stmt->execute([$subtotal, $sellerId]);
+                }
+
+                // Para construir el mensaje con el listado de cartas
+                $lineasCartas = [];
+                foreach ($sellerItems as $item) {
+                    $cantidad   = (int)$item['quantity'];
+                    $cardName   = $item['card_name'];
+                    $precio     = number_format((float)$item['price'], 2);
+                    $lineasCartas[] = "  - {$cardName} (x{$cantidad}) — {$precio} €";
+                }
+                $listaCartas = implode("\n", $lineasCartas);
+
+                // Mensaje automatico tras la venta
+                $contenido = "{$buyerUsername} ha realizado una compra:\n\n"
+                           . "{$listaCartas}\n\n"
+                           . "Dirección de envío:\n{$buyeradress}";
+
+                // Envia el mensaje al vendedor
+                $this->message->send($userId, $sellerId, $contenido);
             }
 
             $this->cart->clear($userId);
