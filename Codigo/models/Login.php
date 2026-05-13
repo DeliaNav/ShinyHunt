@@ -30,6 +30,19 @@ class Login {
         }
     }
 
+    // Comprobacion de que no hay 2 personas con mismos datos
+    public function usernameExists(string $username):bool{
+        $stmt = $this->pdo->prepare("SELECT id FROM users WHERE username = ?");
+        $stmt->execute([$username]);
+        return (bool) $stmt->fetch();
+    }
+
+    public function emailExists(string $email): bool {
+        $stmt = $this->pdo->prepare("SELECT id FROM users WHERE email = ?");
+        $stmt->execute([$email]);
+        return (bool) $stmt->fetch();
+    }
+
     public function registro($data) {
         try{
             $newpassword = password_hash($data['password'], PASSWORD_DEFAULT);

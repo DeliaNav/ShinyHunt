@@ -1,8 +1,8 @@
 :root {
-    --primary: #9A0002;          /* Vino */
-    --primary-hover: #7a0002;    /* Vino oscuro */
-    --bg: #EFE6DE;               /* Crema */
-    --text: #1a1a1a;             /* Negro suave */
+    --primary: #9A0002;          
+    --primary-hover: #7a0002;
+    --bg: #EFE6DE;
+    --text: #1a1a1a;
     --white: #ffffff;
 }
 
@@ -20,7 +20,7 @@ body {
     background: var(--white);
     padding: 2rem;
     border-radius: 1rem;
-    box-shadow: 0 10px 25px rgba(154, 0, 2, 0.1); /* Sombra con matiz vino */
+    box-shadow: 0 10px 25px rgba(154, 0, 2, 0.1);
     width: 100%;
     max-width: 400px;
     border: 1px solid #d6ccc2;
@@ -90,4 +90,24 @@ button:hover {
 
 .footer-link a:hover {
     text-decoration: underline;
+}
+
+.field-error {
+    color: #9A0002;
+    font-size: 0.82rem;
+    margin-top: 4px;
+    display: block;
+}
+.input-error {
+    border-color: #9A0002 !important;
+    background-color: rgba(154, 0, 2, 0.04) !important;
+}
+.alert-error {
+    background: rgba(154, 0, 2, 0.08);
+    color: #9A0002;
+    border: 1px solid rgba(154, 0, 2, 0.3);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
 }
