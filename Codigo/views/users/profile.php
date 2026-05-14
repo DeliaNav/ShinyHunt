@@ -18,7 +18,7 @@
             <div class="profile-name-row">
                 <h1 class="profile-username"><?= htmlspecialchars($user['username']) ?></h1>
                 <?php if (isset($_SESSION['user_id']) && $_SESSION['user_id'] !== $user['id']): ?>
-                    <a href="/TFG/Codigo/chats/<?= $user['id'] ?>" class="btn-message-user">
+                    <a href="/TFG/Codigo/mensajes/<?= $user['username'] ?>" class="btn-message-user">
                         ✉ Enviar mensaje
                     </a>
                 <?php endif; ?>
