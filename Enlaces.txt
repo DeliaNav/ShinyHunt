@@ -1,7 +1,0 @@
-https://www.youtube.com/watch?v=i45eV72MsOw -> Pagos con Sprite - PHP (Este está muy bien, puedes seguir el código y lo que él dice y luego mejorarlo)
-
-https://docs.stripe.com/payments/quickstart?lang=php&client=react&locale=es-419 -> documentación se crea una página de proceso de compra con una API de Payment Intents
-
-https://tcgdex.dev/sdks/php -> API con cartas que si que funciona
-
-https://docs.stripe.com/get-started/development-environment -> documentación stripe (Lo del SDK)
