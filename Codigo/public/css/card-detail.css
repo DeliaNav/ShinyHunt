@@ -1,0 +1,532 @@
+/* ================================================
+   card-detail.css — Ficha de carta Final 
+   ================================================ */
+
+body {
+    background: #EFE6DE;
+    color: #2D2D2D;
+}
+
+.card-detail-wrap {
+    background: #EFE6DE;
+    min-height: 100vh;
+    padding-bottom: 4rem;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+}
+
+/* BACK LINK  */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    color: #666;
+    font-size: .875rem;
+    margin-bottom: 1.5rem;
+    transition: color .2s;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.back-link:hover { 
+    color: #9A0002;
+}
+
+/* LAYOUT  */
+.card-detail {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+@media (max-width: 780px) {
+    .card-detail {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* LEFT: IMAGEN  */
+.card-detail-left {
+    position: sticky;
+    top: 80px;
+}
+
+.card-detail-img-wrap {
+    background: #ffffff;
+    border: 1px solid #EFE6DE;
+    border-radius: 18px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 24px rgba(154, 0, 2, 0.05);
+}
+
+.card-detail-img-wrap img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+
+/* RIGHT: INFO */
+.card-detail-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* HEADER  */
+.card-detail-header {
+    background: #ffffff;
+    border: 1px solid #EFE6DE;
+    border-radius: 14px;
+    padding: 1.5rem;
+    border-left: 5px solid #9A0002;
+}
+
+.card-detail-types {
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+    margin-bottom: .75rem;
+}
+
+.type-badge {
+    font-size: .75rem;
+    font-weight: 600;
+    padding: .2rem .75rem;
+    border-radius: 20px;
+    border: 1px solid #9A0002;
+    color: #9A0002;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
+
+.rarity-badge {
+    font-size: .75rem;
+    font-weight: 600;
+    padding: .2rem .75rem;
+    border-radius: 20px;
+    background: #fff8e1;
+    color: #b08000;
+    border: 1px solid #ffe082;
+}
+
+.card-detail-name {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: .3rem;
+    letter-spacing: -.02em;
+}
+
+.card-detail-set {
+    font-size: .875rem;
+    color: #666;
+}
+
+/* STATS */
+.card-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: .75rem;
+}
+
+.stat-box {
+    background: #ffffff;
+    border: 1px solid #EFE6DE;
+    border-radius: 10px;
+    padding: .75rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+
+.stat-label {
+    font-size: .7rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+}
+
+.stat-value {
+    font-size: .95rem;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+/* PRECIO */
+.price-box {
+    background: #fff;
+    border: 1px solid #EFE6DE;
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem;
+}
+
+.price-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+
+.price-label {
+    font-weight: 600;
+    font-size: .95rem;
+    color: #1a1a1a;
+}
+
+.price-updated {
+    font-size: .75rem;
+    color: #888;
+}
+
+.price-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: .75rem;
+}
+
+.price-item {
+    background: #fdfaf8;
+    border-radius: 8px;
+    padding: .65rem .9rem;
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+    border: 1px solid #f2ece6;
+}
+
+.price-item span {
+    font-size: .72rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+}
+
+.price-item strong {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #9A0002;
+}
+
+/* SECCIONES */
+.card-section {
+    background: #ffffff;
+    border: 1px solid #EFE6DE;
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem;
+}
+
+.card-section-title {
+    font-size: .8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: #888;
+    margin-bottom: 1rem;
+}
+
+/* Abilities & Attacks */
+.ability-card, .attack-card {
+    background: #fdfaf8;
+    border-radius: 8px;
+    padding: .85rem 1rem;
+    margin-bottom: .6rem;
+    border: 1px solid #f2ece6;
+    border-left: 3px solid transparent;
+    transition: all 0.2s;
+}
+
+.ability-card:hover, .attack-card:hover {
+    border-left-color: #9A0002;
+    background: #fff;
+}
+
+.ability-type {
+    font-size: .7rem;
+    font-weight: 600;
+    background: rgba(154, 0, 2, 0.1);
+    color: #9A0002;
+    border-radius: 4px;
+    padding: .1rem .5rem;
+    text-transform: uppercase;
+}
+
+/* TABLA DE LISTINGS */
+.listings-table {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(154, 0, 2, 0.05);
+    overflow: hidden;
+    margin-top: 20px;
+    border: 1px solid #EFE6DE;
+}
+
+.listings-head {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1fr 1.2fr 1.5fr;
+    padding: 15px 20px;
+    background: #fdfaf8;
+    border-bottom: 2px solid #9A0002;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.listing-row {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1fr 1.2fr 1.5fr;
+    padding: 15px 20px;
+    align-items: center;
+    border-bottom: 1px solid #EFE6DE;
+}
+
+.listing-seller a {
+    color: #9A0002;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.listing-price {
+    font-weight: 800;
+    color: #9A0002;
+    font-size: 1.1rem;
+}
+
+/* BOTONES */
+.card-actions {
+    display: flex;
+    gap: .75rem;
+    flex-wrap: wrap;
+}
+
+.btn-collection, .btn-add-cart, .btn-sell, .listings-empty a {
+    background: #9A0002;
+    color: #ffffff;
+    padding: .85rem 1.5rem;
+    border-radius: 10px;
+    font-size: .9rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-collection:hover, .btn-add-cart:hover, .btn-sell:hover, .listings-empty a:hover {
+    background: #7a0002;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(154, 0, 2, 0.2);
+}
+
+.btn-wishlist {
+    background: #ffffff;
+    color: #9A0002;
+    border: 1.5px solid #9A0002;
+    padding: .85rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.btn-wishlist:hover {
+    background: rgba(154, 0, 2, 0.05);
+}
+
+.card-wr {
+    display: flex;
+    gap: 2rem;
+    background: #ffffff;
+    border: 1px solid #EFE6DE;
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem;
+}
+
+.wr-title {
+    font-size: .7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: #888;
+    margin-bottom: .75rem;
+}
+
+.wr-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: .3rem .75rem;
+    border-radius: 8px;
+    font-size: .85rem;
+    font-weight: 600;
+}
+
+.wr-weak {
+    background: rgba(154, 0, 2, 0.1);
+    color: #9A0002;
+    border: 1px solid rgba(154, 0, 2, 0.2);
+}
+
+.wr-resist {
+    background: #fdfaf8;
+    color: #444;
+    border: 1px solid #EFE6DE;
+}
+
+/* Estado Vacío */
+.listings-empty {
+    text-align: center;
+    padding: 40px 20px;
+    background: #ffffff;
+    border: 2px dashed #9A0002;
+    border-radius: 12px;
+}
+
+@media (max-width: 900px) {
+    .card-detail {
+        grid-template-columns: 240px 1fr;
+        gap: 1.5rem;
+    }
+
+    .listings-head,
+    .listing-row {
+        grid-template-columns: 1.5fr 1fr 0.7fr 0.9fr 1.2fr;
+    }
+}
+
+@media (max-width: 780px) {
+    .container { padding: 1.5rem 1.25rem; }
+
+    .card-detail {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .card-detail-left {
+        position: static;
+        max-width: 220px;
+        margin: 0 auto;
+    }
+
+    .listings-head,
+    .listing-row {
+        grid-template-columns: 1.5fr 1fr 0.7fr 1fr 1.2fr;
+        gap: 0.6rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .card-actions {
+        flex-wrap: wrap;
+        gap: 0.6rem;
+    }
+
+    .btn-collection,
+    .btn-wishlist, .btn-sell {
+        flex: 1;
+        min-width: 140px;
+    }
+
+    .price-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .card-stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .card-wr {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 540px) {
+    .container { padding: 1rem; }
+
+    .card-detail-left {
+        max-width: 180px;
+    }
+
+    .card-detail-name {
+        font-size: 1.5rem;
+    }
+
+    .listings-head {
+        display: none;
+    }
+
+    .listing-row {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 0.4rem 0.75rem;
+        padding: 0.85rem 1rem;
+        border-bottom: 1px solid #e3e6f0;
+    }
+
+    .listing-seller {
+        grid-column: 1 / -1;
+        font-weight: 700;
+    }
+
+    .listing-price {
+        font-size: 1.05rem;
+    }
+
+    .listing-actions {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 0.4rem;
+    }
+
+    .card-actions {
+        flex-direction: column;
+    }
+
+    .btn-collection,
+    .btn-wishlist,
+    .btn-sell {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .price-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .card-stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .attack-header {
+        flex-wrap: wrap;
+        gap: 0.4rem;
+    }
+
+    .attack-damage {
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 380px) {
+    .card-detail-left { max-width: 150px; }
+
+    .card-detail-name { font-size: 1.25rem; }
+
+    .price-grid,
+    .card-stats-grid  { grid-template-columns: 1fr; }
+
+    .listing-row      { grid-template-columns: 1fr; }
+
+    .listing-seller   { grid-column: 1; }
+}

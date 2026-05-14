@@ -1,0 +1,184 @@
+/* ================================================
+   collection.css — Mi Colección
+   ================================================ */
+
+/* HERO  */
+.collection-hero {
+    background: #EFE6DE;
+    border-bottom: 1px solid #e2d9d0;
+    padding: 2rem 0;
+}
+
+.collection-hero-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.collection-title {
+    font-family: var(--font-head);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+    color: #9A0002;
+    margin-bottom: .25rem;
+}
+
+.collection-sub {
+    font-size: .9rem;
+    color: #666;
+}
+
+/* CONTAINER  */
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+}
+
+/* BOTÓN EXPLORAR  */
+.btn-explore {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    padding: .7rem 1.4rem;
+    background: #9A0002;
+    color: #fff;
+    border-radius: 8px;
+    font-size: .875rem;
+    font-weight: 600;
+    transition: background .2s;
+    white-space: nowrap;
+}
+.btn-explore:hover { background: #7a0002; }
+
+/* EMPTY STATE  */
+.collection-empty {
+    text-align: center;
+    padding: 5rem 1rem;
+}
+.empty-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: #9A0002;
+}
+.collection-empty h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #9A0002;
+    margin-bottom: .5rem;
+}
+.collection-empty p {
+    font-size: .9rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+/* CARDS GRID  */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(172px, 1fr));
+    gap: 1.1rem;
+}
+
+/* CARD ITEM  */
+.card-item {
+    position: relative;
+    background: #ffffff;
+    border: 1px solid #EFE6DE;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(154,0,2,.05), 0 4px 12px rgba(154,0,2,.03);
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.card-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 10px rgba(154,0,2,.08), 0 12px 28px rgba(154,0,2,.10);
+    border-color: #9A0002;
+}
+
+.card-link { display: block; text-decoration: none; color: inherit; }
+
+/* CARD IMAGE  */
+.card-img-wrap {
+    aspect-ratio: 2.5 / 3.5;
+    overflow: hidden;
+    background: #fdfaf8;
+    position: relative;
+}
+.card-img-wrap img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .28s ease;
+}
+.card-item:hover .card-img-wrap img { transform: scale(1.05); }
+
+.quantity-badge {
+    position: absolute;
+    top: .5rem; right: .5rem;
+    background: #9A0002;
+    color: #fff;
+    font-size: .7rem;
+    font-weight: 700;
+    padding: .15rem .45rem;
+    border-radius: 5px;
+    z-index: 2;
+}
+
+/* CARD INFO  */
+.card-info {
+    padding: 0.8rem;
+    border-top: 1px solid #EFE6DE;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+.card-name {
+    font-size: .875rem;
+    font-weight: 600;
+    color: #2D2D2D;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.card-id {
+    font-size: .75rem;
+    color: #666;
+}
+
+/* BOTÓN ELIMINAR  */
+.btn-remove {
+    width: 100%;
+    margin-top: 0.2rem;
+    background-color: #fce8e8;
+    color: #9A0002;
+    border: none;
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-remove:hover {
+    background-color: #9A0002;
+    color: #fff;
+}
+
+/* RESPONSIVE  */
+@media (max-width: 700px) {
+    .container { padding: 1.5rem 1.25rem; }
+    .collection-hero { padding: 1.5rem 0; }
+    .cards-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: .85rem;
+    }
+}
+@media (max-width: 420px) {
+    .cards-grid { grid-template-columns: repeat(2, 1fr); gap: .75rem; }
+}

@@ -1,0 +1,170 @@
+/* ================================================
+   market.css — Marketplace Final
+   ================================================ */
+
+/* Estructura Principal */
+body {
+    background: #EFE6DE;
+}
+
+.market-page {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.market-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #9A0002;
+    padding-bottom: 15px;
+}
+
+.market-header h2 {
+    color: #1a1a1a;
+    font-family: 'Cinzel', serif;
+    margin: 0;
+}
+
+/* Botones Generales */
+.btn-primary, .btn-save {
+    background-color: #9A0002;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover, .btn-save:hover {
+    background-color: #7a0002;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(154, 0, 2, 0.2);
+}
+
+.btn-cancel {
+    background-color: #d6ccc2;
+    color: #444;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Alertas */
+.alert-success {
+    background-color: #fdfaf8;
+    color: #9A0002;
+    border: 1px solid #9A0002;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Formulario de Venta */
+.card-form {
+    background: #fdfaf8;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
+    border: 1px solid #EFE6DE;
+}
+
+.card-form h3 {
+    color: #9A0002;
+    margin-top: 0;
+}
+
+.form-group input, .form-group select {
+    padding: 12px;
+    border: 1px solid #EFE6DE;
+    border-radius: 8px;
+    font-size: 14px;
+    background: #fff;
+}
+
+.form-group input:focus, .form-group select:focus {
+    outline: none;
+    border-color: #9A0002;
+}
+
+/* Card del Producto */
+.listing-card {
+    background: white;
+    border-radius: 14px;
+    border: 1px solid #EFE6DE;
+    padding: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(154, 0, 2, 0.03);
+}
+
+.listing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(154, 0, 2, 0.1);
+}
+
+.card-header h4 {
+    margin: 0;
+    color: #1a1a1a;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* Badges de Condición */
+.badge {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.badge.near_mint { background: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9; }
+.badge.excellent { background: #e3f2fd; color: #1565c0; border: 1px solid #bbdefb; }
+.badge.good { background: #fff3e0; color: #ef6c00; border: 1px solid #ffe0b2; }
+.badge.played { background: #fce8e8; color: #9A0002; border: 1px solid #f9d2d2; }
+
+.price {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: #9A0002;
+    margin: 15px 0;
+}
+
+.seller strong {
+    color: #1a1a1a;
+}
+
+/* Botón Comprar */
+.btn-buy {
+    width: 100%;
+    background-color: #9A0002;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-buy:hover:not(:disabled) {
+    background-color: #7a0002;
+}
+
+.btn-buy:disabled {
+    background-color: #d6ccc2;
+    color: #888;
+    cursor: not-allowed;
+    opacity: 0.8;
+}

@@ -1,0 +1,231 @@
+/* ================================================
+   cart.css — Mi Carrito
+   ================================================ */
+
+body{
+    background: #fdfaf8;
+}
+
+.cart-wrap { 
+    background: #fdfaf8;
+    min-height: 100vh; 
+    padding-bottom: 4rem; 
+}
+
+.container  { 
+    max-width: 1100px; 
+    margin: 0 auto; 
+    padding: 2rem; 
+}
+
+.cart-title { 
+    font-family: var(--font-head); 
+    font-size: 1.75rem; 
+    margin-bottom: 1.75rem; 
+    color: #9A0002;
+}
+
+.cart-empty { 
+    text-align: center; 
+    padding: 5rem 1rem; 
+}
+
+.cart-empty-icon { 
+    font-size: 3.5rem; 
+    margin-bottom: 1rem; 
+    color: #9A0002;
+}
+
+.cart-empty h3 { 
+    font-size: 1.1rem; 
+    margin-bottom: .5rem; 
+    color: #2D2D2D;
+}
+
+.cart-empty p  { 
+    color: #666; 
+    margin-bottom: 1.5rem; 
+}
+
+.btn-go-home { 
+    display: inline-flex; 
+    padding: .7rem 1.5rem; 
+    background: #9A0002;
+    color: #fff; 
+    border-radius: 8px; 
+    font-weight: 600; 
+    text-decoration: none;
+}
+
+.btn-go-home:hover {
+    background: #7a0002;
+}
+
+.cart-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 2rem;
+    align-items: start;
+}
+@media (max-width: 780px) { .cart-layout { grid-template-columns: 1fr; } }
+
+/* Items */
+.cart-items { 
+    display: flex; 
+    flex-direction: column; 
+    gap: .75rem; 
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 70px 1fr auto auto 32px;
+    gap: 1rem;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #EFE6DE;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+}
+@media (max-width: 560px) { 
+    .cart-item { grid-template-columns: 60px 1fr; gap: .75rem; } 
+}
+
+.cart-item-img img { 
+    width: 70px; 
+    border-radius: 8px; 
+    display: block; 
+}
+
+.cart-item-name { 
+    font-weight: 600; 
+    font-size: .9rem; 
+    margin-bottom: .2rem; 
+    color: #1a1a1a;
+}
+
+.cart-item-seller {
+     font-size: .8rem; 
+     color: #666; 
+     margin-bottom: .15rem; 
+}
+
+.cart-item-seller a {
+    color: #9A0002;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.cart-item-condition { 
+    font-size: .75rem; 
+    color: #888; 
+}
+
+.cart-item-price{ 
+    font-size: .85rem; 
+    color: #444; 
+    margin-top: .2rem; 
+}
+
+.cart-item-qty { 
+    text-align: center; 
+}
+
+.qty-label  { 
+    display: block; 
+    font-size: .875rem; 
+    font-weight: 600; 
+    color: #2D2D2D;
+}
+
+.qty-stock  { 
+    display: block; 
+    font-size: .75rem; 
+    color: #9aa0b5; 
+}
+
+.cart-item-subtotal { 
+    font-weight: 700; 
+    font-size: 1rem; 
+    white-space: nowrap; 
+    color: #9A0002;
+}
+
+.cart-item-remove {
+    width: 28px; 
+    height: 28px; 
+    border-radius: 50%;
+    background: #fce8e8;
+    border: 1px solid #f9d2d2;
+    color: #9A0002;
+    font-size: .75rem;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    cursor: pointer; 
+    transition: all .2s;
+}
+.cart-item-remove:hover { 
+    background: #9A0002; 
+    color: #fff;
+}
+
+/* Summary */
+.cart-summary {
+    background: #fff;
+    border: 1px solid #EFE6DE;
+    border-radius: 14px;
+    padding: 1.5rem;
+    position: sticky;
+    top: 80px;
+    box-shadow: 0 4px 12px rgba(154,0,2,0.03);
+}
+.summary-title { 
+    font-family: var(--font-head); 
+    font-size: 1.1rem; 
+    margin-bottom: 1.25rem; 
+    color: #9A0002;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .875rem;
+    padding: .6rem 0;
+    border-bottom: 1px solid #EFE6DE;
+    gap: .5rem;
+}
+.summary-row:last-of-type { 
+    border-bottom: none; 
+    margin-bottom: 1rem; 
+}
+
+.summary-row--note span:last-child { 
+    font-size: .75rem; 
+    color: #888; 
+    text-align: right; 
+}
+
+.btn-checkout {
+    display: block; 
+    width: 90%;
+    text-align: center;
+    background: #9A0002;
+    color: #fff;
+    border-radius: 8px; 
+    padding: .85rem;
+    font-size: .95rem; 
+    font-weight: 600;
+    transition: background .2s; 
+    text-decoration: none;
+    margin-bottom: .75rem;
+}
+.btn-checkout:hover { 
+    background: #7a0002; 
+}
+
+.summary-note { 
+    font-size: .75rem; 
+    color: #888; 
+    text-align: center; 
+}
