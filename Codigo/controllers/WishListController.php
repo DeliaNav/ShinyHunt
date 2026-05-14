@@ -20,7 +20,7 @@ class WishListController {
         require_once __DIR__ . '/../views/wishlist.php';
     }
 
-    /** Llamado por fetch desde show.php — devuelve JSON */
+    /** Llamado por fetch  desde show.php — devuelve JSON */
     public function add() {
         $this->requireAjax();
 
@@ -41,7 +41,7 @@ class WishListController {
         ]);
     }
 
-    /** Llamado por fetch desde show.php — devuelve JSON */
+    /** Llamado por fetch desde show.php — devuelve JSON  */
     public function remove() {
         $this->requireAjax();
 
@@ -60,7 +60,7 @@ class WishListController {
         ]);
     }
 
-    // ── Helpers ───────────────────────────────────────────────────────────────
+    // Ayudas
 
     private function json(array $data): void {
         header('Content-Type: application/json');
@@ -68,7 +68,7 @@ class WishListController {
         exit();
     }
 
-    private function requireAjax(): void {
+    private function requireAjax(): void { //por si acadp
         header('Content-Type: application/json');
         if (!Auth::check()) {
             $this->json(['success' => false, 'message' => 'Sesión expirada. Recarga la página.']);
